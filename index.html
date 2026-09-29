@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estadística Interactiva: Paràmetres de Centralització i Gràfics</title>
+  <title>Estudiar 2n d'ESO | Plataforma Educativa Interactiva</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,7 +17,7 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -32,35 +32,11 @@
             mono: ['JetBrains Mono', 'monospace'],
           },
           colors: {
-            primary: {
-              50: '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-            },
-            accent: {
-              teal: '#06b6d4',
-              emerald: '#10b981',
-              amber: '#f59e0b',
-              rose: '#f43f5e',
-              violet: '#8b5cf6',
-            }
-          },
-          animation: {
-            'float-slow': 'float 6s ease-in-out infinite',
-            'pulse-soft': 'pulse 3s ease-in-out infinite',
-            'shimmer': 'shimmer 2.5s infinite linear',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' },
-            },
-            shimmer: {
-              '0%': { backgroundPosition: '-200% 0' },
-              '100%': { backgroundPosition: '200% 0' },
+            brand: {
+              catalan: '#f59e0b',
+              catRed: '#ef4444',
+              math: '#6366f1',
+              mathCyan: '#06b6d4',
             }
           }
         }
@@ -71,12 +47,12 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #0b1120;
+      background-color: #090d16;
       color: #f1f5f9;
       background-image: 
-        radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
-        radial-gradient(at 50% 50%, rgba(139, 92, 246, 0.08) 0px, transparent 70%);
+        radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(6, 182, 212, 0.07) 0px, transparent 60%);
       background-attachment: fixed;
     }
     
@@ -84,9 +60,8 @@
       font-family: 'Outfit', sans-serif;
     }
 
-    /* Glassmorphism classes */
     .glass-card {
-      background: rgba(15, 23, 42, 0.75);
+      background: rgba(15, 23, 42, 0.78);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -98,8 +73,8 @@
     }
     .glass-card-hover:hover {
       transform: translateY(-4px);
-      border-color: rgba(99, 102, 241, 0.4);
-      box-shadow: 0 25px 40px -10px rgba(79, 70, 229, 0.35);
+      border-color: rgba(245, 158, 11, 0.35);
+      box-shadow: 0 25px 40px -10px rgba(245, 158, 11, 0.15);
     }
 
     /* Custom glowing scrollbar */
@@ -108,751 +83,1321 @@
       height: 8px;
     }
     ::-webkit-scrollbar-track {
-      background: #0b1120;
+      background: #090d16;
     }
     ::-webkit-scrollbar-thumb {
       background: #334155;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #6366f1;
+      background: #f59e0b;
     }
 
-    /* Badge highlight animations */
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: 6px;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 12px #f59e0b;
+      border: 3px solid #090d16;
+    }
+
     .number-tag {
-      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s, box-shadow 0.2s;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s;
     }
     .number-tag:hover {
-      transform: scale(1.18);
+      transform: scale(1.15);
       z-index: 10;
-    }
-
-    .step-active {
-      border-left: 4px solid #6366f1;
-      background: rgba(99, 102, 241, 0.12);
     }
   </style>
 </head>
-<body class="min-h-screen text-slate-100 flex flex-col antialiased selection:bg-indigo-500 selection:text-white">
+<body class="min-h-screen text-slate-100 flex flex-col antialiased selection:bg-amber-500 selection:text-black">
 
-  <!-- TOP NAVIGATION BAR -->
-  <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 lg:px-8 py-3.5 transition-all duration-300">
-    <div class="max-w-7xl mx-auto flex items-center justify-between">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-indigo-500/25">
-          <i data-lucide="bar-chart-3" class="w-5 h-5 text-white"></i>
+  <!-- TOP HEADER WITH CLEAN SUBJECT SELECTOR (TRETS ELS SUB-ENLLAÇOS, NOMÉS APARTATS PRINCIPALS) -->
+  <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 sm:px-6 lg:px-8 py-3.5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+      
+      <!-- Brand & Grade -->
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-amber-500/25">
+          <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
         </div>
         <div>
-          <span class="text-xs uppercase tracking-widest text-indigo-400 font-bold block">Matemàtiques ESO</span>
-          <span class="text-lg font-extrabold tracking-tight text-white font-heading">Estadística Interactiva</span>
+          <span class="text-[11px] uppercase tracking-widest text-amber-400 font-extrabold block">2n d'ESO • Curs Acadèmic</span>
+          <span class="text-lg font-black tracking-tight text-white font-heading">Estudiar 2n d'ESO</span>
         </div>
       </div>
 
-      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-medium text-slate-300">
-        <a href="#teoria" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Teoria</a>
-        <a href="#exercicis" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Exercicis de la Imatge</a>
-        <a href="#grafiques" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Gràfiques</a>
-        <a href="#laboratori" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">Laboratori</a>
-        <a href="#quiz" class="px-3 py-1.5 rounded-lg text-indigo-400 hover:text-indigo-300 hover:bg-indigo-950/40 transition font-semibold">Test d'Autoavaluació</a>
+      <!-- MAIN SUBJECT APARTATS (CATALÀ / MATEMÀTIQUES) -->
+      <nav class="flex items-center p-1.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-inner">
+        <button id="nav-btn-catala" onclick="setSubject('catala')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md">
+          <i data-lucide="book-marked" class="w-4 h-4"></i>
+          <span>Llengua Catalana</span>
+        </button>
+
+        <button id="nav-btn-mates" onclick="setSubject('mates')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white">
+          <i data-lucide="calculator" class="w-4 h-4"></i>
+          <span>Matemàtiques</span>
+        </button>
       </nav>
 
-      <div class="flex items-center space-x-2">
-        <button onclick="document.getElementById('exercicis').scrollIntoView({behavior: 'smooth'})" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold uppercase tracking-wider rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/30 transition transform active:scale-95">
-          <span>Veure Exercicis</span>
-          <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
-        </button>
+      <!-- Quick Action / GitHub -->
+      <div class="hidden md:flex items-center space-x-2">
+        <a href="https://github.com/workspacenil/estudiar-2n-eso" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-xs font-semibold flex items-center gap-1.5 transition">
+          <i data-lucide="github" class="w-3.5 h-3.5"></i>
+          <span>estudiar-2n-eso</span>
+        </a>
       </div>
+
     </div>
   </header>
 
-  <!-- MAIN CONTAINER -->
+  <!-- MAIN WRAPPER -->
   <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 space-y-16">
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-6 pb-12 overflow-hidden text-center md:text-left">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-        <div class="md:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Guia Interactiva Pas a Pas en Català
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-            Comprendre la <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">Moda, Mediana i Mitjana</span>
-          </h1>
-
-          <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
-            Resolució interactiva completa dels exercicis de la captura. Aprèn de manera visual com calcular els 
-            <strong class="text-white font-medium">paràmetres de centralització</strong> i com representar les dades mitjançant 
-            <strong class="text-white font-medium">diagrames de barres</strong> i <strong class="text-white font-medium">diagrames de sectors</strong>.
-          </p>
-
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <a href="#exercici-a" onclick="switchExercise('a')" class="px-5 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 hover:from-indigo-500 hover:to-indigo-600 font-semibold text-white shadow-lg shadow-indigo-700/25 flex items-center gap-2 transition transform hover:-translate-y-0.5">
-              <span>Exercici 10a: Cotxes</span>
-              <i data-lucide="car" class="w-4 h-4"></i>
-            </a>
-            <a href="#exercici-b" onclick="switchExercise('b')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 font-semibold text-slate-200 border border-slate-700 flex items-center gap-2 transition transform hover:-translate-y-0.5">
-              <span>Exercici 10b: Edats</span>
-              <i data-lucide="users" class="w-4 h-4"></i>
-            </a>
-            <a href="#exercici-c" onclick="switchExercise('c')" class="px-5 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 font-semibold text-slate-200 border border-slate-700 flex items-center gap-2 transition transform hover:-translate-y-0.5">
-              <span>Exercici 10c: Suspeses</span>
-              <i data-lucide="book-x" class="w-4 h-4"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Hero Graphic Display -->
-        <div class="md:col-span-5 relative">
-          <div class="glass-card rounded-2xl p-6 relative overflow-hidden border border-indigo-500/20 shadow-2xl">
-            <div class="absolute -right-10 -bottom-10 w-44 h-44 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
-            
-            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
-              <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-rose-500 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span>
-                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-              </div>
-              <span class="text-xs text-slate-400 font-mono">captura_original.jpg</span>
+    <!-- ======================================================== -->
+    <!-- SUBJECT 1: LLENGUA CATALANA (PROJECTE EVOLUCIÓ DEL CATALÀ) -->
+    <!-- ======================================================== -->
+    <div id="subject-catala" class="space-y-16 transition-opacity duration-300">
+      
+      <!-- HERO CATALÀ -->
+      <section class="relative pt-4 pb-8 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 border border-amber-500/30 text-amber-300">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              Projecte d'Equip • Eix Cronològic i Exposició Oral
             </div>
 
-            <!-- Original Image Transcription Card -->
-            <div class="mt-4 p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-left space-y-3 text-xs sm:text-sm font-sans">
-              <div class="flex items-start gap-2">
-                <span class="px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold">Ex. 10</span>
-                <p class="text-slate-200 font-semibold">Calcula els paràmetres de centralització (moda, mediana i mitjana) de les distribucions següents:</p>
-              </div>
-              <ul class="space-y-2 text-slate-300 font-mono text-xs pl-2 border-l-2 border-indigo-500/40">
-                <li><strong class="text-amber-400">a)</strong> Marques cotxes: Renault, Audi, Citroën, Seat...</li>
-                <li><strong class="text-cyan-400">b)</strong> Edats nois/es: 12, 15, 13, 12, 16, 10, 11...</li>
-                <li><strong class="text-emerald-400">c)</strong> Assignatures suspeses: 0, 1, 0, 2, 4, 0, 1...</li>
-              </ul>
-              <div class="pt-2 text-[11px] text-slate-400 italic bg-slate-950/40 p-2.5 rounded-lg border border-slate-800/80">
-                <strong class="text-slate-200 not-italic block font-sans mb-1">💡 Representacions gràfiques:</strong>
-                "Les dades estadístiques les representem amb gràfiques que ens ajuden a visualitzar i interpretar la informació... diagrama de barres i diagrama de sectors."
-              </div>
-            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+              L'Origen i l'<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-amber-200">Evolució del Català</span>
+            </h1>
 
-            <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
-              <div class="p-2 rounded-lg bg-indigo-950/40 border border-indigo-800/40">
-                <span class="text-slate-400 block text-[10px] uppercase">Moda</span>
-                <span class="font-bold text-indigo-300">El més repetit</span>
-              </div>
-              <div class="p-2 rounded-lg bg-cyan-950/40 border border-cyan-800/40">
-                <span class="text-slate-400 block text-[10px] uppercase">Mediana</span>
-                <span class="font-bold text-cyan-300">Valor del mig</span>
-              </div>
-              <div class="p-2 rounded-lg bg-emerald-950/40 border border-emerald-800/40">
-                <span class="text-slate-400 block text-[10px] uppercase">Mitjana</span>
-                <span class="font-bold text-emerald-300">Valor promig</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 1: TEORIA INTERACTIVA DELS 3 PARÀMETRES -->
-    <section id="teoria" class="space-y-8 scroll-mt-24">
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Fonaments d'Estadística</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Què són els Paràmetres de Centralització?</h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Són valors numèrics que resumeixen un conjunt de dades en un sol número representatiu al voltant del qual es distribueixen la resta de dades.
-        </p>
-      </div>
-
-      <!-- 3 Parameter Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <!-- CARD 1: LA MODA -->
-        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden border-t-4 border-t-amber-500">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold text-xl">
-                Mo
-              </span>
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/20 text-amber-300">
-                Totes les variables
-              </span>
-            </div>
-
-            <h3 class="text-xl font-bold text-white">La Moda (Mo)</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              És el valor que té la <strong class="text-amber-300 font-medium">freqüència més alta</strong>, és a dir, la dada que més vegades es repeteix.
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+              Tot el material complet que t'ha donat el professor per preparar la <strong class="text-white font-medium">cartolina de l'eix cronològic</strong> i l'<strong class="text-white font-medium">exposició oral de 3 a 5 minuts</strong>: les 6 etapes històriques, autors, documents clau, el vídeo il·lustrat de referència, gràfiques interactives i la calculadora de la rúbrica per treure la màxima nota!
             </p>
 
-            <div class="bg-slate-900/80 rounded-xl p-3.5 border border-slate-800 space-y-2 text-xs">
-              <div class="flex items-center gap-2 text-amber-300 font-semibold">
-                <i data-lucide="check-circle" class="w-4 h-4"></i>
-                <span>Característiques clau:</span>
+            <div class="p-4 rounded-2xl bg-amber-950/20 border border-amber-500/30 flex items-start gap-3.5">
+              <i data-lucide="sparkles" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+              <div class="text-xs sm:text-sm text-slate-300 space-y-1">
+                <strong class="text-amber-300 block font-heading text-sm">Com funciona aquesta guia?</strong>
+                <p>Només has d'anar <span class="text-white font-bold">baixant per la pàgina</span> per trobar el vídeo del profe, el repartiment de rols del grup, les 6 etapes històriques explicades, les gràfiques i la rúbrica d'avaluació.</p>
               </div>
-              <ul class="space-y-1.5 text-slate-300 list-disc list-inside">
-                <li>És l'<strong>únic paràmetre</strong> que es pot calcular en dades qualitatives (paraules com marques de cotxe).</li>
-                <li>Si hi ha dues dades amb la màxima freqüència, s'anomena <span class="text-amber-200">bimodal</span>.</li>
-                <li>No cal fer cap càlcul numèric, només comptar.</li>
-              </ul>
             </div>
           </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            <span class="text-slate-300 font-semibold">Exemple ràpid:</span> En [Seat, Seat, Audi], la moda és <strong class="text-amber-300">Seat</strong>.
-          </div>
-        </div>
-
-        <!-- CARD 2: LA MEDIANA -->
-        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden border-t-4 border-t-cyan-500">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold text-xl">
-                Me
-              </span>
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-cyan-500/20 text-cyan-300">
-                Variables quantitatives
-              </span>
-            </div>
-
-            <h3 class="text-xl font-bold text-white">La Mediana (Me)</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              És el valor que ocupa la <strong class="text-cyan-300 font-medium">posició central</strong> un cop totes les dades estan ordenades de menor a major.
-            </p>
-
-            <div class="bg-slate-900/80 rounded-xl p-3.5 border border-slate-800 space-y-2 text-xs">
-              <div class="flex items-center gap-2 text-cyan-300 font-semibold">
-                <i data-lucide="layers" class="w-4 h-4"></i>
-                <span>Com es troba segons $N$:</span>
+          <!-- SUMMARY CARD -->
+          <div class="lg:col-span-5">
+            <div class="glass-card rounded-3xl p-6 sm:p-7 border border-amber-500/30 relative overflow-hidden space-y-5">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">Dades del Projecte</span>
+                <span class="px-2.5 py-1 rounded-full text-[11px] font-semibold bg-amber-500/20 text-amber-300">2n d'ESO</span>
               </div>
-              <ul class="space-y-2 text-slate-300">
-                <li class="bg-cyan-950/30 p-2 rounded border border-cyan-900/40">
-                  <strong class="text-cyan-300 block">Si $N$ és senar (imparell):</strong>
-                  La posició central exacta és $\frac{N+1}{2}$.
-                </li>
-                <li class="bg-cyan-950/30 p-2 rounded border border-cyan-900/40">
-                  <strong class="text-cyan-300 block">Si $N$ és parell:</strong>
-                  Es fa la mitjana dels dos valors centrals a les posicions $\frac{N}{2}$ i $\frac{N}{2}+1$.
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            <span class="text-slate-300 font-semibold">Regla d'or:</span> Les dades han d'estar <strong>obligatòriament ordenades</strong>!
-          </div>
-        </div>
-
-        <!-- CARD 3: LA MITJANA -->
-        <div class="glass-card glass-card-hover rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden border-t-4 border-t-emerald-500">
-          <div class="space-y-4">
-            <div class="flex items-center justify-between">
-              <span class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl">
-                x̄
-              </span>
-              <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300">
-                Només números
-              </span>
-            </div>
-
-            <h3 class="text-xl font-bold text-white">La Mitjana Aritmètica (x̄)</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              És la <strong class="text-emerald-300 font-medium">suma de totes les dades</strong> dividida entre el nombre total d'observacions ($N$).
-            </p>
-
-            <div class="bg-slate-900/80 rounded-xl p-3.5 border border-slate-800 space-y-2 text-xs">
-              <div class="flex items-center gap-2 text-emerald-300 font-semibold">
-                <i data-lucide="calculator" class="w-4 h-4"></i>
-                <span>Fórmula matemàtica:</span>
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span class="text-slate-400 block text-[11px]">Format de l'eix</span>
+                  <strong class="text-white text-sm block mt-0.5">Paper / Cartolina</strong>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span class="text-slate-400 block text-[11px]">Durada exposició</span>
+                  <strong class="text-amber-300 text-sm block mt-0.5">3 a 5 minuts</strong>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span class="text-slate-400 block text-[11px]">Equips</span>
+                  <strong class="text-white text-sm block mt-0.5">3 o 4 alumnes</strong>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                  <span class="text-slate-400 block text-[11px]">Etapes obligatòries</span>
+                  <strong class="text-amber-300 text-sm block mt-0.5">6 Etapes clau</strong>
+                </div>
               </div>
-              <div class="p-3 bg-slate-950 rounded-lg text-center font-mono text-emerald-400 text-sm font-bold border border-emerald-950">
-                x̄ = (x₁ + x₂ + ... + xₙ) / N
+
+              <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 text-xs space-y-2 text-slate-300">
+                <strong class="text-white flex items-center gap-1.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                  Què ha de tenir cada etapa a la cartolina?
+                </strong>
+                <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1 text-[11px]">
+                  <li>Data o segle aproximat.</li>
+                  <li>Explicació breu (3-4 línies del fet o context).</li>
+                  <li>Element visual (foto d'autor, mapa, monument o fragment).</li>
+                  <li>Dada curiosa o document clau.</li>
+                </ul>
               </div>
-              <ul class="space-y-1.5 text-slate-300 list-disc list-inside mt-2">
-                <li><strong class="text-rose-400">Molt important:</strong> Només es pot calcular si les dades són nombres!</li>
-                <li>És sensible als valors extrems (outliers).</li>
-              </ul>
             </div>
           </div>
-
-          <div class="mt-6 pt-4 border-t border-slate-800 text-xs text-slate-400">
-            <span class="text-slate-300 font-semibold">Exemple:</span> Notes: 6, 8, 10 ➔ (6+8+10)/3 = <strong class="text-emerald-300">8</strong>.
-          </div>
         </div>
+      </section>
 
-      </div>
-
-      <!-- TIPUS DE VARIABLES BANNER -->
-      <div class="glass-card rounded-2xl p-6 border border-indigo-500/30 flex flex-col md:flex-row items-center gap-6">
-        <div class="w-14 h-14 rounded-2xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center shrink-0 text-indigo-400">
-          <i data-lucide="help-circle" class="w-8 h-8"></i>
-        </div>
-        <div class="space-y-1 text-center md:text-left">
-          <h4 class="text-base font-bold text-white flex items-center justify-center md:justify-start gap-2">
-            <span>Diferència Clau: Variable Qualitativa vs Variable Quantitativa</span>
-            <span class="px-2 py-0.5 rounded text-[10px] bg-indigo-500 text-white font-semibold">Trampa freqüent a l'examen!</span>
-          </h4>
-          <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
-            Quan les dades són <strong>paraules</strong> (com les marques de cotxe de l'apartat a), la variable és <em>qualitativa</em>. No podem fer operacions matemàtiques amb paraules: <strong>no té sentit sumar cotxes ni calcular-ne la posició central ordenada</strong>. Per tant, en aquests casos <u>només es pot calcular la Moda</u>.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 2: ELS 3 EXERCICIS RESOLTS PAS A PAS (INTERACTIUS) -->
-    <section id="exercicis" class="space-y-8 scroll-mt-24">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Resolució Detallada</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Exercici 10 de la Captura</h2>
-          <p class="text-slate-400 text-sm mt-1">Fes clic a qualsevol dels 3 apartats per explorar la solució pas a pas amb animacions.</p>
-        </div>
-
-        <!-- Exercise Switcher Tabs -->
-        <div class="inline-flex p-1.5 rounded-xl bg-slate-900 border border-slate-800 self-start md:self-auto shadow-inner">
-          <button id="tab-a" onclick="switchExercise('a')" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow">
-            <i data-lucide="car" class="w-4 h-4"></i>
-            <span>Apartat A (Cotxes)</span>
-          </button>
-          <button id="tab-b" onclick="switchExercise('b')" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
-            <i data-lucide="users" class="w-4 h-4"></i>
-            <span>Apartat B (Edats)</span>
-          </button>
-          <button id="tab-c" onclick="switchExercise('c')" class="px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
-            <i data-lucide="book-open" class="w-4 h-4"></i>
-            <span>Apartat C (Suspeses)</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- MAIN EXERCISE VIEWER CONTAINER -->
-      <div id="exercise-content-card" class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 transition-all duration-300">
-        
-        <!-- EXERCISE HEADER INFO -->
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-6 border-b border-slate-800">
+      <!-- VÍDEO DE REFERÈNCIA DEL PROFESSOR -->
+      <section class="space-y-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
           <div>
-            <div class="flex items-center gap-2.5">
-              <span id="ex-badge" class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                APARTAT A
-              </span>
-              <span id="ex-type-badge" class="px-3 py-1 rounded-md text-xs font-sans font-semibold bg-slate-800 text-slate-300">
-                Variable Qualitativa Nominal
-              </span>
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-400">
+              <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i>
+              Vídeo de Referència del Professor
             </div>
-            <h3 id="ex-title" class="text-2xl font-bold text-white mt-2">
-              Marques dels cotxes en un taller mecànic
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">La història del català (il·lustrada)</h2>
+            <p class="text-slate-400 text-xs sm:text-sm">Canal: <em>La Filòloga de Guàrdia</em> • Vídeo recomanat a classe per entendre tota l'evolució.</p>
+          </div>
+          <a href="https://www.youtube.com/watch?v=fNWdlhM9zzY" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto px-4 py-2 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/30 text-xs font-bold flex items-center gap-2 transition">
+            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            <span>Obrir a YouTube</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Video Embed -->
+          <div class="lg:col-span-8 glass-card rounded-3xl overflow-hidden p-2 border border-slate-800 shadow-2xl">
+            <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950">
+              <iframe 
+                class="absolute inset-0 w-full h-full" 
+                src="https://www.youtube-nocookie.com/embed/fNWdlhM9zzY" 
+                title="La història del català (il·lustrada)" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Video Key Points Guide -->
+          <div class="lg:col-span-4 glass-card rounded-3xl p-6 border border-slate-800 space-y-4 text-xs">
+            <h3 class="font-bold text-white text-sm flex items-center gap-2">
+              <i data-lucide="bookmark" class="w-4 h-4 text-amber-400"></i>
+              <span>Guia Ràpida per a l'Eix del Vídeo</span>
             </h3>
-          </div>
-
-          <div class="flex items-center gap-3">
-            <button onclick="toggleStepByStep()" id="btn-step-toggle" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 flex items-center gap-2 transition active:scale-95 shadow">
-              <i data-lucide="play-circle" class="w-4 h-4 text-indigo-400"></i>
-              <span id="step-btn-text">Veure Simulació Pas a Pas</span>
-            </button>
-            <button onclick="audioCheer()" class="p-2.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border border-indigo-500/30 transition" title="Llançar celebració">
-              <i data-lucide="sparkles" class="w-4 h-4"></i>
-            </button>
+            <p class="text-slate-300 leading-relaxed">
+              Mentre mires el vídeo, fixa't en aquests moments clau per incorporar-los directament a la teva exposició:
+            </p>
+            <div class="space-y-2.5">
+              <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <span class="text-amber-400 font-bold block">1. Origen Llatí Vulgar</span>
+                <span class="text-slate-400 text-[11px]">Com es diferencia del llatí clàssic i comença a sonar a català als Pirineus.</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <span class="text-amber-400 font-bold block">2. Homilies d'Organyà</span>
+                <span class="text-slate-400 text-[11px]">El primer sermó religiós en llengua catalana trobat a l'Alt Urgell.</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <span class="text-amber-400 font-bold block">3. La Decadència i Nova Planta</span>
+                <span class="text-slate-400 text-[11px]">La imposició del castellà i com la gent el manté viu a casa seva.</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <span class="text-amber-400 font-bold block">4. Pompeu Fabra: "L'Ordenador"</span>
+                <span class="text-slate-400 text-[11px]">Per què necessitàvem normes ortogràfiques per no escriure cadascú com volia.</span>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- RAW DATA DISPLAY WITH CHIPS -->
-        <div class="my-6 space-y-2">
-          <div class="flex items-center justify-between text-xs text-slate-400">
-            <span>Dades de la mostra recollida (<span id="ex-count" class="font-mono text-white font-bold">14</span> dades):</span>
-            <span class="text-[11px] italic">Passa el ratolí per destacar cada element</span>
-          </div>
-
-          <div id="raw-data-chips" class="flex flex-wrap gap-2 p-4 rounded-2xl bg-slate-950/70 border border-slate-800/80 min-h-[70px] items-center">
-            <!-- Chips injected by JS -->
-          </div>
+      <!-- ROLS DINS DEL GRUP (ORGANITZACIÓ D'EQUIP) -->
+      <section class="space-y-6">
+        <div class="text-center max-w-2xl mx-auto space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Organització del Treball</span>
+          <h2 class="text-3xl font-extrabold text-white">Els 4 Rols de l'Equip (3 o 4 Alumnes)</h2>
+          <p class="text-slate-400 text-xs sm:text-sm">
+            Tal com diu el document del professor, cadascú tindrà una responsabilitat principal, però <strong>tots heu de parlar a l'exposició oral</strong>!
+          </p>
         </div>
 
-        <!-- INTERACTIVE STEP BY STEP PANEL (Can be toggled) -->
-        <div id="step-panel" class="hidden my-6 p-5 rounded-2xl bg-indigo-950/20 border border-indigo-500/30 space-y-4 transition-all">
-          <div class="flex items-center justify-between">
-            <h4 class="text-sm font-bold text-indigo-300 uppercase tracking-wider flex items-center gap-2">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          
+          <!-- ROL 1 -->
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-t-4 border-t-amber-500 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 font-bold">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Coordinador/a</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              S'assegura que tothom treballi, que es respectin totes les opinions i que es compleixin els terminis de lliurament de la cartolina.
+            </p>
+            <div class="pt-2 text-[11px] text-amber-300 font-semibold flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Lideratge i terminis
+            </div>
+          </div>
+
+          <!-- ROL 2 -->
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-t-4 border-t-cyan-500 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold">
+              <i data-lucide="pen-tool" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Redactor/a Principal</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Revisa la correcció lingüística: que no hi hagi faltes d'ortografia i que les 3-4 línies de text de cada etapa estiguin perfectament redactades.
+            </p>
+            <div class="pt-2 text-[11px] text-cyan-300 font-semibold flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Ortografia i síntesi
+            </div>
+          </div>
+
+          <!-- ROL 3 -->
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-t-4 border-t-emerald-500 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold">
+              <i data-lucide="palette" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Dissenyador/a Digital</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              S'encarrega d'organitzar la plantilla visual de la cartolina, triar els colors, dibuixar la fletxa temporal i enganxar les imatges o mapes.
+            </p>
+            <div class="pt-2 text-[11px] text-emerald-300 font-semibold flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Cartolina i imatges
+            </div>
+          </div>
+
+          <!-- ROL 4 -->
+          <div class="glass-card glass-card-hover rounded-2xl p-5 border-t-4 border-t-rose-500 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400 font-bold">
+              <i data-lucide="mic" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-base font-bold text-white">Portaveu / Cronometrador</h3>
+            <p class="text-slate-300 text-xs leading-relaxed">
+              Coordina el repartiment dels minuts d'exposició oral (entre 3 i 5 minuts) perquè tots els membres parlin exactament el mateix temps.
+            </p>
+            <div class="pt-2 text-[11px] text-rose-300 font-semibold flex items-center gap-1">
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Control dels 3-5 minuts
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LES 6 ETAPES HISTÒRIQUES DE L'EIX CRONOLÒGIC -->
+      <section class="space-y-8">
+        <div class="text-center max-w-3xl mx-auto space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Contingut del Document Oficial</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">L'Eix Cronològic: Les 6 Etapes Obligatòries</h2>
+          <p class="text-slate-400 text-xs sm:text-sm">
+            Fes servir aquest resum detallat per escriure exactament els textos de la vostra cartolina i preparar el guió oral.
+          </p>
+        </div>
+
+        <!-- TIMELINE CARDS CONTAINER -->
+        <div class="space-y-6">
+          
+          <!-- ETAPA 1 -->
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-amber-500 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                  ETAPA 1 • SEGLES IX - XII
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Els primers passos</span>
+              </div>
+              <span class="text-xs font-semibold text-amber-400">Naixement de la llengua</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">Del Llatí al Català: Primers Documents Escrits</h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              El català és una <strong>llengua romànica</strong> nascuda de l'evolució del <em>llatí vulgar</em> parlat a la part nord-oriental de la Península Ibèrica durant els segles IX i X. Durant segles només es parlava, fins que al segle XII apareixen els primers textos escrits íntegrament en català per necessitats pràctiques i religioses.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-amber-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="file-text" class="w-4 h-4"></i>
+                  Liber Iudiciorum (Llibre dels Judicis)
+                </strong>
+                <p class="text-slate-400">És el <strong>primer text jurídic</strong> en català (segle XII). Traducció del codi de lleis visigòtic perquè els jutges i el poble el poguessin entendre.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-amber-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="book" class="w-4 h-4"></i>
+                  Homilies d'Organyà (c. 1200)
+                </strong>
+                <p class="text-slate-400">El <strong>primer text literari i religiós en prosa</strong> conservat. Sis sermons trobats a la rectoria d'Organyà (Alt Urgell) per predicar al poble.</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200">
+              💡 <strong>Dada curiosa per a la cartolina:</strong> Abans d'aquests textos, el català ja apareixia amagat en juraments feudals i testaments escrits en llatí corruptat (com el <em>Jurament de Radulf Oriol</em> de 1028).
+            </div>
+          </div>
+
+          <!-- ETAPA 2 -->
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-cyan-500 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                  ETAPA 2 • SEGLES XIII - XIV
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Corona d'Aragó</span>
+              </div>
+              <span class="text-xs font-semibold text-cyan-400">Expansió Mediterrània</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">L'Expansió de la Llengua per la Mediterrània</h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Amb les conquestes de Jaume I i els reis de la Corona d'Aragó, el català s'expandeix des de la Catalunya Vella cap al <strong>País Valencià</strong> i les <strong>Illes Balears</strong>, i posteriorment cap a Sicília, Nàpols, Atenes, Neopàtria i Sardenya (on encara avui es parla a la ciutat de l'Alguer). Es converteix en llengua internacional de comerç marítim i diplomàcia.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-cyan-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="user-check" class="w-4 h-4"></i>
+                  Ramon Llull (1232 - 1316)
+                </strong>
+                <p class="text-slate-400">El savi mallorquí va ser el <strong>primer filòsof d'Europa que va escriure ciència, teologia i filosofia en una llengua romànica</strong> en comptes de llatí!</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-cyan-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="landmark" class="w-4 h-4"></i>
+                  Les Quatre Grans Cròniques
+                </strong>
+                <p class="text-slate-400">Relats històrics plens d'aventura i patriotisme: Jaume I (<em>Llibre dels Fets</em>), Bernat Desclot, Ramon Muntaner i Pere el Cerimoniós.</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-200">
+              💡 <strong>Dada curiosa per a la cartolina:</strong> El <em>Consolat de Mar</em> va ser el codi de dret marítim redactat en català que va regir tot el comerç de la mar Mediterrània durant segles!
+            </div>
+          </div>
+
+          <!-- ETAPA 3 -->
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-indigo-500 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                  ETAPA 3 • SEGLE XV
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Època Daurada</span>
+              </div>
+              <span class="text-xs font-semibold text-indigo-400">El Segle d'Or de les Lletres</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">L'Apogeu Literari: El Segle d'Or Català</h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              El segle XV representa el moment de màxima esplendor de la literatura catalana medieval. La <strong>Cancelleria Reial</strong> funcionava com a garant d'un model de llengua culta, clara i unificada. Especialment a València, que viu una explosió econòmica i artística extraordinària.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2 text-xs">
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-indigo-300 block font-bold">Joanot Martorell</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">Autor de <em>Tirant lo Blanc</em>, el cavaller humà i realista. Cervantes va dir al Quixot que era "el millor llibre del món".</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-indigo-300 block font-bold">Ausiàs March</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">El gran poeta que abandona la poesia trobadoresca provençal per escriure versos d'amor real, sincer i filosòfic en català.</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-indigo-300 block font-bold">Bernat Metge</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">Pioner de l'Humanisme i del Renaixement a la Corona d'Aragó amb la seva obra mestra <em>Lo Somni</em> (1399).</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-indigo-300 block font-bold">Joan Roís de Corella</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">Mestre de la prosa elegant, la poesia mística i els temes mitològics clàssics (<em>Tragèdia de Caldesa</em>).</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-200">
+              💡 <strong>Dada curiosa per a la cartolina:</strong> La primera bíblia impresa en una llengua romànica al món va ser la <em>Bíblia Valenciana</em> de Bonifaci Ferrer el 1478.
+            </div>
+          </div>
+
+          <!-- ETAPA 4 -->
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-rose-500 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                  ETAPA 4 • SEGLES XVI - XVIII
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Pèrdua de prestigi</span>
+              </div>
+              <span class="text-xs font-semibold text-rose-400">La Davallada i Decrets de Nova Planta</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">La Davallada i la Repressió de Nova Planta (1716)</h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Amb la unió dinàstica dels Reis Catòlics i el trasllat de la cort a Castella, les classes nobles abandonen el català i el castellà es converteix en llengua de poder. El cop definitiu arriba amb la derrota a la <strong>Guerra de Successió (11 de setembre de 1714)</strong>: Felip V imposa els <strong>Decrets de Nova Planta (1716)</strong>.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-rose-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="alert-octagon" class="w-4 h-4"></i>
+                  Què van suposar els Decrets de Nova Planta?
+                </strong>
+                <p class="text-slate-400">Abolició de totes les institucions catalanes (la Generalitat, les Corts i el Consell de Cent) i prohibició total del català a les escoles, l'administració de justícia i els documents públics.</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-rose-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="shield" class="w-4 h-4"></i>
+                  Com va sobreviure la llengua?
+                </strong>
+                <p class="text-slate-400">La llengua va resistir viva gràcies al poble: es continuava parlant a casa, al carrer, al camp, a les cançons populars i a les festes tradicionals.</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-200">
+              💡 <strong>Dada curiosa per a la cartolina:</strong> Malgrat la forta pressió política, autors populars com el rector de Vallfogona (Francesc Vicent Garcia) mantenien viva la literatura satírica catalana.
+            </div>
+          </div>
+
+          <!-- ETAPA 5 -->
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-emerald-500 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  ETAPA 5 • SEGLE XIX (DES DE 1833)
+                </span>
+                <span class="text-xs text-slate-400 font-mono">El Romanticisme</span>
+              </div>
+              <span class="text-xs font-semibold text-emerald-400">El Gran Ressorgiment</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">La Renaixença: Ressorgiment Cultural i Literari</h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Inspirat pel moviment romàntic europeu que valorava les arrels nacionals i les llengües pròpies, neix la <strong>Renaixença</strong>. L'inici se sol situar l'any 1833 amb la publicació de l'oda <em>La Pàtria</em> de Bonaventura Carles Aribau. L'objectiu era tornar al català la dignitat i el prestigi literari perduts.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-emerald-300 block font-bold">Jacint Verdaguer</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">El gran poeta nacional (<em>L'Atlàntida</em>, <em>Canigó</em>). Va demostrar que el català podia escriure la poesia més sublim d'Europa.</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-emerald-300 block font-bold">Àngel Guimerà</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">Dramaturg teatral de fama internacional amb drames apassionats com <em>Terra baixa</em> ("He mort el llop!") i <em>Mar i cel</em>.</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-emerald-300 block font-bold">Narcís Oller</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">El pare de la novel·la catalana moderna realista (<em>La papallona</em>, <em>La febre d'or</em>), retratant la revolució industrial.</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-200">
+              💡 <strong>Dada curiosa per a la cartolina:</strong> La restauració dels <em>Jocs Florals</em> el 1859 sota el lema "Pàtria, Feli i Amor" va omplir els teatres i va engrescar milers de poetes a escriure en català.
+            </div>
+          </div>
+
+          <!-- ETAPA 6 -->
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-violet-500 space-y-4">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center gap-2.5">
+                <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-violet-500/20 text-violet-300 border border-violet-500/30">
+                  ETAPA 6 • 1900 - ACTUALITAT
+                </span>
+                <span class="text-xs text-slate-400 font-mono">Modernitat i Reptes</span>
+              </div>
+              <span class="text-xs font-semibold text-violet-400">Normalització, Franquisme i Segle XXI</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white">Modernisme, Pompeu Fabra, Dictadura i l'Època Actual</h3>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              El segle XX comença amb la gran fita de la <strong>normativització de Pompeu Fabra</strong> (Normes ortogràfiques de 1913 i Diccionari de 1932) i l'oficialitat amb l'Estatut republicà de 1932. Després de la dura foscor de la dictadura franquista (1939-1975), la democràcia permet recuperar la immersió lingüística, TV3 i el català modern.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-violet-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="award" class="w-4 h-4"></i>
+                  Pompeu Fabra: El Mestre de la Llengua
+                </strong>
+                <p class="text-slate-400">Enginyer industrial i lingüista que va modernitzar i unificar el català, creant una ortografia clara vàlida per a tots els dialectes (central, valencià, balear...).</p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
+                <strong class="text-violet-300 flex items-center gap-1.5 font-bold">
+                  <i data-lucide="radio" class="w-4 h-4"></i>
+                  La Situació Avui (Reptes del Segle XXI)
+                </strong>
+                <p class="text-slate-400">El català és oficial i present a l'escola i govern, però afronta el gran repte de l'ús entre els joves, a les plataformes digitals (TikTok, Twitch, Netflix) i a la música urbana.</p>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-violet-500/10 border border-violet-500/20 text-xs text-violet-200">
+              💡 <strong>Dada curiosa per a la cartolina:</strong> Durant el franquisme, malgrat estar prohibit parlar català en públic, la gent s'organitzava a les cases per fer classes clandestines de català i cantar cançons de la <em>Nova Cançó</em> (Lluís Llach, Raimon).
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- GRÀFIQUES HISTÒRIQUES DE LA LLENGUA (CHART.JS) -->
+      <section class="space-y-6">
+        <div class="text-center max-w-3xl mx-auto space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Gràfiques Estadístiques</span>
+          <h2 class="text-3xl font-extrabold text-white">L'Evolució del Català en Dades i Gràfics</h2>
+          <p class="text-slate-400 text-xs sm:text-sm">
+            Per treure la màxima puntuació a l'apartat de disseny visual i rigor històric, podeu dibuixar alguna d'aquestes gràfiques a la vostra cartolina!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- CHART 1: HISTÒRIA DE L'ÚS PÚBLIC -->
+          <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+                  <i data-lucide="trending-up" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-white">Índex d'Ús Oficial i Prestigi Cultural (S. X - S. XXI)</h3>
+                  <span class="text-xs text-slate-400">Com ha variat la força de la llengua al llarg de 1000 anys</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative h-72 sm:h-80 w-full pt-2">
+              <canvas id="catalaHistoryChart"></canvas>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 flex items-start gap-2">
+              <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+              <span>Observa els dos moments d'esplendor: el <strong>Segle d'Or (S. XV)</strong> i l'<strong>Època de la República (1932)</strong>, i les dues grans caigudes: els <strong>Decrets de Nova Planta (1716)</strong> i la <strong>Dictadura Franquista (1939-1975)</strong>.</span>
+            </div>
+          </div>
+
+          <!-- CHART 2: ORIGEN ETIMOLÒGIC DEL VOCABULARI -->
+          <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-400 flex items-center justify-center font-bold">
+                  <i data-lucide="pie-chart" class="w-4 h-4"></i>
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-white">D'on ve el Vocabulari Català?</h3>
+                  <span class="text-xs text-slate-400">Origen de les paraules que fem servir</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative h-72 sm:h-80 w-full flex items-center justify-center pt-2">
+              <canvas id="etymologyChart"></canvas>
+            </div>
+
+            <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 space-y-1">
+              <div class="flex justify-between text-slate-400 text-[11px]">
+                <span>🏛️ Llatí vulgar: ~80%</span>
+                <span>⚔️ Germànic: ~8%</span>
+                <span>🕌 Àrab: ~4%</span>
+              </div>
+              <p class="text-slate-400 text-[11px]">Paraules àrabs com <em>sucre, xarop, magatzem</em>; germàniques com <em>guerra, blanc, guanyar</em>.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CALCULADORA DE LA RÚBRICA D'AVALUACIÓ (15 PUNTS / NOTA SOBRE 10) -->
+      <section class="space-y-6">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-500/30 relative overflow-hidden">
+          <div class="max-w-2xl space-y-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300">
+              <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
+              Calculadora Oficial de la Rúbrica
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Autoavalua el vostre Treball d'Equip!</h2>
+            <p class="text-slate-300 text-xs sm:text-sm">
+              Selecciona quants punts obtindreu a cadascun dels 5 criteris de la rúbrica que ha donat el professor (3 punts màxim per criteri = 15 punts total).
+            </p>
+          </div>
+
+          <!-- RÚBRICA INTERACTIVA -->
+          <div class="mt-8 space-y-5" id="rubric-criteria-list">
+            
+            <!-- CRITERI 1 -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-bold flex items-center justify-center">1</span>
+                  Rigor i contingut històric
+                </span>
+                <span id="score-crit-1" class="text-xs font-mono font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-950/60 border border-amber-800/60">3 punts</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <button onclick="setRubricScore(1, 3, this)" class="p-2.5 rounded-xl border border-amber-500 bg-amber-950/50 text-amber-200 text-left font-semibold">
+                  3 pts: Les 6 etapes completes i precises
+                </button>
+                <button onclick="setRubricScore(1, 2, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  2 pts: 4-5 etapes, informació correcta
+                </button>
+                <button onclick="setRubricScore(1, 1, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  1 pt: Falten etapes o errors destacables
+                </button>
+                <button onclick="setRubricScore(1, 0, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  0 pts: Inexistent o incorrecte
+                </button>
+              </div>
+            </div>
+
+            <!-- CRITERI 2 -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center">2</span>
+                  Correcció lingüística (Eix i Oral)
+                </span>
+                <span id="score-crit-2" class="text-xs font-mono font-bold text-cyan-400 px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/60">3 punts</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <button onclick="setRubricScore(2, 3, this)" class="p-2.5 rounded-xl border border-cyan-500 bg-cyan-950/50 text-cyan-200 text-left font-semibold">
+                  3 pts: Sense faltes, vocabulari ric
+                </button>
+                <button onclick="setRubricScore(2, 2, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  2 pts: 1-3 faltes puntuals
+                </button>
+                <button onclick="setRubricScore(2, 1, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  1 pt: 4-6 faltes o to informal
+                </button>
+                <button onclick="setRubricScore(2, 0, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  0 pts: >6 faltes o incomprensible
+                </button>
+              </div>
+            </div>
+
+            <!-- CRITERI 3 -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-300 text-xs font-bold flex items-center justify-center">3</span>
+                  Disseny, estructura i elements visuals
+                </span>
+                <span id="score-crit-3" class="text-xs font-mono font-bold text-emerald-400 px-2 py-0.5 rounded bg-emerald-950/60 border border-emerald-800/60">3 punts</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <button onclick="setRubricScore(3, 3, this)" class="p-2.5 rounded-xl border border-emerald-500 bg-emerald-950/50 text-emerald-200 text-left font-semibold">
+                  3 pts: Eix atractiu, clar i amb fotos amb sentit
+                </button>
+                <button onclick="setRubricScore(3, 2, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  2 pts: Disseny correcte, imatges decoratives
+                </button>
+                <button onclick="setRubricScore(3, 1, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  1 pt: Desordenat o sense imatges
+                </button>
+                <button onclick="setRubricScore(3, 0, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  0 pts: Sense estructura temporal (text pla)
+                </button>
+              </div>
+            </div>
+
+            <!-- CRITERI 4 -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 text-xs font-bold flex items-center justify-center">4</span>
+                  Fluïdesa oral i expressió no verbal
+                </span>
+                <span id="score-crit-4" class="text-xs font-mono font-bold text-indigo-400 px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800/60">3 punts</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <button onclick="setRubricScore(4, 3, this)" class="p-2.5 rounded-xl border border-indigo-500 bg-indigo-950/50 text-indigo-200 text-left font-semibold">
+                  3 pts: Sense llegir, contacte visual i veu clara
+                </button>
+                <button onclick="setRubricScore(4, 2, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  2 pts: Mira notes de tant en tant, veu audible
+                </button>
+                <button onclick="setRubricScore(4, 1, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  1 pt: Es limita a llegir l'eix, to de veu baix
+                </button>
+                <button onclick="setRubricScore(4, 0, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  0 pts: No se l'escolta o no és capaç de parlar
+                </button>
+              </div>
+            </div>
+
+            <!-- CRITERI 5 -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <span class="text-sm font-bold text-white flex items-center gap-2">
+                  <span class="w-6 h-6 rounded-lg bg-rose-500/20 text-rose-300 text-xs font-bold flex items-center justify-center">5</span>
+                  Treball en equip i coordinació
+                </span>
+                <span id="score-crit-5" class="text-xs font-mono font-bold text-rose-400 px-2 py-0.5 rounded bg-rose-950/60 border border-rose-800/60">3 punts</span>
+              </div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                <button onclick="setRubricScore(5, 3, this)" class="p-2.5 rounded-xl border border-rose-500 bg-rose-950/50 text-rose-200 text-left font-semibold">
+                  3 pts: Tots parlen igual temps, suport mutu
+                </button>
+                <button onclick="setRubricScore(5, 2, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  2 pts: Temps una mica desigual entre membres
+                </button>
+                <button onclick="setRubricScore(5, 1, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  1 pt: Només 1 o 2 membres fan gairebé tot
+                </button>
+                <button onclick="setRubricScore(5, 0, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
+                  0 pts: Desinterès absolut d'alguns integrants
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- TOTAL CALCULATED SCORE CARD -->
+          <div class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-amber-950/70 via-slate-900 to-indigo-950/70 border border-amber-500/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="space-y-1 text-center sm:text-left">
+              <span class="text-xs uppercase font-mono tracking-wider text-amber-400 font-bold">Puntuació Final Estimada</span>
+              <h3 id="rubric-total-title" class="text-xl sm:text-2xl font-black text-white">Excel·lent! Nota: 10 / 10</h3>
+              <p id="rubric-total-subtitle" class="text-xs text-slate-300">Compleix tots els requisits màxims de la rúbrica del professor.</p>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="text-center px-5 py-3 rounded-2xl bg-slate-950/80 border border-amber-500/40">
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Punts Rúbrica</span>
+                <span id="rubric-raw-score" class="text-3xl font-black text-amber-400 font-mono">15 / 15</span>
+              </div>
+              <button onclick="celebrateMaxRubric()" class="p-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-lg shadow-amber-500/25 transition active:scale-95" title="Llançar celebració">
+                <i data-lucide="party-popper" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONSELLS D'OR PER A L'EXPOSICIÓ ORAL -->
+      <section class="space-y-6">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800">
+          <div class="flex items-center gap-3 pb-4 border-b border-slate-800">
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
+              <i data-lucide="speech" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-white">Guia d'Èxit per a l'Exposició Oral (3 a 5 minuts)</h3>
+              <p class="text-xs text-slate-400">Com repartir el temps i com parlar per guanyar-se el 10</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6 text-xs text-slate-300">
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
+              <strong class="text-amber-400 text-sm block">1. Repartiment del Temps (4 min promig)</strong>
+              <p class="text-slate-400 leading-relaxed">
+                Si sou <strong>3 persones</strong>: exactament <strong>1 minut i 20 segons per persona</strong>.
+                <br>Si sou <strong>4 persones</strong>: exactament <strong>1 minut per persona</strong>.
+                <br>Feu servir un cronòmetre a l'assaig abans del dia de la presentació!
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
+              <strong class="text-cyan-400 text-sm block">2. Comunicació No Verbal</strong>
+              <p class="text-slate-400 leading-relaxed">
+                <strong>No llegiu la cartolina!</strong> La cartolina només és el suport visual. Mireu als ulls dels vostres companys de classe, manteniu una postura dreta i somrieu amb confiança.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
+              <strong class="text-emerald-400 text-sm block">3. Suport de la Cartolina</strong>
+              <p class="text-slate-400 leading-relaxed">
+                Assenyaleu amb la mà la imatge o el document quan en parleu (ex: "com podeu veure aquí a les Homilies d'Organyà..."). Això demostra domini absolut de l'espai!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- SUBJECT 2: MATEMÀTIQUES (PARÀMETRES DE CENTRALITZACIÓ) -->
+    <!-- ======================================================== -->
+    <div id="subject-mates" class="hidden space-y-16 transition-opacity duration-300">
+      
+      <!-- HERO MATES -->
+      <section class="relative pt-4 pb-8 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Matemàtiques ESO • Estadística Descriptiva
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+              Paràmetres de <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">Centralització i Gràfics</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+              Resolució interactiva completa dels 3 exercicis de la captura: càlcul de la <strong class="text-white font-medium">Moda</strong>, <strong class="text-white font-medium">Mediana</strong> i <strong class="text-white font-medium">Mitjana aritmètica</strong>, amb taula de freqüències i representació en <strong class="text-white font-medium">diagrames de barres i de sectors</strong>.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-2.5 pt-2">
+              <button onclick="switchExercise('a')" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-semibold text-white shadow-md text-xs flex items-center gap-1.5 transition">
+                <i data-lucide="car" class="w-4 h-4"></i>
+                <span>Ex. 10a (Cotxes)</span>
+              </button>
+              <button onclick="switchExercise('b')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-semibold text-slate-200 border border-slate-700 text-xs flex items-center gap-1.5 transition">
+                <i data-lucide="users" class="w-4 h-4"></i>
+                <span>Ex. 10b (Edats)</span>
+              </button>
+              <button onclick="switchExercise('c')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 font-semibold text-slate-200 border border-slate-700 text-xs flex items-center gap-1.5 transition">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                <span>Ex. 10c (Suspeses)</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="glass-card rounded-3xl p-6 border border-indigo-500/20 space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+                <span class="text-xs font-mono text-indigo-400 font-bold">Captura Original</span>
+                <span class="text-xs text-slate-500">Exercici 10</span>
+              </div>
+              <div class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 font-mono space-y-2">
+                <p class="text-slate-200 font-sans font-semibold">Calcula els paràmetres de centralització:</p>
+                <div class="text-[11px] space-y-1 text-slate-400 pl-2 border-l border-indigo-500/40">
+                  <p><strong class="text-amber-400">a)</strong> Marques cotxes: Renault, Audi, Citroën...</p>
+                  <p><strong class="text-cyan-400">b)</strong> Edats nois/es: 12, 15, 13, 12, 16...</p>
+                  <p><strong class="text-emerald-400">c)</strong> Suspeses: 0, 1, 0, 2, 4, 0, 1, 1...</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="p-2 rounded-xl bg-indigo-950/40 border border-indigo-800/40">
+                  <span class="text-slate-400 block text-[10px] uppercase">Moda</span>
+                  <span class="font-bold text-indigo-300">El més repetit</span>
+                </div>
+                <div class="p-2 rounded-xl bg-cyan-950/40 border border-cyan-800/40">
+                  <span class="text-slate-400 block text-[10px] uppercase">Mediana</span>
+                  <span class="font-bold text-cyan-300">Valor central</span>
+                </div>
+                <div class="p-2 rounded-xl bg-emerald-950/40 border border-emerald-800/40">
+                  <span class="text-slate-400 block text-[10px] uppercase">Mitjana</span>
+                  <span class="font-bold text-emerald-300">Promig suma/N</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓ DE RESOLUCIÓ DE L'EXERCICI (INTERACTIU) -->
+      <section class="space-y-6">
+        <!-- Switcher Tabs -->
+        <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+          <div class="inline-flex p-1 rounded-2xl bg-slate-900 border border-slate-800">
+            <button id="tab-a" onclick="switchExercise('a')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow">
+              <i data-lucide="car" class="w-4 h-4"></i>
+              <span>Apartat A (Cotxes)</span>
+            </button>
+            <button id="tab-b" onclick="switchExercise('b')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
+              <i data-lucide="users" class="w-4 h-4"></i>
+              <span>Apartat B (Edats)</span>
+            </button>
+            <button id="tab-c" onclick="switchExercise('c')" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>Apartat C (Suspeses)</span>
+            </button>
+          </div>
+
+          <button onclick="toggleStepByStep()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 flex items-center gap-2 transition">
+            <i data-lucide="play-circle" class="w-4 h-4 text-indigo-400"></i>
+            <span id="step-btn-text">Veure Simulació Pas a Pas</span>
+          </button>
+        </div>
+
+        <!-- EXERCISE MAIN CARD -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <div class="flex items-center gap-2">
+                <span id="ex-badge" class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">APARTAT A</span>
+                <span id="ex-type-badge" class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-800 text-slate-300">Variable Qualitativa</span>
+              </div>
+              <h3 id="ex-title" class="text-2xl font-bold text-white mt-1.5">Marques dels cotxes en un taller mecànic</h3>
+            </div>
+            <span class="text-xs text-slate-400 font-mono">Total dades (N): <strong id="ex-count" class="text-white">14</strong></span>
+          </div>
+
+          <!-- Raw Data Chips -->
+          <div class="space-y-1.5">
+            <span class="text-xs text-slate-400">Mostra recollida:</span>
+            <div id="raw-data-chips" class="flex flex-wrap gap-2 p-3.5 rounded-2xl bg-slate-950/70 border border-slate-800/80 min-h-[60px] items-center"></div>
+          </div>
+
+          <!-- Step Panel -->
+          <div id="step-panel" class="hidden p-5 rounded-2xl bg-indigo-950/20 border border-indigo-500/30 space-y-3">
+            <h4 class="text-xs font-bold text-indigo-300 uppercase tracking-wider flex items-center gap-1.5">
               <i data-lucide="list-ordered" class="w-4 h-4"></i>
               <span>Procés de Raonament i Càlcul Pas a Pas</span>
             </h4>
-            <span class="text-xs text-slate-400">Guia de resolució</span>
+            <div id="step-timeline" class="space-y-2.5 text-xs text-slate-300"></div>
           </div>
 
-          <div id="step-timeline" class="space-y-3 text-xs sm:text-sm text-slate-300">
-            <!-- Timeline injected dynamically -->
-          </div>
-        </div>
-
-        <!-- 3 MAIN PARAMETER RESULTS CARDS FOR CURRENT EXERCISE -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 my-8">
-          
-          <!-- RESULT 1: MODA -->
-          <div class="rounded-2xl p-5 bg-slate-900/90 border border-amber-500/30 flex flex-col justify-between relative overflow-hidden">
-            <div class="space-y-2">
+          <!-- 3 PARAMETERS RESULTS -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <!-- MODA -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/30 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Moda (Mo)</span>
+                <span class="text-xs font-bold text-amber-400 uppercase">Moda (Mo)</span>
                 <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
               </div>
-              <div id="res-moda-val" class="text-3xl font-black text-white font-heading tracking-tight">
-                Seat
-              </div>
-              <p id="res-moda-desc" class="text-xs text-slate-300 leading-relaxed">
-                Apareix <strong class="text-amber-400">5 vegades</strong>. És el valor més repetit de la distribució.
-              </p>
+              <div id="res-moda-val" class="text-2xl font-black text-white font-heading">Seat</div>
+              <p id="res-moda-desc" class="text-xs text-slate-300">Apareix 5 vegades (màxima freqüència).</p>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-emerald-400 flex items-center gap-1 font-semibold">
-              <i data-lucide="check" class="w-3.5 h-3.5"></i> VÀLID I DETERMINAT
-            </div>
-          </div>
 
-          <!-- RESULT 2: MEDIANA -->
-          <div id="res-mediana-card" class="rounded-2xl p-5 bg-slate-900/90 border border-cyan-500/30 flex flex-col justify-between relative overflow-hidden">
-            <div class="space-y-2">
+            <!-- MEDIANA -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-cyan-500/30 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Mediana (Me)</span>
+                <span class="text-xs font-bold text-cyan-400 uppercase">Mediana (Me)</span>
                 <i data-lucide="split" class="w-4 h-4 text-cyan-400"></i>
               </div>
-              <div id="res-mediana-val" class="text-3xl font-black text-white font-heading tracking-tight">
-                No existeix
-              </div>
-              <p id="res-mediana-desc" class="text-xs text-slate-300 leading-relaxed">
-                Les marques de cotxe no es poden ordenar amb criteri matemàtic (no són números).
-              </p>
+              <div id="res-mediana-val" class="text-2xl font-black text-white font-heading">No existeix</div>
+              <p id="res-mediana-desc" class="text-xs text-slate-300">No es pot ordenar de menor a major.</p>
+              <div id="res-mediana-status" class="pt-2 text-[10px] text-rose-400 font-bold uppercase">NO ES POT CALCULAR</div>
             </div>
-            <div id="res-mediana-status" class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-rose-400 flex items-center gap-1 font-semibold">
-              <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> NO ES POT CALCULAR
-            </div>
-          </div>
 
-          <!-- RESULT 3: MITJANA -->
-          <div id="res-mitjana-card" class="rounded-2xl p-5 bg-slate-900/90 border border-emerald-500/30 flex flex-col justify-between relative overflow-hidden">
-            <div class="space-y-2">
+            <!-- MITJANA -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-emerald-500/30 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Mitjana (x̄)</span>
+                <span class="text-xs font-bold text-emerald-400 uppercase">Mitjana (x̄)</span>
                 <i data-lucide="sigma" class="w-4 h-4 text-emerald-400"></i>
               </div>
-              <div id="res-mitjana-val" class="text-3xl font-black text-white font-heading tracking-tight">
-                No existeix
-              </div>
-              <p id="res-mitjana-desc" class="text-xs text-slate-300 leading-relaxed">
-                No es pot fer la suma aritmètica de marques de cotxe dividit entre 14.
-              </p>
-            </div>
-            <div id="res-mitjana-status" class="mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-rose-400 flex items-center gap-1 font-semibold">
-              <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> NO ES POT CALCULAR
+              <div id="res-mitjana-val" class="text-2xl font-black text-white font-heading">No existeix</div>
+              <p id="res-mitjana-desc" class="text-xs text-slate-300">No es poden sumar cotxes dividit entre N.</p>
+              <div id="res-mitjana-status" class="pt-2 text-[10px] text-rose-400 font-bold uppercase">NO ES POT CALCULAR</div>
             </div>
           </div>
 
-        </div>
-
-        <!-- FREQUENCY TABLE & VISUAL CALCULATION -->
-        <div class="space-y-4">
-          <div class="flex items-center justify-between">
-            <h4 class="text-base font-bold text-white flex items-center gap-2">
-              <i data-lucide="table-2" class="w-5 h-5 text-indigo-400"></i>
-              <span>Taula de Freqüències Completa i Càlcul d'Angles per al Gràfic</span>
+          <!-- TAULA DE FREQÜÈNCIES COMPLETA -->
+          <div class="space-y-3">
+            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+              <i data-lucide="table-2" class="w-4 h-4 text-indigo-400"></i>
+              <span>Taula de Freqüències Completa i Càlcul d'Angles (α = (fᵢ / N) × 360°)</span>
             </h4>
-            <span class="text-xs text-slate-400 font-mono">Formula angle: α = (fᵢ / N) × 360°</span>
+            <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/60">
+              <table class="w-full text-left text-xs">
+                <thead class="bg-slate-900 text-slate-300 font-mono border-b border-slate-800 uppercase tracking-wider text-[11px]">
+                  <tr>
+                    <th class="px-4 py-3 font-semibold text-white">Categoria (xᵢ)</th>
+                    <th class="px-4 py-3 font-semibold text-amber-300">fᵢ (Absoluta)</th>
+                    <th class="px-4 py-3 font-semibold text-cyan-300">hᵢ (Relativa)</th>
+                    <th class="px-4 py-3 font-semibold text-indigo-300">% (Percentatge)</th>
+                    <th class="px-4 py-3 font-semibold text-emerald-300">Fᵢ (Acumulada)</th>
+                    <th class="px-4 py-3 font-semibold text-rose-300">Angle (α°)</th>
+                  </tr>
+                </thead>
+                <tbody id="frequency-table-body" class="divide-y divide-slate-800/70 font-mono text-slate-200"></tbody>
+                <tfoot id="frequency-table-foot" class="bg-slate-900/90 font-mono font-bold text-white border-t-2 border-slate-700"></tfoot>
+              </table>
+            </div>
           </div>
 
-          <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/60">
-            <table class="w-full text-left text-xs sm:text-sm">
-              <thead class="bg-slate-900 text-slate-300 font-mono border-b border-slate-800 text-[11px] uppercase tracking-wider">
-                <tr>
-                  <th class="px-4 py-3 font-semibold text-white">Dada / Categoria (xᵢ)</th>
-                  <th class="px-4 py-3 font-semibold text-amber-300">Freq. Absoluta (fᵢ)</th>
-                  <th class="px-4 py-3 font-semibold text-cyan-300">Freq. Relativa (hᵢ)</th>
-                  <th class="px-4 py-3 font-semibold text-indigo-300">Percentatge (%)</th>
-                  <th class="px-4 py-3 font-semibold text-emerald-300">Freq. Acumulada (Fᵢ)</th>
-                  <th class="px-4 py-3 font-semibold text-rose-300">Angle Sector (α°)</th>
-                </tr>
-              </thead>
-              <tbody id="frequency-table-body" class="divide-y divide-slate-800/70 font-mono text-slate-200">
-                <!-- Dynamically populated rows -->
-              </tbody>
-              <tfoot id="frequency-table-foot" class="bg-slate-900/90 font-mono font-bold text-white border-t-2 border-slate-700">
-                <!-- Totals row -->
-              </tfoot>
-            </table>
-          </div>
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- SECTION 3: REPRESENTACIONS GRÀFIQUES DINÀMIQUES -->
-    <section id="grafiques" class="space-y-8 scroll-mt-24">
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-indigo-400">Visualització Estadística</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Diagrama de Barres i Diagrama de Sectors</h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Tal com indica el quadre de la captura: <em>"Les dades estadístiques les representem amb gràfiques que ens ajuden a visualitzar i interpretar la informació recollida."</em>
-        </p>
-      </div>
-
-      <!-- CHARTS CONTAINER -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
-        <!-- CHART 1: BAR CHART -->
-        <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-4">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-bold">
-                <i data-lucide="bar-chart" class="w-4 h-4"></i>
-              </div>
-              <div>
+      <!-- GRÀFIQUES DINÀMIQUES DE MATES -->
+      <section class="space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- BARRES -->
+          <div class="lg:col-span-7 glass-card rounded-3xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="bar-chart-2" class="w-5 h-5 text-indigo-400"></i>
                 <h3 class="text-base font-bold text-white">Diagrama de Barres</h3>
-                <span class="text-xs text-slate-400">L'alçada de cada barra representa la seva freqüència absoluta</span>
               </div>
+              <span id="chart-badge-title" class="text-xs font-mono text-indigo-300 font-bold">Apartat A</span>
             </div>
-            <span id="chart-badge-title" class="text-xs font-mono font-bold text-indigo-300 px-2.5 py-1 rounded bg-indigo-950/60 border border-indigo-800/60">
-              Apartat A: Marques
-            </span>
+            <div class="relative h-64 sm:h-72 w-full">
+              <canvas id="barChartCanvas"></canvas>
+            </div>
+            <p id="bar-chart-explanation" class="text-xs text-slate-300 p-3 rounded-xl bg-slate-900 border border-slate-800"></p>
           </div>
 
-          <div class="relative h-72 sm:h-80 w-full pt-2">
-            <canvas id="barChartCanvas"></canvas>
-          </div>
-
-          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-300 flex items-start gap-2">
-            <i data-lucide="info" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
-            <span id="bar-chart-explanation">
-              La barra més alta identifica immediatament la <strong>Moda</strong> (la dada més freqüent). En aquest cas, Seat assoleix 5 unitats.
-            </span>
-          </div>
-        </div>
-
-        <!-- CHART 2: SECTOR / PIE CHART -->
-        <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-4">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center gap-2.5">
-              <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold">
-                <i data-lucide="pie-chart" class="w-4 h-4"></i>
-              </div>
-              <div>
+          <!-- SECTORS -->
+          <div class="lg:col-span-5 glass-card rounded-3xl p-6 border border-slate-800 space-y-4">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <i data-lucide="pie-chart" class="w-5 h-5 text-cyan-400"></i>
                 <h3 class="text-base font-bold text-white">Diagrama de Sectors</h3>
-                <span class="text-xs text-slate-400">Cercle complet dividit en 360 graus</span>
+              </div>
+              <span class="text-xs font-mono text-cyan-300 font-bold">Formatget</span>
+            </div>
+            <div class="relative h-64 sm:h-72 w-full flex items-center justify-center">
+              <canvas id="pieChartCanvas"></canvas>
+            </div>
+            <p class="text-xs text-slate-400 p-3 rounded-xl bg-slate-900 border border-slate-800">
+              Angle: <strong class="text-cyan-300">α = (fᵢ / N) × 360°</strong>. La circumferència sencera suma 360°.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- LABORATORI DADES PRÒPIES -->
+      <section class="space-y-6">
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-indigo-500/30 space-y-5">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300">
+              <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
+              Laboratori Virtual de Dades
+            </div>
+            <h2 class="text-2xl font-bold text-white">Prova amb les teves pròpies dades</h2>
+            <p class="text-slate-400 text-xs">Introdueix qualsevol conjunt de números o paraules separats per comes:</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+            <div class="md:col-span-8">
+              <input id="custom-data-input" type="text" value="7, 8, 5, 9, 7, 6, 10, 7, 8, 9" class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-white font-mono text-xs focus:border-indigo-500 transition">
+            </div>
+            <div class="md:col-span-4 flex gap-2">
+              <button onclick="calculateCustomData()" class="w-full py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-white text-xs flex items-center justify-center gap-1.5 transition active:scale-95 shadow">
+                <i data-lucide="calculator" class="w-4 h-4"></i>
+                <span>Calcular</span>
+              </button>
+              <button onclick="loadRandomSample()" class="p-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition" title="Exemple aleatori">
+                <i data-lucide="shuffle" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+
+          <div id="custom-result-area" class="hidden pt-4 border-t border-slate-800 space-y-3">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-amber-500/30">
+                <span class="text-xs text-amber-400 font-bold uppercase block">Moda</span>
+                <span id="custom-res-moda" class="text-xl font-black text-white font-heading">-</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-cyan-500/30">
+                <span class="text-xs text-cyan-400 font-bold uppercase block">Mediana</span>
+                <span id="custom-res-mediana" class="text-xl font-black text-white font-heading">-</span>
+              </div>
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-emerald-500/30">
+                <span class="text-xs text-emerald-400 font-bold uppercase block">Mitjana</span>
+                <span id="custom-res-mitjana" class="text-xl font-black text-white font-heading">-</span>
               </div>
             </div>
-            <span class="text-xs font-mono text-cyan-400 font-bold">Formatget</span>
+            <div id="custom-res-info" class="text-xs text-slate-300 bg-slate-950 p-3 rounded-xl border border-slate-800"></div>
           </div>
+        </div>
+      </section>
 
-          <div class="relative h-72 sm:h-80 w-full flex items-center justify-center pt-2">
-            <canvas id="pieChartCanvas"></canvas>
-          </div>
+      <!-- TEST AUTOAVALUACIÓ MATES -->
+      <section class="space-y-6">
+        <div class="text-center max-w-2xl mx-auto space-y-1">
+          <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Posa't a Prova</span>
+          <h2 class="text-2xl font-extrabold text-white">Comprova els conceptes clau de l'examen</h2>
+        </div>
 
-          <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-slate-300 flex items-start gap-2">
-            <i data-lucide="compass" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
-            <div>
-              <strong class="text-cyan-300">Com es dibuixa a mà?</strong>
-              <p class="mt-0.5 text-slate-400">Es multiplica la freqüència relativa per 360°. Amb un transportador d'angles es trasllada cada angle al cercle.</p>
+        <div class="max-w-2xl mx-auto space-y-4">
+          <!-- Q1 -->
+          <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3" data-q="1">
+            <span class="text-[11px] font-mono font-bold text-indigo-400 uppercase">Pregunta 1</span>
+            <p class="text-white text-xs sm:text-sm font-semibold">Per què a l'apartat a) (marques de cotxes) NO podem calcular la mitjana?</p>
+            <div class="space-y-2 text-xs">
+              <button onclick="checkAnswer(1, 0, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">A) Perquè falten cotxes a la mostra.</button>
+              <button onclick="checkAnswer(1, 1, this)" data-correct="true" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">B) Perquè és una variable qualitativa (paraules) i no es poden sumar.</button>
+              <button onclick="checkAnswer(1, 2, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">C) Perquè el nombre total és parell (14).</button>
             </div>
+            <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
           </div>
-        </div>
 
-      </div>
-    </section>
-
-    <!-- SECTION 4: LABORATORI EXPERIMENTAL (CALCULA LES TEVES PRÒPIES DADES) -->
-    <section id="laboratori" class="space-y-6 scroll-mt-24">
-      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-indigo-500/30 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-80 h-80 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-2xl space-y-3">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300">
-            <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
-            Laboratori Virtual Interactiu
-          </div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Prova amb les teves pròpies dades!</h2>
-          <p class="text-slate-300 text-sm">
-            Escriu una llista de números o noms separats per comes (per exemple, les notes de la teva classe o les teves pròpies dades) i mira com l'algorisme en calcula la moda, mediana, mitjana i genera les gràfiques en temps real.
-          </p>
-        </div>
-
-        <div class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-4">
-          <div class="md:col-span-8 space-y-2">
-            <label for="custom-data-input" class="text-xs font-semibold uppercase tracking-wider text-slate-300">
-              Introdueix les dades (separades per comes):
-            </label>
-            <div class="relative">
-              <input id="custom-data-input" type="text" value="7, 8, 5, 9, 7, 6, 10, 7, 8, 9" class="w-full px-4 py-3.5 rounded-xl bg-slate-900 border border-slate-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 text-white font-mono text-sm placeholder-slate-500 transition shadow-inner">
+          <!-- Q2 -->
+          <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3" data-q="2">
+            <span class="text-[11px] font-mono font-bold text-indigo-400 uppercase">Pregunta 2</span>
+            <p class="text-white text-xs sm:text-sm font-semibold">Com es troba la mediana a l'apartat c) amb N = 16 (parell)?</p>
+            <div class="space-y-2 text-xs">
+              <button onclick="checkAnswer(2, 0, this)" data-correct="true" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">A) S'ordenen les dades i es fa la mitjana de les posicions 8a i 9a.</button>
+              <button onclick="checkAnswer(2, 1, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">B) S'agafa la dada més gran dividit per dos.</button>
+              <button onclick="checkAnswer(2, 2, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">C) La mediana només existeix amb N senar.</button>
             </div>
-          </div>
-
-          <div class="md:col-span-4 flex items-end gap-2">
-            <button onclick="calculateCustomData()" class="w-full py-3.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 font-bold text-white text-sm shadow-lg shadow-indigo-600/30 transition transform active:scale-95 flex items-center justify-center gap-2">
-              <i data-lucide="calculator" class="w-4 h-4"></i>
-              <span>Calcular Ara</span>
-            </button>
-            <button onclick="loadRandomSample()" class="p-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition" title="Exemple aleatori">
-              <i data-lucide="shuffle" class="w-4 h-4"></i>
-            </button>
+            <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
           </div>
         </div>
+      </section>
 
-        <!-- Custom Data Dynamic Result Output -->
-        <div id="custom-result-area" class="mt-6 pt-6 border-t border-slate-800 hidden space-y-4">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div class="p-4 rounded-xl bg-slate-900 border border-amber-500/30">
-              <span class="text-xs text-amber-400 font-bold uppercase block">Moda</span>
-              <span id="custom-res-moda" class="text-2xl font-black text-white font-heading">-</span>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-900 border border-cyan-500/30">
-              <span class="text-xs text-cyan-400 font-bold uppercase block">Mediana</span>
-              <span id="custom-res-mediana" class="text-2xl font-black text-white font-heading">-</span>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-900 border border-emerald-500/30">
-              <span class="text-xs text-emerald-400 font-bold uppercase block">Mitjana</span>
-              <span id="custom-res-mitjana" class="text-2xl font-black text-white font-heading">-</span>
-            </div>
-          </div>
-          <div id="custom-res-info" class="text-xs text-slate-300 bg-slate-950 p-3 rounded-lg border border-slate-800"></div>
-          <div class="pt-2 flex flex-wrap justify-end gap-3">
-            <button onclick="applyCustomToMainCharts()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold shadow-md shadow-indigo-600/30 flex items-center gap-2 transition active:scale-95">
-              <i data-lucide="line-chart" class="w-4 h-4"></i>
-              <span>Dibuixar aquestes dades als Gràfics Principals</span>
-            </button>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- SECTION 5: TEST D'AUTOAVALUACIÓ / QUIZ INTERACTIU -->
-    <section id="quiz" class="space-y-8 scroll-mt-24 pb-12">
-      <div class="text-center max-w-3xl mx-auto space-y-3">
-        <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Posa't a Prova</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Comprova el que has après!</h2>
-        <p class="text-slate-400 text-sm sm:text-base">
-          Respon a aquestes 4 preguntes clau sobre el contingut de la captura per assegurar-te una nota excel·lent al teu control.
-        </p>
-      </div>
-
-      <div class="max-w-3xl mx-auto space-y-5" id="quiz-container">
-        
-        <!-- QUESTION 1 -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4" data-q="1">
-          <div class="flex items-start justify-between gap-4">
-            <span class="px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold">Pregunta 1</span>
-            <span class="text-xs text-slate-400">Concepte teòric</span>
-          </div>
-          <p class="text-white font-semibold text-base">
-            A l'apartat a) (marques de cotxes com Renault, Audi, Seat...), per què NO podem calcular la mitjana aritmètica?
-          </p>
-          <div class="grid grid-cols-1 gap-2.5 text-xs sm:text-sm">
-            <button onclick="checkAnswer(1, 0, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              A) Perquè falten cotxes a la mostra.
-            </button>
-            <button onclick="checkAnswer(1, 1, this)" data-correct="true" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              B) Perquè és una variable qualitativa (paraules) i no té sentit sumar noms de cotxes.
-            </button>
-            <button onclick="checkAnswer(1, 2, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              C) Perquè el nombre de cotxes és parell (14).
-            </button>
-          </div>
-          <div class="feedback hidden p-3 rounded-lg text-xs"></div>
-        </div>
-
-        <!-- QUESTION 2 -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4" data-q="2">
-          <div class="flex items-start justify-between gap-4">
-            <span class="px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold">Pregunta 2</span>
-            <span class="text-xs text-slate-400">Mediana amb N parell</span>
-          </div>
-          <p class="text-white font-semibold text-base">
-            A l'apartat c) tenim 16 dades de suspeses (número parell). Com es troba exactament la Mediana?
-          </p>
-          <div class="grid grid-cols-1 gap-2.5 text-xs sm:text-sm">
-            <button onclick="checkAnswer(2, 0, this)" data-correct="true" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              A) S'ordenen totes les dades i es fa la mitjana dels dos valors centrals (posicions 8a i 9a).
-            </button>
-            <button onclick="checkAnswer(2, 1, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              B) S'agafa directament el valor més gran i es divideix entre dos.
-            </button>
-            <button onclick="checkAnswer(2, 2, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              C) La mediana només es pot calcular quan el total de dades és imparell.
-            </button>
-          </div>
-          <div class="feedback hidden p-3 rounded-lg text-xs"></div>
-        </div>
-
-        <!-- QUESTION 3 -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4" data-q="3">
-          <div class="flex items-start justify-between gap-4">
-            <span class="px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold">Pregunta 3</span>
-            <span class="text-xs text-slate-400">Diagrama de sectors</span>
-          </div>
-          <p class="text-white font-semibold text-base">
-            Quina fórmula utilitzem per calcular els graus (l'obertura angular) de cada porció en un diagrama de sectors?
-          </p>
-          <div class="grid grid-cols-1 gap-2.5 text-xs sm:text-sm">
-            <button onclick="checkAnswer(3, 0, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              A) Graus = fᵢ × 100
-            </button>
-            <button onclick="checkAnswer(3, 1, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              B) Graus = (fᵢ + N) / 180°
-            </button>
-            <button onclick="checkAnswer(3, 2, this)" data-correct="true" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              C) Graus = (fᵢ / N) × 360° (freqüència relativa per 360 graus)
-            </button>
-          </div>
-          <div class="feedback hidden p-3 rounded-lg text-xs"></div>
-        </div>
-
-        <!-- QUESTION 4 -->
-        <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-4" data-q="4">
-          <div class="flex items-start justify-between gap-4">
-            <span class="px-2.5 py-1 rounded bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold">Pregunta 4</span>
-            <span class="text-xs text-slate-400">Moda a l'apartat B</span>
-          </div>
-          <p class="text-white font-semibold text-base">
-            A l'apartat b) sobre les edats dels nois i noies, quina és la Moda de la distribució?
-          </p>
-          <div class="grid grid-cols-1 gap-2.5 text-xs sm:text-sm">
-            <button onclick="checkAnswer(4, 0, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              A) 16 anys (perquè és el número més gran).
-            </button>
-            <button onclick="checkAnswer(4, 1, this)" data-correct="true" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              B) 12 anys (perquè apareix 4 vegades, més que cap altra edat).
-            </button>
-            <button onclick="checkAnswer(4, 2, this)" class="p-3.5 rounded-xl bg-slate-900/90 hover:bg-slate-800/90 text-left border border-slate-800 text-slate-300 transition">
-              C) 10 anys (perquè apareix 3 vegades).
-            </button>
-          </div>
-          <div class="feedback hidden p-3 rounded-lg text-xs"></div>
-        </div>
-
-      </div>
-
-      <div id="quiz-score-banner" class="hidden max-w-3xl mx-auto p-6 rounded-3xl bg-gradient-to-r from-indigo-900/60 to-emerald-900/60 border border-emerald-500/40 text-center space-y-2">
-        <h3 class="text-2xl font-black text-white font-heading">Felicitats! Has completat l'autoavaluació! 🎉</h3>
-        <p class="text-emerald-200 text-sm" id="score-text">Has encertat totes les preguntes. Ja domines completament la moda, mediana, mitjana i els gràfics estadístics.</p>
-      </div>
-    </section>
+    </div>
 
   </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-800/80 bg-slate-950/80 py-8 text-center text-xs text-slate-400 space-y-2">
     <div class="flex items-center justify-center gap-2 text-slate-300 font-semibold">
-      <i data-lucide="book-check" class="w-4 h-4 text-indigo-400"></i>
-      <span>Guia Pedagògica d'Estadística Descriptiva en Català</span>
+      <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
+      <span>Plataforma d'Estudi 2n d'ESO • Català i Matemàtiques</span>
     </div>
-    <p>Creat per a l'aprenentatge interactiu de matemàtiques. Curs d'Estadística ESO.</p>
+    <p>Projecte creat per estudiar amb gràfics, animacions i contingut 100% oficial en català.</p>
   </footer>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- SCRIPT LOGIC -->
   <script>
-    // DATA FROM THE IMAGE
+    // NAVIGATION CONTROLLER (SUBJECT SWITCHER)
+    let currentSubject = 'catala';
+
+    function setSubject(subj) {
+      currentSubject = subj;
+      const catalaSec = document.getElementById('subject-catala');
+      const matesSec = document.getElementById('subject-mates');
+      const btnCatala = document.getElementById('nav-btn-catala');
+      const btnMates = document.getElementById('nav-btn-mates');
+
+      if (subj === 'catala') {
+        catalaSec.classList.remove('hidden');
+        matesSec.classList.add('hidden');
+        btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md';
+        btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
+        renderCatalaCharts();
+      } else {
+        catalaSec.classList.add('hidden');
+        matesSec.classList.remove('hidden');
+        btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md';
+        btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
+        renderExercise(currentExerciseKey);
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // CATALÀ CHARTS CONTROLLER
+    let catalaHistoryChartInstance = null;
+    let etymologyChartInstance = null;
+
+    function renderCatalaCharts() {
+      // 1. History of prestige / public usage
+      const ctxHist = document.getElementById('catalaHistoryChart');
+      if (ctxHist) {
+        if (catalaHistoryChartInstance) catalaHistoryChartInstance.destroy();
+        catalaHistoryChartInstance = new Chart(ctxHist.getContext('2d'), {
+          type: 'line',
+          data: {
+            labels: ['S. X (Origen)', 'S. XII (Homilies)', 'S. XV (Segle d\'Or)', 'S. XVII (Davallada)', '1716 (Nova Planta)', 'S. XIX (Renaixença)', '1932 (República)', '1940 (Franquisme)', '1980 (Democràcia)', '2026 (Actualitat)'],
+            datasets: [{
+              label: 'Nivell d\'Ús Oficial i Prestigi Literari (0 - 100)',
+              data: [25, 45, 95, 40, 15, 60, 85, 10, 80, 75],
+              borderColor: '#f59e0b',
+              backgroundColor: 'rgba(245, 158, 11, 0.15)',
+              borderWidth: 3,
+              pointBackgroundColor: '#f59e0b',
+              pointRadius: 5,
+              tension: 0.35,
+              fill: true
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                backgroundColor: '#0f172a',
+                titleColor: '#f59e0b',
+                padding: 10,
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: { color: '#94a3b8' },
+                grid: { color: 'rgba(255, 255, 255, 0.05)' }
+              },
+              x: {
+                ticks: { color: '#94a3b8', font: { size: 10 } },
+                grid: { color: 'rgba(255, 255, 255, 0.05)' }
+              }
+            }
+          }
+        });
+      }
+
+      // 2. Etymology Pie Chart
+      const ctxEtym = document.getElementById('etymologyChart');
+      if (ctxEtym) {
+        if (etymologyChartInstance) etymologyChartInstance.destroy();
+        etymologyChartInstance = new Chart(ctxEtym.getContext('2d'), {
+          type: 'doughnut',
+          data: {
+            labels: ['Llatí vulgar', 'Germànic (visigots/francs)', 'Àrab', 'Prèstecs moderns (francès, anglès, grec)'],
+            datasets: [{
+              data: [80, 8, 4, 8],
+              backgroundColor: ['#f59e0b', '#06b6d4', '#10b981', '#a855f7'],
+              borderColor: '#0f172a',
+              borderWidth: 3
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: { color: '#cbd5e1', font: { size: 10 } }
+              }
+            }
+          }
+        });
+      }
+    }
+
+    // RUBRIC CALCULATOR
+    const rubricScores = { 1: 3, 2: 3, 3: 3, 4: 3, 5: 3 };
+
+    function setRubricScore(criterion, score, btn) {
+      rubricScores[criterion] = score;
+      document.getElementById(`score-crit-${criterion}`).innerText = `${score} punts`;
+
+      // Update button visual styles
+      const parent = btn.parentElement;
+      const allButtons = parent.querySelectorAll('button');
+      allButtons.forEach(b => {
+        b.className = 'p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left';
+      });
+
+      const colorMap = { 1: 'amber', 2: 'cyan', 3: 'emerald', 4: 'indigo', 5: 'rose' };
+      const col = colorMap[criterion];
+      btn.className = `p-2.5 rounded-xl border border-${col}-500 bg-${col}-950/50 text-${col}-200 text-left font-semibold`;
+
+      updateRubricTotal();
+    }
+
+    function updateRubricTotal() {
+      const total = Object.values(rubricScores).reduce((a, b) => a + b, 0);
+      const markOutOf10 = ((total / 15) * 10).toFixed(1);
+
+      document.getElementById('rubric-raw-score').innerText = `${total} / 15`;
+      const title = document.getElementById('rubric-total-title');
+      const subtitle = document.getElementById('rubric-total-subtitle');
+
+      if (total >= 14) {
+        title.innerText = `Excel·lent! Nota: ${markOutOf10} / 10`;
+        subtitle.innerText = 'Feina perfecta! Compleix tots els requisits màxims de la cartolina i l\'oral.';
+      } else if (total >= 11) {
+        title.innerText = `Notable! Nota: ${markOutOf10} / 10`;
+        subtitle.innerText = 'Molt bona feina! Reviseu els detalls menors per aspirar al 10.';
+      } else if (total >= 8) {
+        title.innerText = `Bé / Aprovat: ${markOutOf10} / 10`;
+        subtitle.innerText = 'Compleix el mínim, però cal aprofundir en més etapes i assajar més l\'oral.';
+      } else {
+        title.innerText = `Insuficient: ${markOutOf10} / 10`;
+        subtitle.innerText = 'Atenció: falten etapes essencials o coordinació d\'equip.';
+      }
+    }
+
+    function celebrateMaxRubric() {
+      confetti({
+        particleCount: 100,
+        spread: 80,
+        origin: { y: 0.6 }
+      });
+    }
+
+    // ==========================================
+    // MATEMÀTIQUES LOGIC (EXERCICI 10 A, B, C)
+    // ==========================================
     const exercisesData = {
       'a': {
-        id: 'a',
         badge: 'APARTAT A',
         typeBadge: 'Variable Qualitativa Nominal',
         title: 'Marques dels cotxes en un taller mecànic',
-        unit: 'cotxes',
-        isQuantitative: false,
-        raw: [
-          'Renault', 'Audi', 'Citroën', 'Seat', 'Renault', 'Seat', 'Seat',
-          'Mercedes', 'Citroën', 'Renault', 'Seat', 'Seat', 'Renault', 'Citroën'
-        ],
+        raw: ['Renault', 'Audi', 'Citroën', 'Seat', 'Renault', 'Seat', 'Seat', 'Mercedes', 'Citroën', 'Renault', 'Seat', 'Seat', 'Renault', 'Citroën'],
         frequencies: [
           { val: 'Seat', fi: 5, color: '#f59e0b' },
           { val: 'Renault', fi: 4, color: '#6366f1' },
@@ -861,89 +1406,79 @@
           { val: 'Mercedes', fi: 1, color: '#8b5cf6' }
         ],
         moda: 'Seat',
-        modaDesc: 'La marca Seat és la més freqüent amb 5 cotxes (35,71% del total).',
-        mediana: 'No es pot calcular',
-        medianaDesc: 'No es pot calcular perquè les marques són qualitatives no ordinals (no es poden col·locar de menor a major de manera objectiva).',
+        modaDesc: 'La marca Seat és la més freqüent (5 cotxes de 14).',
+        mediana: 'No calculable',
+        medianaDesc: 'No es poden ordenar cotxes de menor a major de manera matemàtica.',
         medianaValid: false,
-        mitjana: 'No es pot calcular',
-        mitjanaDesc: 'No es pot calcular perquè no són números. No té cap sentit matemàtic sumar noms de marques.',
+        mitjana: 'No calculable',
+        mitjanaDesc: 'No es pot fer la suma de marques de cotxe dividit entre 14.',
         mitjanaValid: false,
         steps: [
-          '1. Identificació de la variable: És qualitativa nominal (marques de cotxes, dades no numèriques).',
-          '2. Recompte de freqüències: Seat (5), Renault (4), Citroën (3), Audi (1), Mercedes (1). Total N = 14.',
-          '3. Càlcul de la Moda (Mo): El valor que més vegades es repeteix és "Seat" (5 vegades). Per tant, Mo = Seat.',
-          '4. Mediana (Me) i Mitjana (x̄): Com que les dades són paraules i no es poden ordenar matemàticament ni sumar, aquests paràmetres NO existeixen per a aquesta distribució.'
+          '1. Variable qualitativa: paraules (marques de cotxes). Total N = 14.',
+          '2. Recompte: Seat (5), Renault (4), Citroën (3), Audi (1), Mercedes (1).',
+          '3. Moda = Seat (el valor més repetit).',
+          '4. Mediana i Mitjana: No existeixen perquè requereixen números.'
         ],
-        chartExplanation: 'La barra més alta correspon a <strong>Seat (5 cotxes)</strong>, que és clarament la <strong>Moda</strong>. Observa com en el diagrama de sectors ocupa més d\'un terç de tot el cercle (128,6°).'
+        chartExplanation: 'La barra més alta identifica clarament la <strong>Moda (Seat, 5 unitats)</strong>.'
       },
       'b': {
-        id: 'b',
         badge: 'APARTAT B',
         typeBadge: 'Variable Quantitativa Discreta',
         title: 'Edats de diversos nois i noies',
-        unit: 'anys',
-        isQuantitative: true,
         raw: [12, 15, 13, 12, 16, 10, 11, 12, 10, 11, 12, 9, 9, 10, 8],
-        sorted: [8, 9, 9, 10, 10, 10, 11, 11, 12, 12, 12, 12, 13, 15, 16],
         frequencies: [
-          { val: '8 anys', rawVal: 8, fi: 1, color: '#38bdf8' },
-          { val: '9 anys', rawVal: 9, fi: 2, color: '#818cf8' },
-          { val: '10 anys', rawVal: 10, fi: 3, color: '#a78bfa' },
-          { val: '11 anys', rawVal: 11, fi: 2, color: '#f472b6' },
-          { val: '12 anys', rawVal: 12, fi: 4, color: '#f59e0b' },
-          { val: '13 anys', rawVal: 13, fi: 1, color: '#10b981' },
-          { val: '15 anys', rawVal: 15, fi: 1, color: '#fb923c' },
-          { val: '16 anys', rawVal: 16, fi: 1, color: '#e11d48' }
+          { val: '8 anys', fi: 1, color: '#38bdf8' },
+          { val: '9 anys', fi: 2, color: '#818cf8' },
+          { val: '10 anys', fi: 3, color: '#a78bfa' },
+          { val: '11 anys', fi: 2, color: '#f472b6' },
+          { val: '12 anys', fi: 4, color: '#f59e0b' },
+          { val: '13 anys', fi: 1, color: '#10b981' },
+          { val: '15 anys', fi: 1, color: '#fb923c' },
+          { val: '16 anys', fi: 1, color: '#e11d48' }
         ],
         moda: '12 anys',
-        modaDesc: 'L\'edat de 12 anys es repeteix 4 vegades (la màxima freqüència de la mostra).',
+        modaDesc: 'Apareix 4 vegades (freqüència màxima).',
         mediana: '11 anys',
-        medianaDesc: 'Com que N = 15 (senar), la posició central és la 8a posició ((15+1)/2 = 8). El valor a la 8a posició és 11.',
+        medianaDesc: 'Dades ordenades (N = 15 senar): la 8a posició és 11.',
         medianaValid: true,
         mitjana: '11,33 anys',
-        mitjanaDesc: 'Suma de totes les 15 edats = 170. Dividit entre 15 edats: 170 / 15 ≈ 11,33 anys.',
+        mitjanaDesc: 'Suma de les 15 edats = 170. x̄ = 170 / 15 ≈ 11,33 anys.',
         mitjanaValid: true,
         steps: [
-          '1. Identificació de la variable: És quantitativa discreta (nombres enters d\'edat). Total de dades N = 15.',
-          '2. Ordenem les dades de menor a major: 8, 9, 9, 10, 10, 10, 11, [11], 12, 12, 12, 12, 13, 15, 16.',
-          '3. Càlcul de la Moda (Mo): L\'edat 12 es repeteix 4 vegades (màxima freqüència). Mo = 12 anys.',
-          '4. Càlcul de la Mediana (Me): Amb N = 15 senar, la dada central és la 8a: Me = 11 anys.',
-          '5. Càlcul de la Mitjana (x̄): Sumem totes les edats: 8 + 9 + 9 + 10 + 10 + 10 + 11 + 11 + 12 + 12 + 12 + 12 + 13 + 15 + 16 = 170. x̄ = 170 / 15 = 11,33 anys.'
+          '1. Ordenem les 15 edats: 8, 9, 9, 10, 10, 10, 11, [11], 12, 12, 12, 12, 13, 15, 16.',
+          '2. Moda = 12 anys (apareix 4 vegades).',
+          '3. Mediana = 11 anys (posició central única (15+1)/2 = 8a).',
+          '4. Mitjana = 170 / 15 = 11,33 anys.'
         ],
-        chartExplanation: 'En el diagrama de barres podem observar la distribució de les edats. La barra de <strong>12 anys</strong> és la més alta (Moda), mentre que la <strong>Mediana (11 anys)</strong> i la <strong>Mitjana (11,33 anys)</strong> se situen molt a prop al centre.'
+        chartExplanation: 'La barra de 12 anys és la més alta (Moda). La mitjana i la mediana se situen al voltant d\'11 anys.'
       },
       'c': {
-        id: 'c',
         badge: 'APARTAT C',
         typeBadge: 'Variable Quantitativa Discreta',
-        title: 'Nombre d\'assignatures suspeses el 2n trimestre',
-        unit: 'suspeses',
-        isQuantitative: true,
+        title: 'Assignatures suspeses el 2n trimestre',
         raw: [0, 1, 0, 2, 4, 0, 1, 1, 2, 3, 3, 1, 0, 0, 0, 1],
-        sorted: [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 3, 3, 4],
         frequencies: [
-          { val: '0 suspeses', rawVal: 0, fi: 6, color: '#10b981' },
-          { val: '1 suspesa', rawVal: 1, fi: 5, color: '#38bdf8' },
-          { val: '2 suspeses', rawVal: 2, fi: 2, color: '#f59e0b' },
-          { val: '3 suspeses', rawVal: 3, fi: 2, color: '#fb923c' },
-          { val: '4 suspeses', rawVal: 4, fi: 1, color: '#ef4444' }
+          { val: '0 suspeses', fi: 6, color: '#10b981' },
+          { val: '1 suspesa', fi: 5, color: '#38bdf8' },
+          { val: '2 suspeses', fi: 2, color: '#f59e0b' },
+          { val: '3 suspeses', fi: 2, color: '#fb923c' },
+          { val: '4 suspeses', fi: 1, color: '#ef4444' }
         ],
         moda: '0 suspeses',
-        modaDesc: 'La dada 0 es repeteix 6 vegades (la majoria d\'alumnes no han suspès cap assignatura).',
+        modaDesc: 'Apareix 6 vegades (la gran majoria no té cap suspesa).',
         mediana: '1 suspesa',
-        medianaDesc: 'Com que N = 16 (parell), prenem els dos valors centrals (posicions 8a i 9a). Ambdós són 1, per tant (1 + 1) / 2 = 1.',
+        medianaDesc: 'N = 16 (parell): mitjana de posicions 8a (1) i 9a (1) = 1.',
         medianaValid: true,
         mitjana: '1,19 suspeses',
-        mitjanaDesc: 'Suma = (0×6) + (1×5) + (2×2) + (3×2) + (4×1) = 0 + 5 + 4 + 6 + 4 = 19. Mitjana = 19 / 16 = 1,1875 ≈ 1,19.',
+        mitjanaDesc: 'Suma total = 19 suspeses / 16 alumnes ≈ 1,19 suspeses.',
         mitjanaValid: true,
         steps: [
-          '1. Identificació de la variable: És quantitativa discreta. Total alumnes analitzats N = 16.',
-          '2. Ordenem les dades: 0, 0, 0, 0, 0, 0, 1, [1, 1], 1, 1, 2, 2, 3, 3, 4.',
-          '3. Càlcul de la Moda (Mo): El valor 0 es repeteix 6 vegades. Mo = 0 suspeses.',
-          '4. Càlcul de la Mediana (Me): Com que N = 16 és parell, les posicions centrals són N/2 = 8a posició i (N/2 + 1) = 9a posició. Com que la 8a dada és 1 i la 9a dada és 1: Me = (1 + 1) / 2 = 1 suspesa.',
-          '5. Càlcul de la Mitjana (x̄): Sumem totes les suspeses = 19. Dividit entre 16 alumnes: x̄ = 19 / 16 = 1,1875 ≈ 1,19 suspeses per alumne.'
+          '1. Dades ordenades: 0, 0, 0, 0, 0, 0, 1, [1, 1], 1, 1, 2, 2, 3, 3, 4.',
+          '2. Moda = 0 suspeses (freqüència màxima = 6).',
+          '3. Mediana = (1 + 1)/2 = 1 suspesa (posicions centrals 8a i 9a).',
+          '4. Mitjana = 19 / 16 = 1,1875 ≈ 1,19 suspeses per alumne.'
         ],
-        chartExplanation: 'El <strong>diagrama de barres</strong> mostra una distribució clarament asimètrica: la gran majoria té 0 o 1 assignatura suspesa. Al <strong>diagrama de sectors</strong>, el sector verd (0 suspeses) representa el 37,5% del pastís (135°).'
+        chartExplanation: 'Diagrama clarament asimètric: el 68,75% dels alumnes tenen 0 o 1 suspesa.'
       }
     };
 
@@ -952,485 +1487,259 @@
     let pieChartInstance = null;
     let isStepVisible = false;
 
-    // INITIALIZATION ON LOAD
-    window.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
-      renderExercise('a');
-    });
-
-    // SWITCH EXERCISE HANDLER
     function switchExercise(key) {
       currentExerciseKey = key;
-      
-      // Update tab buttons styles
       ['a', 'b', 'c'].forEach(k => {
         const btn = document.getElementById(`tab-${k}`);
-        if (k === key) {
-          btn.className = 'px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow';
-        } else {
-          btn.className = 'px-4 py-2 rounded-lg text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2';
+        if (btn) {
+          btn.className = k === key
+            ? 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-2 bg-indigo-600 text-white shadow'
+            : 'px-4 py-2 rounded-xl text-xs sm:text-sm font-bold text-slate-400 hover:text-white transition flex items-center gap-2';
         }
       });
-
       renderExercise(key);
     }
 
-    // RENDER EXERCISE DETAILS
     function renderExercise(key) {
       const data = exercisesData[key];
-      
-      // Update header details
+      if (!data) return;
+
       document.getElementById('ex-badge').innerText = data.badge;
       document.getElementById('ex-type-badge').innerText = data.typeBadge;
       document.getElementById('ex-title').innerText = data.title;
       document.getElementById('ex-count').innerText = data.raw.length;
       document.getElementById('chart-badge-title').innerText = `${data.badge}: ${data.title.split(' ')[0]}`;
 
-      // Render raw chips
+      // Raw chips
       const chipsContainer = document.getElementById('raw-data-chips');
       chipsContainer.innerHTML = '';
-      data.raw.forEach((val, index) => {
+      data.raw.forEach(val => {
         const chip = document.createElement('span');
-        chip.className = 'number-tag px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-900 text-slate-200 border border-slate-700/80 shadow-sm cursor-pointer hover:border-indigo-400 hover:text-white hover:bg-indigo-950/70';
+        chip.className = 'number-tag px-3 py-1 rounded-lg text-xs font-mono font-bold bg-slate-900 text-slate-200 border border-slate-700/80 shadow-sm cursor-pointer hover:border-indigo-400';
         chip.innerText = val;
-        chip.title = `Dada núm. ${index + 1}: ${val}`;
         chipsContainer.appendChild(chip);
       });
 
-      // Render Step by step timeline
+      // Steps
       const timeline = document.getElementById('step-timeline');
       timeline.innerHTML = '';
-      data.steps.forEach((stepText, idx) => {
+      data.steps.forEach((st, idx) => {
         const item = document.createElement('div');
-        item.className = 'p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex items-start gap-3';
-        item.innerHTML = `
-          <div class="w-6 h-6 rounded-full bg-indigo-600/30 text-indigo-400 flex items-center justify-center font-mono text-xs font-bold shrink-0 mt-0.5">${idx + 1}</div>
-          <p class="leading-relaxed">${stepText}</p>
-        `;
+        item.className = 'p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex items-start gap-2.5';
+        item.innerHTML = `<span class="w-5 h-5 rounded-full bg-indigo-600/30 text-indigo-400 flex items-center justify-center font-mono text-xs font-bold shrink-0">${idx+1}</span><p>${st}</p>`;
         timeline.appendChild(item);
       });
 
-      // Render Result Cards
+      // Parameters
       document.getElementById('res-moda-val').innerText = data.moda;
       document.getElementById('res-moda-desc').innerText = data.modaDesc;
+      document.getElementById('res-mediana-val').innerText = data.mediana;
+      document.getElementById('res-mediana-desc').innerText = data.medianaDesc;
+      document.getElementById('res-mitjana-val').innerText = data.mitjana;
+      document.getElementById('res-mitjana-desc').innerText = data.mitjanaDesc;
 
-      // Mediana Card state
-      const medVal = document.getElementById('res-mediana-val');
-      const medDesc = document.getElementById('res-mediana-desc');
       const medStatus = document.getElementById('res-mediana-status');
-      medVal.innerText = data.mediana;
-      medDesc.innerText = data.medianaDesc;
-      if (data.medianaValid) {
-        medStatus.className = 'mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-emerald-400 flex items-center gap-1 font-semibold';
-        medStatus.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i> VÀLID I DETERMINAT';
-      } else {
-        medStatus.className = 'mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-rose-400 flex items-center gap-1 font-semibold';
-        medStatus.innerHTML = '<i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> NO ES POT CALCULAR';
-      }
+      medStatus.innerText = data.medianaValid ? 'VÀLID I DETERMINAT' : 'NO ES POT CALCULAR';
+      medStatus.className = `pt-2 text-[10px] font-bold uppercase ${data.medianaValid ? 'text-emerald-400' : 'text-rose-400'}`;
 
-      // Mitjana Card state
-      const mitjVal = document.getElementById('res-mitjana-val');
-      const mitjDesc = document.getElementById('res-mitjana-desc');
       const mitjStatus = document.getElementById('res-mitjana-status');
-      mitjVal.innerText = data.mitjana;
-      mitjDesc.innerText = data.mitjanaDesc;
-      if (data.mitjanaValid) {
-        mitjStatus.className = 'mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-emerald-400 flex items-center gap-1 font-semibold';
-        mitjStatus.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5"></i> VÀLID I DETERMINAT';
-      } else {
-        mitjStatus.className = 'mt-4 pt-3 border-t border-slate-800/80 text-[11px] text-rose-400 flex items-center gap-1 font-semibold';
-        mitjStatus.innerHTML = '<i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i> NO ES POT CALCULAR';
-      }
+      mitjStatus.innerText = data.mitjanaValid ? 'VÀLID I DETERMINAT' : 'NO ES POT CALCULAR';
+      mitjStatus.className = `pt-2 text-[10px] font-bold uppercase ${data.mitjanaValid ? 'text-emerald-400' : 'text-rose-400'}`;
 
-      // Render Frequency Table
+      // Table
       renderTable(data);
 
-      // Render Explanation
+      // Explanation
       document.getElementById('bar-chart-explanation').innerHTML = data.chartExplanation;
 
-      // Update Charts
-      updateCharts(data);
-
-      // Re-trigger icon rendering
+      // Charts
+      updateMathCharts(data);
       lucide.createIcons();
     }
 
-    // RENDER FREQUENCY TABLE WITH DEGREES & PERCENTAGES
     function renderTable(data) {
       const tbody = document.getElementById('frequency-table-body');
       const tfoot = document.getElementById('frequency-table-foot');
       tbody.innerHTML = '';
 
       const N = data.raw.length;
-      let cumulativeFi = 0;
-      let totalAngle = 0;
-      let totalRelative = 0;
-
-      data.frequencies.forEach((row, i) => {
-        cumulativeFi += row.fi;
-        const relative = row.fi / N;
-        totalRelative += relative;
-        const pct = (relative * 100).toFixed(2);
-        const degrees = (relative * 360).toFixed(1);
-        totalAngle += parseFloat(degrees);
+      let cumFi = 0;
+      data.frequencies.forEach(row => {
+        cumFi += row.fi;
+        const rel = (row.fi / N).toFixed(4);
+        const pct = ((row.fi / N) * 100).toFixed(1);
+        const deg = ((row.fi / N) * 360).toFixed(1);
 
         const tr = document.createElement('tr');
         tr.className = 'hover:bg-slate-900/60 transition';
         tr.innerHTML = `
-          <td class="px-4 py-3 font-semibold text-white flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full" style="background-color: ${row.color}"></span>
-            ${row.val}
-          </td>
-          <td class="px-4 py-3 text-amber-300 font-bold">${row.fi}</td>
-          <td class="px-4 py-3 text-cyan-300">${relative.toFixed(4)}</td>
-          <td class="px-4 py-3 text-indigo-300 font-bold">${pct}%</td>
-          <td class="px-4 py-3 text-emerald-300">${cumulativeFi}</td>
-          <td class="px-4 py-3 text-rose-300 font-bold">${degrees}°</td>
+          <td class="px-4 py-2.5 font-semibold text-white flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full" style="background:${row.color}"></span>${row.val}</td>
+          <td class="px-4 py-2.5 text-amber-300 font-bold">${row.fi}</td>
+          <td class="px-4 py-2.5 text-cyan-300">${rel}</td>
+          <td class="px-4 py-2.5 text-indigo-300 font-bold">${pct}%</td>
+          <td class="px-4 py-2.5 text-emerald-300">${cumFi}</td>
+          <td class="px-4 py-2.5 text-rose-300 font-bold">${deg}°</td>
         `;
         tbody.appendChild(tr);
       });
 
-      // Render Total row
       tfoot.innerHTML = `
         <tr>
-          <td class="px-4 py-3 text-white">TOTALS (N = ${N})</td>
-          <td class="px-4 py-3 text-amber-400">${N}</td>
-          <td class="px-4 py-3 text-cyan-400">1,0000</td>
-          <td class="px-4 py-3 text-indigo-400">100%</td>
-          <td class="px-4 py-3 text-emerald-400">-</td>
-          <td class="px-4 py-3 text-rose-400">360,0°</td>
+          <td class="px-4 py-2.5 text-white">TOTALS (N = ${N})</td>
+          <td class="px-4 py-2.5 text-amber-400">${N}</td>
+          <td class="px-4 py-2.5 text-cyan-400">1,0000</td>
+          <td class="px-4 py-2.5 text-indigo-400">100%</td>
+          <td class="px-4 py-2.5 text-emerald-400">-</td>
+          <td class="px-4 py-2.5 text-rose-400">360,0°</td>
         </tr>
       `;
     }
 
-    // CHART.JS CONTROLLER
-    function updateCharts(data) {
+    function updateMathCharts(data) {
       const labels = data.frequencies.map(f => f.val);
       const values = data.frequencies.map(f => f.fi);
       const colors = data.frequencies.map(f => f.color);
 
-      // BAR CHART
-      const ctxBar = document.getElementById('barChartCanvas').getContext('2d');
-      if (barChartInstance) {
-        barChartInstance.destroy();
-      }
-
-      barChartInstance = new Chart(ctxBar, {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: 'Freqüència Absoluta (fᵢ)',
-            data: values,
-            backgroundColor: colors.map(c => c + 'cc'),
-            borderColor: colors,
-            borderWidth: 2,
-            borderRadius: 8,
-            hoverBackgroundColor: colors,
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          animation: {
-            duration: 900,
-            easing: 'easeOutQuart'
+      const ctxBar = document.getElementById('barChartCanvas');
+      if (ctxBar) {
+        if (barChartInstance) barChartInstance.destroy();
+        barChartInstance = new Chart(ctxBar.getContext('2d'), {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: values,
+              backgroundColor: colors.map(c => c + 'cc'),
+              borderColor: colors,
+              borderWidth: 2,
+              borderRadius: 8
+            }]
           },
-          plugins: {
-            legend: {
-              display: false
-            },
-            tooltip: {
-              backgroundColor: '#0f172a',
-              titleColor: '#f8fafc',
-              bodyColor: '#cbd5e1',
-              borderColor: '#334155',
-              borderWidth: 1,
-              padding: 12,
-              displayColors: true,
-              callbacks: {
-                label: function(context) {
-                  const N = data.raw.length;
-                  const val = context.parsed.y;
-                  const pct = ((val / N) * 100).toFixed(1);
-                  return `Freqüència: ${val} (${pct}%)`;
-                }
-              }
-            }
-          },
-          scales: {
-            x: {
-              grid: {
-                color: 'rgba(255, 255, 255, 0.05)',
-              },
-              ticks: {
-                color: '#94a3b8',
-                font: { family: 'Plus Jakarta Sans', weight: '600' }
-              }
-            },
-            y: {
-              beginAtZero: true,
-              ticks: {
-                stepSize: 1,
-                color: '#94a3b8',
-                font: { family: 'JetBrains Mono' }
-              },
-              grid: {
-                color: 'rgba(255, 255, 255, 0.08)',
-              }
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+              y: { beginAtZero: true, ticks: { stepSize: 1, color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+              x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } }
             }
           }
-        }
-      });
-
-      // PIE / SECTORS CHART
-      const ctxPie = document.getElementById('pieChartCanvas').getContext('2d');
-      if (pieChartInstance) {
-        pieChartInstance.destroy();
+        });
       }
 
-      pieChartInstance = new Chart(ctxPie, {
-        type: 'pie',
-        data: {
-          labels: labels,
-          datasets: [{
-            data: values,
-            backgroundColor: colors,
-            borderColor: '#0f172a',
-            borderWidth: 3,
-            hoverOffset: 12
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          animation: {
-            duration: 1000,
-            animateRotate: true,
-            animateScale: true
+      const ctxPie = document.getElementById('pieChartCanvas');
+      if (ctxPie) {
+        if (pieChartInstance) pieChartInstance.destroy();
+        pieChartInstance = new Chart(ctxPie.getContext('2d'), {
+          type: 'pie',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: values,
+              backgroundColor: colors,
+              borderColor: '#0f172a',
+              borderWidth: 2
+            }]
           },
-          plugins: {
-            legend: {
-              position: 'bottom',
-              labels: {
-                color: '#cbd5e1',
-                padding: 14,
-                font: { family: 'Plus Jakarta Sans', size: 11, weight: '500' }
-              }
-            },
-            tooltip: {
-              backgroundColor: '#0f172a',
-              titleColor: '#f8fafc',
-              bodyColor: '#cbd5e1',
-              borderColor: '#334155',
-              borderWidth: 1,
-              padding: 12,
-              callbacks: {
-                label: function(context) {
-                  const N = data.raw.length;
-                  const val = context.parsed;
-                  const pct = ((val / N) * 100).toFixed(1);
-                  const deg = ((val / N) * 360).toFixed(1);
-                  return ` ${context.label}: ${val} (${pct}%, angle: ${deg}°)`;
-                }
-              }
-            }
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom', labels: { color: '#cbd5e1', font: { size: 10 } } } }
           }
-        }
-      });
+        });
+      }
     }
 
-    // STEP BY STEP TOGGLE
     function toggleStepByStep() {
-      const panel = document.getElementById('step-panel');
-      const btnText = document.getElementById('step-btn-text');
+      const p = document.getElementById('step-panel');
+      const b = document.getElementById('step-btn-text');
       isStepVisible = !isStepVisible;
-
       if (isStepVisible) {
-        panel.classList.remove('hidden');
-        btnText.innerText = 'Amagar Simulació';
+        p.classList.remove('hidden');
+        b.innerText = 'Amagar Simulació';
       } else {
-        panel.classList.add('hidden');
-        btnText.innerText = 'Veure Simulació Pas a Pas';
+        p.classList.add('hidden');
+        b.innerText = 'Veure Simulació Pas a Pas';
       }
-    }
-
-    // AUDIO CELEBRATION / CONFETTI
-    function audioCheer() {
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.6 }
-      });
     }
 
     // CUSTOM DATA CALCULATOR
     function calculateCustomData() {
       const inputStr = document.getElementById('custom-data-input').value.trim();
       if (!inputStr) return;
+      const raw = inputStr.split(',').map(s => s.trim()).filter(Boolean);
+      if (!raw.length) return;
 
-      const rawItems = inputStr.split(',').map(s => s.trim()).filter(s => s.length > 0);
-      if (rawItems.length === 0) return;
+      document.getElementById('custom-result-area').classList.remove('hidden');
+      const isNum = raw.every(x => !isNaN(Number(x)));
 
-      const resultArea = document.getElementById('custom-result-area');
-      resultArea.classList.remove('hidden');
-
-      // Check if all items are numbers
-      const isAllNumbers = rawItems.every(item => !isNaN(Number(item)));
-
-      // 1. Calculate Frequencies
       const counts = {};
-      rawItems.forEach(item => {
-        counts[item] = (counts[item] || 0) + 1;
-      });
+      raw.forEach(x => { counts[x] = (counts[x] || 0) + 1; });
 
-      // 2. Moda
-      let maxFreq = 0;
+      let max = 0;
       let modes = [];
-      for (const [key, freq] of Object.entries(counts)) {
-        if (freq > maxFreq) {
-          maxFreq = freq;
-          modes = [key];
-        } else if (freq === maxFreq) {
-          modes.push(key);
-        }
+      for (const [k, v] of Object.entries(counts)) {
+        if (v > max) { max = v; modes = [k]; }
+        else if (v === max) modes.push(k);
       }
-      const modaText = modes.join(', ') + ` (freq: ${maxFreq})`;
-      document.getElementById('custom-res-moda').innerText = modaText;
+      document.getElementById('custom-res-moda').innerText = `${modes.join(', ')} (${max}v)`;
 
-      // 3. Mediana & Mitjana
-      if (isAllNumbers) {
-        const nums = rawItems.map(Number).sort((a, b) => a - b);
+      if (isNum) {
+        const nums = raw.map(Number).sort((a,b)=>a-b);
         const N = nums.length;
-        
-        // Mediana
-        let medianaVal;
-        if (N % 2 !== 0) {
-          medianaVal = nums[Math.floor(N / 2)];
-        } else {
-          medianaVal = ((nums[N / 2 - 1] + nums[N / 2]) / 2).toFixed(2);
-        }
-        document.getElementById('custom-res-mediana').innerText = medianaVal;
-
-        // Mitjana
-        const sum = nums.reduce((acc, curr) => acc + curr, 0);
+        const med = N % 2 !== 0 ? nums[Math.floor(N/2)] : ((nums[N/2 - 1] + nums[N/2]) / 2).toFixed(2);
+        const sum = nums.reduce((a,b)=>a+b, 0);
         const mean = (sum / N).toFixed(2);
+        document.getElementById('custom-res-mediana').innerText = med;
         document.getElementById('custom-res-mitjana').innerText = mean;
-
-        document.getElementById('custom-res-info').innerHTML = `
-          <strong>Anàlisi completada:</strong> Total de dades N = ${N}. Dades ordenades: <code>[${nums.join(', ')}]</code>. 
-          Suma total = ${sum}.
-        `;
+        document.getElementById('custom-res-info').innerHTML = `Total dades N = ${N}. Dades ordenades: [${nums.join(', ')}]. Suma = ${sum}.`;
       } else {
         document.getElementById('custom-res-mediana').innerText = 'No calculable';
         document.getElementById('custom-res-mitjana').innerText = 'No calculable';
-        document.getElementById('custom-res-info').innerHTML = `
-          <strong class="text-amber-300">Dades Qualitatives:</strong> Com que les dades contenen text, només es pot calcular la <strong>Moda</strong>. La mediana i la mitjana requereixen dades numèriques.
-        `;
+        document.getElementById('custom-res-info').innerText = 'Variable qualitativa (text). Només la Moda té sentit matemàtic.';
       }
 
-      confetti({
-        particleCount: 50,
-        spread: 60,
-        origin: { y: 0.7 }
-      });
+      confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } });
     }
 
     function loadRandomSample() {
       const samples = [
-        "4, 6, 7, 7, 8, 9, 7, 5, 6, 8, 10, 7",
-        "Poma, Pera, Poma, Plàtan, Poma, Taronja, Plàtan",
-        "14, 15, 15, 16, 14, 17, 15, 14, 18, 15"
+        "7, 9, 8, 6, 9, 10, 8, 7, 9",
+        "Gat, Gos, Gat, Ocell, Gos, Gat, Cavall",
+        "15, 14, 16, 14, 15, 17, 14, 18, 15"
       ];
-      const pick = samples[Math.floor(Math.random() * samples.length)];
-      document.getElementById('custom-data-input').value = pick;
+      document.getElementById('custom-data-input').value = samples[Math.floor(Math.random() * samples.length)];
       calculateCustomData();
     }
 
-    // APLICAR DADES PERSONALITZADES ALS GRÀFICS PRINCIPALS
-    function applyCustomToMainCharts() {
-      const inputStr = document.getElementById('custom-data-input').value.trim();
-      if (!inputStr) return;
-      const rawItems = inputStr.split(',').map(s => s.trim()).filter(s => s.length > 0);
-      if (rawItems.length === 0) return;
-
-      const counts = {};
-      rawItems.forEach(item => { counts[item] = (counts[item] || 0) + 1; });
-
-      const palette = ['#6366f1', '#06b6d4', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6', '#3b82f6', '#14b8a6', '#f43f5e', '#a855f7'];
-      let colorIndex = 0;
-      const freqs = Object.keys(counts).map(key => {
-        const c = palette[colorIndex % palette.length];
-        colorIndex++;
-        return { val: key, fi: counts[key], color: c };
-      });
-
-      const customObj = {
-        raw: rawItems,
-        frequencies: freqs,
-        chartExplanation: `Gràfics generats en temps real amb les teves <strong>${rawItems.length} dades personalitzades</strong>.`
-      };
-
-      document.getElementById('chart-badge-title').innerText = 'Dades Personalitzades';
-      document.getElementById('bar-chart-explanation').innerHTML = customObj.chartExplanation;
-      updateCharts(customObj);
-
-      // Scroll to charts smoothly
-      document.getElementById('grafiques').scrollIntoView({ behavior: 'smooth' });
-      confetti({ particleCount: 60, spread: 80, origin: { y: 0.5 } });
-    }
-
     // QUIZ CHECK SYSTEM
-    let score = 0;
     const answered = {};
+    function checkAnswer(q, opt, btn) {
+      if (answered[q]) return;
+      answered[q] = true;
+      const card = document.querySelector(`[data-q="${q}"]`);
+      const fb = card.querySelector('.feedback');
+      const isOk = btn.getAttribute('data-correct') === 'true';
 
-    function checkAnswer(qNum, optIndex, btn) {
-      if (answered[qNum]) return; // already answered
-      answered[qNum] = true;
-
-      const card = document.querySelector(`[data-q="${qNum}"]`);
-      const feedback = card.querySelector('.feedback');
-      const isCorrect = btn.getAttribute('data-correct') === 'true';
-
-      if (isCorrect) {
-        btn.classList.remove('bg-slate-900/90', 'border-slate-800');
+      if (isOk) {
         btn.classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
-        feedback.className = 'feedback p-3 rounded-lg text-xs bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 flex items-center gap-2';
-        feedback.innerHTML = '<i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i><span><strong>Molt bé! Resposta correcta.</strong></span>';
-        feedback.classList.remove('hidden');
-        score++;
+        fb.className = 'feedback p-2.5 rounded-lg text-xs bg-emerald-950/80 border border-emerald-500/40 text-emerald-200';
+        fb.innerHTML = '<strong>Molt bé! Resposta correcta.</strong>';
+        fb.classList.remove('hidden');
+        confetti({ particleCount: 40, spread: 50 });
       } else {
-        btn.classList.remove('bg-slate-900/90', 'border-slate-800');
         btn.classList.add('bg-rose-950', 'border-rose-500', 'text-rose-200');
-        feedback.className = 'feedback p-3 rounded-lg text-xs bg-rose-950/80 border border-rose-500/40 text-rose-200 flex items-center gap-2';
-        feedback.innerHTML = '<i data-lucide="x-circle" class="w-4 h-4 text-rose-400"></i><span><strong>Incorrecte.</strong> Revisa la teoria dels paràmetres de centralització més amunt.</span>';
-        feedback.classList.remove('hidden');
-
-        // highlight the correct one
-        const correctBtn = card.querySelector('[data-correct="true"]');
-        if (correctBtn) {
-          correctBtn.classList.add('border-emerald-500/60', 'bg-emerald-950/40');
-        }
-      }
-
-      lucide.createIcons();
-
-      // Check if all answered
-      if (Object.keys(answered).length === 4) {
-        const banner = document.getElementById('quiz-score-banner');
-        const scoreText = document.getElementById('score-text');
-        banner.classList.remove('hidden');
-        scoreText.innerText = `Has obtingut ${score} de 4 respostes correctes (${(score / 4 * 100).toFixed(0)}%).`;
-        
-        if (score >= 3) {
-          confetti({
-            particleCount: 150,
-            spread: 90,
-            origin: { y: 0.6 }
-          });
-        }
+        fb.className = 'feedback p-2.5 rounded-lg text-xs bg-rose-950/80 border border-rose-500/40 text-rose-200';
+        fb.innerHTML = '<strong>Incorrecte.</strong> Revisa la regla: les variables qualitatives no es poden sumar.';
+        fb.classList.remove('hidden');
       }
     }
+
+    // ON LOAD
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      renderCatalaCharts();
+    });
   </script>
 </body>
 </html>
