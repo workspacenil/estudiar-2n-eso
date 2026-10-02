@@ -143,6 +143,10 @@
           <i data-lucide="calculator" class="w-4 h-4"></i>
           <span>Matemàtiques</span>
         </button>
+              <button id="nav-btn-fisica" onclick="setSubject('fisica')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white">
+          <i data-lucide="flask-conical" class="w-4 h-4"></i>
+          <span>Física i Química</span>
+        </button>
       </nav>
 
       <!-- Quick Action / GitHub -->
@@ -1216,6 +1220,230 @@
 
     </div>
 
+  
+    <!-- ======================================================== -->
+    <!-- SUBJECT 3: FÍSICA I QUÍMICA -->
+    <!-- ======================================================== -->
+    <div id="subject-fisica" class="hidden space-y-16 transition-opacity duration-300">
+      
+      <section class="relative pt-4 pb-8 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-12 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-teal-500/10 border border-teal-500/30 text-teal-300">
+              <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+              Ciències • La matèria, l'energia i la investigació
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+              Física i <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-200">Química</span>
+            </h1>
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
+              Entendre el món que ens envolta requereix dues eines clau: la <strong>Física</strong> i la <strong>Química</strong>. A través del <strong>Mètode Científic</strong>, som capaços de fer-nos preguntes, plantejar hipòtesis i trobar respostes basades en l'experimentació. Explora els apunts detallats i els documents pràctics del professor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPLICACIONS DETALLADES: FÍSICA I QUÍMICA -->
+      <section class="space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- Què és la Física? -->
+          <div class="glass-card rounded-3xl p-8 border-t-4 border-t-emerald-500 space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold">
+                <i data-lucide="atom" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white">La Física</h3>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              La <strong>Física</strong> és la ciència natural que estudia els components fonamentals de l'univers: l'energia, la matèria, l'espai i el temps, així com les interaccions que tenen lloc entre ells. 
+            </p>
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2 text-sm text-slate-400">
+              <strong class="text-emerald-300 block">La clau de la Física:</strong>
+              No hi ha canvis en la composició. La matèria continua sent la mateixa. Quan llences una pilota, la pilota canvia de lloc, però segueix sent una pilota. Quan congeles aigua, canvia d'estat (de líquid a sòlid), però segueix sent aigua ($).
+            </div>
+            <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+              <li><strong>Mecànica:</strong> Com es mouen els cossos (velocitat, forces, gravetat).</li>
+              <li><strong>Òptica i Acústica:</strong> Com viatja la llum i el so (per què el cel és blau o com funciona una guitarra).</li>
+              <li><strong>Electromagnetisme:</strong> La base dels nostres mòbils, ordinadors i electrodomèstics.</li>
+            </ul>
+          </div>
+
+          <!-- Què és la Química? -->
+          <div class="glass-card rounded-3xl p-8 border-t-4 border-t-teal-500 space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 font-bold">
+                <i data-lucide="flask-conical" class="w-6 h-6"></i>
+              </div>
+              <h3 class="text-2xl font-bold text-white">La Química</h3>
+            </div>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              La <strong>Química</strong> és la ciència que estudia la composició, l'estructura i les propietats de la matèria, així com els <strong>canvis que aquesta experimenta durant les reaccions químiques</strong>.
+            </p>
+            <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800 space-y-2 text-sm text-slate-400">
+              <strong class="text-teal-300 block">La clau de la Química:</strong>
+              Es produeixen canvis interns! Quan una substància es transforma en una altra de completament nova. Per exemple, quan cremem fusta, es converteix en cendra i gas (la fusta original ja no existeix com a tal). Quan el ferro s'oxida, es crea una nova substància de color taronja (l'òxid).
+            </div>
+            <ul class="list-disc list-inside text-sm text-slate-400 space-y-1">
+              <li><strong>Química Orgànica:</strong> L'estudi de la química del carboni (base de la vida, els plàstics, etc.).</li>
+              <li><strong>Química Inorgànica:</strong> L'estudi dels metalls, minerals i altres elements de la taula periòdica.</li>
+              <li><strong>Bioquímica:</strong> Com funciona la digestió, la respiració i el nostre ADN.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- EL MÈTODE CIENTÍFIC EN PROFUNDITAT -->
+      <section class="space-y-6">
+        <div class="glass-card rounded-3xl p-8 border border-slate-800 space-y-6">
+          <div class="text-center max-w-2xl mx-auto space-y-2">
+            <span class="text-xs font-bold uppercase tracking-widest text-cyan-400">La guia per investigar</span>
+            <h2 class="text-3xl font-extrabold text-white">El Mètode Científic pas a pas</h2>
+            <p class="text-slate-400 text-sm">
+              Ni la Física ni la Química serien possibles sense un ordre. El mètode científic és el procediment que segueixen tots els científics del món per assegurar-se que els seus descobriments són reals i no només casualitats.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-cyan-400 font-black text-xl">1</span>
+              <h4 class="text-white font-bold mb-1 mt-1">Observació</h4>
+              <p class="text-xs text-slate-400">Consisteix a fixar-se en un fenomen de la natura amb atenció. Ex: "He notat que les plantes de la finestra creixen cap al vidre".</p>
+            </div>
+            <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-cyan-400 font-black text-xl">2</span>
+              <h4 class="text-white font-bold mb-1 mt-1">Pregunta / Problema</h4>
+              <p class="text-xs text-slate-400">A partir de l'observació, formulem una pregunta clara. Ex: "Per què la tija es doblega sempre cap a la llum?"</p>
+            </div>
+            <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-cyan-400 font-black text-xl">3</span>
+              <h4 class="text-white font-bold mb-1 mt-1">Hipòtesi</h4>
+              <p class="text-xs text-slate-400">És una possible explicació, una suposició fonamentada que es pot comprovar. Ex: "Les plantes es dobleguen perquè necessiten llum directa per fer la fotosíntesi".</p>
+            </div>
+            <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-cyan-400 font-black text-xl">4</span>
+              <h4 class="text-white font-bold mb-1 mt-1">Experimentació</h4>
+              <p class="text-xs text-slate-400">Dissenyar un experiment per comprovar si la hipòtesi és certa o falsa, controlant variables (posar una planta a les fosques i una al sol).</p>
+            </div>
+            <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-cyan-400 font-black text-xl">5</span>
+              <h4 class="text-white font-bold mb-1 mt-1">Anàlisi de dades</h4>
+              <p class="text-xs text-slate-400">Recollir els resultats (mesurar quant han crescut, cap a on) i organitzar-los en taules i gràfiques per trobar un patró.</p>
+            </div>
+            <div class="p-4 bg-slate-900/60 rounded-xl border border-slate-800">
+              <span class="text-cyan-400 font-black text-xl">6</span>
+              <h4 class="text-white font-bold mb-1 mt-1">Conclusions</h4>
+              <p class="text-xs text-slate-400">Confirmar o rebutjar la hipòtesi inicial. Si es rebutja, cal tornar al pas 3. Si es confirma, es poden establir lleis o teories científiques!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RECURSOS I DOCUMENTS (DETALLATS) -->
+      <section class="space-y-6">
+        <div class="text-center max-w-3xl mx-auto space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Dossier de l'Alumne</span>
+          <h2 class="text-3xl font-extrabold text-white">Documents, Pràctiques i Imatges</h2>
+          <p class="text-slate-400 text-sm">
+            Repassa els documents oficials penjats pel professor. Hem analitzat cada document perquè sàpigues exactament què hi trobaràs.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- Doc 1 -->
+          <a href="./Fisica i Quimica/normes_seguretat.docx" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 shrink-0 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center">
+                <i data-lucide="shield-alert" class="w-7 h-7"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-bold text-white">Normes de Seguretat al Laboratori (.docx)</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  <strong>Què conté?</strong> Un document imprescindible abans d'entrar a fer pràctiques. T'explica quina roba has de portar (bata lligada, ulleres, cabell recollit), com actuar en cas que es trenqui un vas de precipitats, i <strong>el significat dels pictogrames de perillositat</strong> (comburent, tòxic, inflamable, nociu per al medi ambient, etc.). És vital conèixer-los per no fer un mal ús dels reactius químics.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Doc 2 -->
+          <a href="./Fisica i Quimica/activitats_metode_cientific.pdf" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 shrink-0 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center">
+                <i data-lucide="file-question" class="w-7 h-7"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-bold text-white">Activitats del Mètode Científic (.pdf)</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  <strong>Què conté?</strong> Una sèrie d'exercicis pràctics i casos d'estudi preparats per posar a prova el que has après sobre el mètode científic. Et faran llegir situacions (com per exemple, per què la flor es panseix o què cau abans, una bola de plom o de paper) i hauràs d'<strong>identificar les diferents fases:</strong> quina és la hipòtesi, quina és la variable independent (allò que nosaltres canviem) i quina la dependent (allò que mesurem al final).
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Doc 3 -->
+          <a href="./Fisica i Quimica/informe_practiques.pdf" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 shrink-0 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center">
+                <i data-lucide="clipboard-list" class="w-7 h-7"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-bold text-white">Guia de l'Informe de Pràctiques (.pdf)</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  <strong>Què conté?</strong> És l'esquema de com has de presentar els treballs de laboratori. Tot informe científic ha de tenir una estructura formal: Títol, Objectiu (què volem aconseguir?), Material (provetes, llistat de substàncies), Procediment (passos numerats), Resultats (taules i dades recollides) i Conclusions Finals. Si segueixes aquesta pauta, tindràs un 10 segur.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Doc 4 -->
+          <a href="./Fisica i Quimica/image.png" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
+            <div class="flex items-start gap-4">
+              <div class="w-14 h-14 shrink-0 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
+                <i data-lucide="image" class="w-7 h-7"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-lg font-bold text-white">Esquema Visual i Mapa Mental (.png)</h4>
+                <p class="text-sm text-slate-400 leading-relaxed">
+                  <strong>Què conté?</strong> És una imatge que resumeix de manera visual tots els blocs temàtics. Un recurs visual excel·lent (mapa conceptual) per repassar el dia abans de l'examen i retenir amb un cop d'ull com es connecten els conceptes de física, matèria i metodologia científica.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- VÍDEO COMPLEMENTARI AL FINAL -->
+      <section class="space-y-6 pt-10 border-t border-slate-800">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div>
+            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-teal-400">
+              <i data-lucide="play-circle" class="w-4 h-4 text-red-500"></i>
+              Material Audiovisual Complementari
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">El Mètode Científic (Vídeo)</h2>
+            <p class="text-slate-400 text-sm mt-2 max-w-3xl">
+              Si després de llegir l'explicació de dalt et va bé un suport visual, aquí tens el vídeo educatiu. L'hem col·locat al final perquè amb la teoria que hem desglossat més amunt ja en tindries prou per superar l'assignatura, però aquest petit clip animat et pot ajudar a consolidar les etapes de l'investigador d'una manera molt visual.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl overflow-hidden p-2 border border-slate-800 shadow-2xl max-w-4xl mx-auto">
+          <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950">
+            <iframe 
+              class="absolute inset-0 w-full h-full" 
+              src="https://www.youtube-nocookie.com/embed/2l0MfhsIqUU" 
+              title="El Mètode Científic" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
   </main>
 
   <!-- FOOTER -->
@@ -1232,20 +1460,39 @@
     // NAVIGATION CONTROLLER (SUBJECT SWITCHER)
     let currentSubject = 'catala';
 
-    function setSubject(subj) {
+        function setSubject(subj) {
       currentSubject = subj;
       const catalaSec = document.getElementById('subject-catala');
       const matesSec = document.getElementById('subject-mates');
+      const fisicaSec = document.getElementById('subject-fisica');
+      
       const btnCatala = document.getElementById('nav-btn-catala');
       const btnMates = document.getElementById('nav-btn-mates');
+      const btnFisica = document.getElementById('nav-btn-fisica');
+
+      if (catalaSec) catalaSec.classList.add('hidden');
+      if (matesSec) matesSec.classList.add('hidden');
+      if (fisicaSec) fisicaSec.classList.add('hidden');
+      
+      if (btnCatala) btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
+      if (btnMates) btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
+      if (btnFisica) btnFisica.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
 
       if (subj === 'catala') {
-        catalaSec.classList.remove('hidden');
-        matesSec.classList.add('hidden');
-        btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md';
-        btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
+        if (catalaSec) catalaSec.classList.remove('hidden');
+        if (btnCatala) btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md';
         renderCatalaCharts();
-      } else {
+      } else if (subj === 'mates') {
+        if (matesSec) matesSec.classList.remove('hidden');
+        if (btnMates) btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md';
+        renderExercise(currentExerciseKey);
+      } else if (subj === 'fisica') {
+        if (fisicaSec) fisicaSec.classList.remove('hidden');
+        if (btnFisica) btnFisica.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md';
+      }
+      
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
         catalaSec.classList.add('hidden');
         matesSec.classList.remove('hidden');
         btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md';
