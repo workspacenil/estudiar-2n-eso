@@ -117,7 +117,7 @@
 </head>
 <body class="min-h-screen text-slate-100 flex flex-col antialiased selection:bg-amber-500 selection:text-black">
 
-  <!-- TOP HEADER WITH CLEAN SUBJECT SELECTOR (TRETS ELS SUB-ENLLAÃ‡OS, NOMÃ‰S APARTATS PRINCIPALS) -->
+  <!-- TOP HEADER WITH CLEAN SUBJECT SELECTOR (TRETS ELS SUB-ENLLAÇOS, NOMÉS APARTATS PRINCIPALS) -->
   <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 px-4 sm:px-6 lg:px-8 py-3.5 transition-all duration-300">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
       
@@ -127,12 +127,12 @@
           <i data-lucide="graduation-cap" class="w-5 h-5 text-white"></i>
         </div>
         <div>
-          <span class="text-[11px] uppercase tracking-widest text-amber-400 font-extrabold block">2n d'ESO â€¢ Curs AcadÃ¨mic</span>
+          <span class="text-[11px] uppercase tracking-widest text-amber-400 font-extrabold block">2n d'ESO • Curs Acadèmic</span>
           <span class="text-lg font-black tracking-tight text-white font-heading">Estudiar 2n d'ESO</span>
         </div>
       </div>
 
-      <!-- MAIN SUBJECT APARTATS (CATALÃ€ / MATEMÃ€TIQUES) -->
+      <!-- MAIN SUBJECT APARTATS (CATALÀ / MATEMÀTIQUES) -->
       <nav class="flex items-center p-1.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-inner">
         <button id="nav-btn-catala" onclick="setSubject('catala')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md">
           <i data-lucide="book-marked" class="w-4 h-4"></i>
@@ -141,12 +141,7 @@
 
         <button id="nav-btn-mates" onclick="setSubject('mates')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white">
           <i data-lucide="calculator" class="w-4 h-4"></i>
-          <span>MatemÃ tiques</span>
-        </button>
-
-        <button id="nav-btn-fisica" onclick="setSubject('fisica')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white">
-          <i data-lucide="flask-conical" class="w-4 h-4"></i>
-          <span>FÃ­sica i QuÃ­mica</span>
+          <span>Matemàtiques</span>
         </button>
       </nav>
 
@@ -165,32 +160,32 @@
   <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 space-y-16">
 
     <!-- ======================================================== -->
-    <!-- SUBJECT 1: LLENGUA CATALANA (PROJECTE EVOLUCIÃ“ DEL CATALÃ€) -->
+    <!-- SUBJECT 1: LLENGUA CATALANA (PROJECTE EVOLUCIÓ DEL CATALÀ) -->
     <!-- ======================================================== -->
     <div id="subject-catala" class="space-y-16 transition-opacity duration-300">
       
-      <!-- HERO CATALÃ€ -->
+      <!-- HERO CATALÀ -->
       <section class="relative pt-4 pb-8 overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-7 space-y-5">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 border border-amber-500/30 text-amber-300">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-              Projecte d'Equip â€¢ Eix CronolÃ²gic i ExposiciÃ³ Oral
+              Projecte d'Equip • Eix Cronològic i Exposició Oral
             </div>
 
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-              L'Origen i l'<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-amber-200">EvoluciÃ³ del CatalÃ </span>
+              L'Origen i l'<span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-rose-400 to-amber-200">Evolució del Català</span>
             </h1>
 
             <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
-              Tot el material complet que t'ha donat el professor per preparar la <strong class="text-white font-medium">cartolina de l'eix cronolÃ²gic</strong> i l'<strong class="text-white font-medium">exposiciÃ³ oral de 3 a 5 minuts</strong>: les 6 etapes histÃ²riques, autors, documents clau, el vÃ­deo ilÂ·lustrat de referÃ¨ncia, grÃ fiques interactives i la calculadora de la rÃºbrica per treure la mÃ xima nota!
+              Tot el material complet que t'ha donat el professor per preparar la <strong class="text-white font-medium">cartolina de l'eix cronològic</strong> i l'<strong class="text-white font-medium">exposició oral de 3 a 5 minuts</strong>: les 6 etapes històriques, autors, documents clau, el vídeo il·lustrat de referència, gràfiques interactives i la calculadora de la rúbrica per treure la màxima nota!
             </p>
 
             <div class="p-4 rounded-2xl bg-amber-950/20 border border-amber-500/30 flex items-start gap-3.5">
               <i data-lucide="sparkles" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
               <div class="text-xs sm:text-sm text-slate-300 space-y-1">
                 <strong class="text-amber-300 block font-heading text-sm">Com funciona aquesta guia?</strong>
-                <p>NomÃ©s has d'anar <span class="text-white font-bold">baixant per la pÃ gina</span> per trobar el vÃ­deo del profe, el repartiment de rols del grup, les 6 etapes histÃ²riques explicades, les grÃ fiques i la rÃºbrica d'avaluaciÃ³.</p>
+                <p>Només has d'anar <span class="text-white font-bold">baixant per la pàgina</span> per trobar el vídeo del profe, el repartiment de rols del grup, les 6 etapes històriques explicades, les gràfiques i la rúbrica d'avaluació.</p>
               </div>
             </div>
           </div>
@@ -209,7 +204,7 @@
                   <strong class="text-white text-sm block mt-0.5">Paper / Cartolina</strong>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                  <span class="text-slate-400 block text-[11px]">Durada exposiciÃ³</span>
+                  <span class="text-slate-400 block text-[11px]">Durada exposició</span>
                   <strong class="text-amber-300 text-sm block mt-0.5">3 a 5 minuts</strong>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
@@ -217,7 +212,7 @@
                   <strong class="text-white text-sm block mt-0.5">3 o 4 alumnes</strong>
                 </div>
                 <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                  <span class="text-slate-400 block text-[11px]">Etapes obligatÃ²ries</span>
+                  <span class="text-slate-400 block text-[11px]">Etapes obligatòries</span>
                   <strong class="text-amber-300 text-sm block mt-0.5">6 Etapes clau</strong>
                 </div>
               </div>
@@ -225,11 +220,11 @@
               <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/80 text-xs space-y-2 text-slate-300">
                 <strong class="text-white flex items-center gap-1.5">
                   <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                  QuÃ¨ ha de tenir cada etapa a la cartolina?
+                  Què ha de tenir cada etapa a la cartolina?
                 </strong>
                 <ul class="list-disc list-inside space-y-1 text-slate-400 pl-1 text-[11px]">
                   <li>Data o segle aproximat.</li>
-                  <li>ExplicaciÃ³ breu (3-4 lÃ­nies del fet o context).</li>
+                  <li>Explicació breu (3-4 línies del fet o context).</li>
                   <li>Element visual (foto d'autor, mapa, monument o fragment).</li>
                   <li>Dada curiosa o document clau.</li>
                 </ul>
@@ -239,16 +234,16 @@
         </div>
       </section>
 
-      <!-- VÃDEO DE REFERÃˆNCIA DEL PROFESSOR -->
+      <!-- VÍDEO DE REFERÈNCIA DEL PROFESSOR -->
       <section class="space-y-6">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
           <div>
             <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-amber-400">
               <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i>
-              VÃ­deo de ReferÃ¨ncia del Professor
+              Vídeo de Referència del Professor
             </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">La histÃ²ria del catalÃ  (ilÂ·lustrada)</h2>
-            <p class="text-slate-400 text-xs sm:text-sm">Canal: <em>La FilÃ²loga de GuÃ rdia</em> â€¢ VÃ­deo recomanat a classe per entendre tota l'evoluciÃ³.</p>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">La història del català (il·lustrada)</h2>
+            <p class="text-slate-400 text-xs sm:text-sm">Canal: <em>La Filòloga de Guàrdia</em> • Vídeo recomanat a classe per entendre tota l'evolució.</p>
           </div>
           <a href="https://www.youtube.com/watch?v=fNWdlhM9zzY" target="_blank" rel="noopener noreferrer" class="self-start md:self-auto px-4 py-2 rounded-xl bg-red-600/20 hover:bg-red-600/30 text-red-300 border border-red-500/30 text-xs font-bold flex items-center gap-2 transition">
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
@@ -263,7 +258,7 @@
               <iframe 
                 class="absolute inset-0 w-full h-full" 
                 src="https://www.youtube-nocookie.com/embed/fNWdlhM9zzY" 
-                title="La histÃ²ria del catalÃ  (ilÂ·lustrada)" 
+                title="La història del català (il·lustrada)" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
@@ -275,40 +270,40 @@
           <div class="lg:col-span-4 glass-card rounded-3xl p-6 border border-slate-800 space-y-4 text-xs">
             <h3 class="font-bold text-white text-sm flex items-center gap-2">
               <i data-lucide="bookmark" class="w-4 h-4 text-amber-400"></i>
-              <span>Guia RÃ pida per a l'Eix del VÃ­deo</span>
+              <span>Guia Ràpida per a l'Eix del Vídeo</span>
             </h3>
             <p class="text-slate-300 leading-relaxed">
-              Mentre mires el vÃ­deo, fixa't en aquests moments clau per incorporar-los directament a la teva exposiciÃ³:
+              Mentre mires el vídeo, fixa't en aquests moments clau per incorporar-los directament a la teva exposició:
             </p>
             <div class="space-y-2.5">
               <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                <span class="text-amber-400 font-bold block">1. Origen LlatÃ­ Vulgar</span>
-                <span class="text-slate-400 text-[11px]">Com es diferencia del llatÃ­ clÃ ssic i comenÃ§a a sonar a catalÃ  als Pirineus.</span>
+                <span class="text-amber-400 font-bold block">1. Origen Llatí Vulgar</span>
+                <span class="text-slate-400 text-[11px]">Com es diferencia del llatí clàssic i comença a sonar a català als Pirineus.</span>
               </div>
               <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                <span class="text-amber-400 font-bold block">2. Homilies d'OrganyÃ </span>
-                <span class="text-slate-400 text-[11px]">El primer sermÃ³ religiÃ³s en llengua catalana trobat a l'Alt Urgell.</span>
+                <span class="text-amber-400 font-bold block">2. Homilies d'Organyà</span>
+                <span class="text-slate-400 text-[11px]">El primer sermó religiós en llengua catalana trobat a l'Alt Urgell.</span>
               </div>
               <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                <span class="text-amber-400 font-bold block">3. La DecadÃ¨ncia i Nova Planta</span>
-                <span class="text-slate-400 text-[11px]">La imposiciÃ³ del castellÃ  i com la gent el mantÃ© viu a casa seva.</span>
+                <span class="text-amber-400 font-bold block">3. La Decadència i Nova Planta</span>
+                <span class="text-slate-400 text-[11px]">La imposició del castellà i com la gent el manté viu a casa seva.</span>
               </div>
               <div class="p-2.5 rounded-xl bg-slate-900/90 border border-slate-800">
                 <span class="text-amber-400 font-bold block">4. Pompeu Fabra: "L'Ordenador"</span>
-                <span class="text-slate-400 text-[11px]">Per quÃ¨ necessitÃ vem normes ortogrÃ fiques per no escriure cadascÃº com volia.</span>
+                <span class="text-slate-400 text-[11px]">Per què necessitàvem normes ortogràfiques per no escriure cadascú com volia.</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ROLS DINS DEL GRUP (ORGANITZACIÃ“ D'EQUIP) -->
+      <!-- ROLS DINS DEL GRUP (ORGANITZACIÓ D'EQUIP) -->
       <section class="space-y-6">
         <div class="text-center max-w-2xl mx-auto space-y-2">
-          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">OrganitzaciÃ³ del Treball</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Organització del Treball</span>
           <h2 class="text-3xl font-extrabold text-white">Els 4 Rols de l'Equip (3 o 4 Alumnes)</h2>
           <p class="text-slate-400 text-xs sm:text-sm">
-            Tal com diu el document del professor, cadascÃº tindrÃ  una responsabilitat principal, perÃ² <strong>tots heu de parlar a l'exposiciÃ³ oral</strong>!
+            Tal com diu el document del professor, cadascú tindrà una responsabilitat principal, però <strong>tots heu de parlar a l'exposició oral</strong>!
           </p>
         </div>
 
@@ -335,10 +330,10 @@
             </div>
             <h3 class="text-base font-bold text-white">Redactor/a Principal</h3>
             <p class="text-slate-300 text-xs leading-relaxed">
-              Revisa la correcciÃ³ lingÃ¼Ã­stica: que no hi hagi faltes d'ortografia i que les 3-4 lÃ­nies de text de cada etapa estiguin perfectament redactades.
+              Revisa la correcció lingüística: que no hi hagi faltes d'ortografia i que les 3-4 línies de text de cada etapa estiguin perfectament redactades.
             </p>
             <div class="pt-2 text-[11px] text-cyan-300 font-semibold flex items-center gap-1">
-              <i data-lucide="check" class="w-3.5 h-3.5"></i> Ortografia i sÃ­ntesi
+              <i data-lucide="check" class="w-3.5 h-3.5"></i> Ortografia i síntesi
             </div>
           </div>
 
@@ -363,7 +358,7 @@
             </div>
             <h3 class="text-base font-bold text-white">Portaveu / Cronometrador</h3>
             <p class="text-slate-300 text-xs leading-relaxed">
-              Coordina el repartiment dels minuts d'exposiciÃ³ oral (entre 3 i 5 minuts) perquÃ¨ tots els membres parlin exactament el mateix temps.
+              Coordina el repartiment dels minuts d'exposició oral (entre 3 i 5 minuts) perquè tots els membres parlin exactament el mateix temps.
             </p>
             <div class="pt-2 text-[11px] text-rose-300 font-semibold flex items-center gap-1">
               <i data-lucide="check" class="w-3.5 h-3.5"></i> Control dels 3-5 minuts
@@ -373,13 +368,13 @@
         </div>
       </section>
 
-      <!-- LES 6 ETAPES HISTÃ’RIQUES DE L'EIX CRONOLÃ’GIC -->
+      <!-- LES 6 ETAPES HISTÒRIQUES DE L'EIX CRONOLÒGIC -->
       <section class="space-y-8">
         <div class="text-center max-w-3xl mx-auto space-y-2">
           <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Contingut del Document Oficial</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">L'Eix CronolÃ²gic: Les 6 Etapes ObligatÃ²ries</h2>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white">L'Eix Cronològic: Les 6 Etapes Obligatòries</h2>
           <p class="text-slate-400 text-xs sm:text-sm">
-            Fes servir aquest resum detallat per escriure exactament els textos de la vostra cartolina i preparar el guiÃ³ oral.
+            Fes servir aquest resum detallat per escriure exactament els textos de la vostra cartolina i preparar el guió oral.
           </p>
         </div>
 
@@ -391,17 +386,17 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
                 <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                  ETAPA 1 â€¢ SEGLES IX - XII
+                  ETAPA 1 • SEGLES IX - XII
                 </span>
                 <span class="text-xs text-slate-400 font-mono">Els primers passos</span>
               </div>
               <span class="text-xs font-semibold text-amber-400">Naixement de la llengua</span>
             </div>
 
-            <h3 class="text-2xl font-bold text-white">Del LlatÃ­ al CatalÃ : Primers Documents Escrits</h3>
+            <h3 class="text-2xl font-bold text-white">Del Llatí al Català: Primers Documents Escrits</h3>
 
             <p class="text-slate-300 text-sm leading-relaxed">
-              El catalÃ  Ã©s una <strong>llengua romÃ nica</strong> nascuda de l'evoluciÃ³ del <em>llatÃ­ vulgar</em> parlat a la part nord-oriental de la PenÃ­nsula IbÃ¨rica durant els segles IX i X. Durant segles nomÃ©s es parlava, fins que al segle XII apareixen els primers textos escrits Ã­ntegrament en catalÃ  per necessitats prÃ ctiques i religioses.
+              El català és una <strong>llengua romànica</strong> nascuda de l'evolució del <em>llatí vulgar</em> parlat a la part nord-oriental de la Península Ibèrica durant els segles IX i X. Durant segles només es parlava, fins que al segle XII apareixen els primers textos escrits íntegrament en català per necessitats pràctiques i religioses.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
@@ -410,20 +405,20 @@
                   <i data-lucide="file-text" class="w-4 h-4"></i>
                   Liber Iudiciorum (Llibre dels Judicis)
                 </strong>
-                <p class="text-slate-400">Ã‰s el <strong>primer text jurÃ­dic</strong> en catalÃ  (segle XII). TraducciÃ³ del codi de lleis visigÃ²tic perquÃ¨ els jutges i el poble el poguessin entendre.</p>
+                <p class="text-slate-400">És el <strong>primer text jurídic</strong> en català (segle XII). Traducció del codi de lleis visigòtic perquè els jutges i el poble el poguessin entendre.</p>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
                 <strong class="text-amber-300 flex items-center gap-1.5 font-bold">
                   <i data-lucide="book" class="w-4 h-4"></i>
-                  Homilies d'OrganyÃ  (c. 1200)
+                  Homilies d'Organyà (c. 1200)
                 </strong>
-                <p class="text-slate-400">El <strong>primer text literari i religiÃ³s en prosa</strong> conservat. Sis sermons trobats a la rectoria d'OrganyÃ  (Alt Urgell) per predicar al poble.</p>
+                <p class="text-slate-400">El <strong>primer text literari i religiós en prosa</strong> conservat. Sis sermons trobats a la rectoria d'Organyà (Alt Urgell) per predicar al poble.</p>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200">
-              ðŸ’¡ <strong>Dada curiosa per a la cartolina:</strong> Abans d'aquests textos, el catalÃ  ja apareixia amagat en juraments feudals i testaments escrits en llatÃ­ corruptat (com el <em>Jurament de Radulf Oriol</em> de 1028).
+              💡 <strong>Dada curiosa per a la cartolina:</strong> Abans d'aquests textos, el català ja apareixia amagat en juraments feudals i testaments escrits en llatí corruptat (com el <em>Jurament de Radulf Oriol</em> de 1028).
             </div>
           </div>
 
@@ -432,17 +427,17 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
                 <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
-                  ETAPA 2 â€¢ SEGLES XIII - XIV
+                  ETAPA 2 • SEGLES XIII - XIV
                 </span>
-                <span class="text-xs text-slate-400 font-mono">Corona d'AragÃ³</span>
+                <span class="text-xs text-slate-400 font-mono">Corona d'Aragó</span>
               </div>
-              <span class="text-xs font-semibold text-cyan-400">ExpansiÃ³ MediterrÃ nia</span>
+              <span class="text-xs font-semibold text-cyan-400">Expansió Mediterrània</span>
             </div>
 
-            <h3 class="text-2xl font-bold text-white">L'ExpansiÃ³ de la Llengua per la MediterrÃ nia</h3>
+            <h3 class="text-2xl font-bold text-white">L'Expansió de la Llengua per la Mediterrània</h3>
 
             <p class="text-slate-300 text-sm leading-relaxed">
-              Amb les conquestes de Jaume I i els reis de la Corona d'AragÃ³, el catalÃ  s'expandeix des de la Catalunya Vella cap al <strong>PaÃ­s ValenciÃ </strong> i les <strong>Illes Balears</strong>, i posteriorment cap a SicÃ­lia, NÃ pols, Atenes, NeopÃ tria i Sardenya (on encara avui es parla a la ciutat de l'Alguer). Es converteix en llengua internacional de comerÃ§ marÃ­tim i diplomÃ cia.
+              Amb les conquestes de Jaume I i els reis de la Corona d'Aragó, el català s'expandeix des de la Catalunya Vella cap al <strong>País Valencià</strong> i les <strong>Illes Balears</strong>, i posteriorment cap a Sicília, Nàpols, Atenes, Neopàtria i Sardenya (on encara avui es parla a la ciutat de l'Alguer). Es converteix en llengua internacional de comerç marítim i diplomàcia.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
@@ -451,20 +446,20 @@
                   <i data-lucide="user-check" class="w-4 h-4"></i>
                   Ramon Llull (1232 - 1316)
                 </strong>
-                <p class="text-slate-400">El savi mallorquÃ­ va ser el <strong>primer filÃ²sof d'Europa que va escriure ciÃ¨ncia, teologia i filosofia en una llengua romÃ nica</strong> en comptes de llatÃ­!</p>
+                <p class="text-slate-400">El savi mallorquí va ser el <strong>primer filòsof d'Europa que va escriure ciència, teologia i filosofia en una llengua romànica</strong> en comptes de llatí!</p>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
                 <strong class="text-cyan-300 flex items-center gap-1.5 font-bold">
                   <i data-lucide="landmark" class="w-4 h-4"></i>
-                  Les Quatre Grans CrÃ²niques
+                  Les Quatre Grans Cròniques
                 </strong>
-                <p class="text-slate-400">Relats histÃ²rics plens d'aventura i patriotisme: Jaume I (<em>Llibre dels Fets</em>), Bernat Desclot, Ramon Muntaner i Pere el CerimoniÃ³s.</p>
+                <p class="text-slate-400">Relats històrics plens d'aventura i patriotisme: Jaume I (<em>Llibre dels Fets</em>), Bernat Desclot, Ramon Muntaner i Pere el Cerimoniós.</p>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-xs text-cyan-200">
-              ðŸ’¡ <strong>Dada curiosa per a la cartolina:</strong> El <em>Consolat de Mar</em> va ser el codi de dret marÃ­tim redactat en catalÃ  que va regir tot el comerÃ§ de la mar MediterrÃ nia durant segles!
+              💡 <strong>Dada curiosa per a la cartolina:</strong> El <em>Consolat de Mar</em> va ser el codi de dret marítim redactat en català que va regir tot el comerç de la mar Mediterrània durant segles!
             </div>
           </div>
 
@@ -473,43 +468,43 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
                 <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                  ETAPA 3 â€¢ SEGLE XV
+                  ETAPA 3 • SEGLE XV
                 </span>
-                <span class="text-xs text-slate-400 font-mono">Ãˆpoca Daurada</span>
+                <span class="text-xs text-slate-400 font-mono">Època Daurada</span>
               </div>
               <span class="text-xs font-semibold text-indigo-400">El Segle d'Or de les Lletres</span>
             </div>
 
-            <h3 class="text-2xl font-bold text-white">L'Apogeu Literari: El Segle d'Or CatalÃ </h3>
+            <h3 class="text-2xl font-bold text-white">L'Apogeu Literari: El Segle d'Or Català</h3>
 
             <p class="text-slate-300 text-sm leading-relaxed">
-              El segle XV representa el moment de mÃ xima esplendor de la literatura catalana medieval. La <strong>Cancelleria Reial</strong> funcionava com a garant d'un model de llengua culta, clara i unificada. Especialment a ValÃ¨ncia, que viu una explosiÃ³ econÃ²mica i artÃ­stica extraordinÃ ria.
+              El segle XV representa el moment de màxima esplendor de la literatura catalana medieval. La <strong>Cancelleria Reial</strong> funcionava com a garant d'un model de llengua culta, clara i unificada. Especialment a València, que viu una explosió econòmica i artística extraordinària.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-2 text-xs">
               <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
                 <strong class="text-indigo-300 block font-bold">Joanot Martorell</strong>
-                <span class="text-slate-400 text-[11px] block mt-1">Autor de <em>Tirant lo Blanc</em>, el cavaller humÃ  i realista. Cervantes va dir al Quixot que era "el millor llibre del mÃ³n".</span>
+                <span class="text-slate-400 text-[11px] block mt-1">Autor de <em>Tirant lo Blanc</em>, el cavaller humà i realista. Cervantes va dir al Quixot que era "el millor llibre del món".</span>
               </div>
 
               <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                <strong class="text-indigo-300 block font-bold">AusiÃ s March</strong>
-                <span class="text-slate-400 text-[11px] block mt-1">El gran poeta que abandona la poesia trobadoresca provenÃ§al per escriure versos d'amor real, sincer i filosÃ²fic en catalÃ .</span>
+                <strong class="text-indigo-300 block font-bold">Ausiàs March</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">El gran poeta que abandona la poesia trobadoresca provençal per escriure versos d'amor real, sincer i filosòfic en català.</span>
               </div>
 
               <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
                 <strong class="text-indigo-300 block font-bold">Bernat Metge</strong>
-                <span class="text-slate-400 text-[11px] block mt-1">Pioner de l'Humanisme i del Renaixement a la Corona d'AragÃ³ amb la seva obra mestra <em>Lo Somni</em> (1399).</span>
+                <span class="text-slate-400 text-[11px] block mt-1">Pioner de l'Humanisme i del Renaixement a la Corona d'Aragó amb la seva obra mestra <em>Lo Somni</em> (1399).</span>
               </div>
 
               <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                <strong class="text-indigo-300 block font-bold">Joan RoÃ­s de Corella</strong>
-                <span class="text-slate-400 text-[11px] block mt-1">Mestre de la prosa elegant, la poesia mÃ­stica i els temes mitolÃ²gics clÃ ssics (<em>TragÃ¨dia de Caldesa</em>).</span>
+                <strong class="text-indigo-300 block font-bold">Joan Roís de Corella</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">Mestre de la prosa elegant, la poesia mística i els temes mitològics clàssics (<em>Tragèdia de Caldesa</em>).</span>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-200">
-              ðŸ’¡ <strong>Dada curiosa per a la cartolina:</strong> La primera bÃ­blia impresa en una llengua romÃ nica al mÃ³n va ser la <em>BÃ­blia Valenciana</em> de Bonifaci Ferrer el 1478.
+              💡 <strong>Dada curiosa per a la cartolina:</strong> La primera bíblia impresa en una llengua romànica al món va ser la <em>Bíblia Valenciana</em> de Bonifaci Ferrer el 1478.
             </div>
           </div>
 
@@ -518,26 +513,26 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
                 <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30">
-                  ETAPA 4 â€¢ SEGLES XVI - XVIII
+                  ETAPA 4 • SEGLES XVI - XVIII
                 </span>
-                <span class="text-xs text-slate-400 font-mono">PÃ¨rdua de prestigi</span>
+                <span class="text-xs text-slate-400 font-mono">Pèrdua de prestigi</span>
               </div>
               <span class="text-xs font-semibold text-rose-400">La Davallada i Decrets de Nova Planta</span>
             </div>
 
-            <h3 class="text-2xl font-bold text-white">La Davallada i la RepressiÃ³ de Nova Planta (1716)</h3>
+            <h3 class="text-2xl font-bold text-white">La Davallada i la Repressió de Nova Planta (1716)</h3>
 
             <p class="text-slate-300 text-sm leading-relaxed">
-              Amb la uniÃ³ dinÃ stica dels Reis CatÃ²lics i el trasllat de la cort a Castella, les classes nobles abandonen el catalÃ  i el castellÃ  es converteix en llengua de poder. El cop definitiu arriba amb la derrota a la <strong>Guerra de SuccessiÃ³ (11 de setembre de 1714)</strong>: Felip V imposa els <strong>Decrets de Nova Planta (1716)</strong>.
+              Amb la unió dinàstica dels Reis Catòlics i el trasllat de la cort a Castella, les classes nobles abandonen el català i el castellà es converteix en llengua de poder. El cop definitiu arriba amb la derrota a la <strong>Guerra de Successió (11 de setembre de 1714)</strong>: Felip V imposa els <strong>Decrets de Nova Planta (1716)</strong>.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
               <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
                 <strong class="text-rose-300 flex items-center gap-1.5 font-bold">
                   <i data-lucide="alert-octagon" class="w-4 h-4"></i>
-                  QuÃ¨ van suposar els Decrets de Nova Planta?
+                  Què van suposar els Decrets de Nova Planta?
                 </strong>
-                <p class="text-slate-400">AboliciÃ³ de totes les institucions catalanes (la Generalitat, les Corts i el Consell de Cent) i prohibiciÃ³ total del catalÃ  a les escoles, l'administraciÃ³ de justÃ­cia i els documents pÃºblics.</p>
+                <p class="text-slate-400">Abolició de totes les institucions catalanes (la Generalitat, les Corts i el Consell de Cent) i prohibició total del català a les escoles, l'administració de justícia i els documents públics.</p>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
@@ -545,12 +540,12 @@
                   <i data-lucide="shield" class="w-4 h-4"></i>
                   Com va sobreviure la llengua?
                 </strong>
-                <p class="text-slate-400">La llengua va resistir viva grÃ cies al poble: es continuava parlant a casa, al carrer, al camp, a les canÃ§ons populars i a les festes tradicionals.</p>
+                <p class="text-slate-400">La llengua va resistir viva gràcies al poble: es continuava parlant a casa, al carrer, al camp, a les cançons populars i a les festes tradicionals.</p>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-xs text-rose-200">
-              ðŸ’¡ <strong>Dada curiosa per a la cartolina:</strong> Malgrat la forta pressiÃ³ polÃ­tica, autors populars com el rector de Vallfogona (Francesc Vicent Garcia) mantenien viva la literatura satÃ­rica catalana.
+              💡 <strong>Dada curiosa per a la cartolina:</strong> Malgrat la forta pressió política, autors populars com el rector de Vallfogona (Francesc Vicent Garcia) mantenien viva la literatura satírica catalana.
             </div>
           </div>
 
@@ -559,38 +554,38 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
                 <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                  ETAPA 5 â€¢ SEGLE XIX (DES DE 1833)
+                  ETAPA 5 • SEGLE XIX (DES DE 1833)
                 </span>
                 <span class="text-xs text-slate-400 font-mono">El Romanticisme</span>
               </div>
               <span class="text-xs font-semibold text-emerald-400">El Gran Ressorgiment</span>
             </div>
 
-            <h3 class="text-2xl font-bold text-white">La RenaixenÃ§a: Ressorgiment Cultural i Literari</h3>
+            <h3 class="text-2xl font-bold text-white">La Renaixença: Ressorgiment Cultural i Literari</h3>
 
             <p class="text-slate-300 text-sm leading-relaxed">
-              Inspirat pel moviment romÃ ntic europeu que valorava les arrels nacionals i les llengÃ¼es prÃ²pies, neix la <strong>RenaixenÃ§a</strong>. L'inici se sol situar l'any 1833 amb la publicaciÃ³ de l'oda <em>La PÃ tria</em> de Bonaventura Carles Aribau. L'objectiu era tornar al catalÃ  la dignitat i el prestigi literari perduts.
+              Inspirat pel moviment romàntic europeu que valorava les arrels nacionals i les llengües pròpies, neix la <strong>Renaixença</strong>. L'inici se sol situar l'any 1833 amb la publicació de l'oda <em>La Pàtria</em> de Bonaventura Carles Aribau. L'objectiu era tornar al català la dignitat i el prestigi literari perduts.
             </p>
 
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
               <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
                 <strong class="text-emerald-300 block font-bold">Jacint Verdaguer</strong>
-                <span class="text-slate-400 text-[11px] block mt-1">El gran poeta nacional (<em>L'AtlÃ ntida</em>, <em>CanigÃ³</em>). Va demostrar que el catalÃ  podia escriure la poesia mÃ©s sublim d'Europa.</span>
+                <span class="text-slate-400 text-[11px] block mt-1">El gran poeta nacional (<em>L'Atlàntida</em>, <em>Canigó</em>). Va demostrar que el català podia escriure la poesia més sublim d'Europa.</span>
               </div>
 
               <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                <strong class="text-emerald-300 block font-bold">Ã€ngel GuimerÃ </strong>
+                <strong class="text-emerald-300 block font-bold">Àngel Guimerà</strong>
                 <span class="text-slate-400 text-[11px] block mt-1">Dramaturg teatral de fama internacional amb drames apassionats com <em>Terra baixa</em> ("He mort el llop!") i <em>Mar i cel</em>.</span>
               </div>
 
               <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
-                <strong class="text-emerald-300 block font-bold">NarcÃ­s Oller</strong>
-                <span class="text-slate-400 text-[11px] block mt-1">El pare de la novelÂ·la catalana moderna realista (<em>La papallona</em>, <em>La febre d'or</em>), retratant la revoluciÃ³ industrial.</span>
+                <strong class="text-emerald-300 block font-bold">Narcís Oller</strong>
+                <span class="text-slate-400 text-[11px] block mt-1">El pare de la novel·la catalana moderna realista (<em>La papallona</em>, <em>La febre d'or</em>), retratant la revolució industrial.</span>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-emerald-200">
-              ðŸ’¡ <strong>Dada curiosa per a la cartolina:</strong> La restauraciÃ³ dels <em>Jocs Florals</em> el 1859 sota el lema "PÃ tria, Feli i Amor" va omplir els teatres i va engrescar milers de poetes a escriure en catalÃ .
+              💡 <strong>Dada curiosa per a la cartolina:</strong> La restauració dels <em>Jocs Florals</em> el 1859 sota el lema "Pàtria, Feli i Amor" va omplir els teatres i va engrescar milers de poetes a escriure en català.
             </div>
           </div>
 
@@ -599,17 +594,17 @@
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center gap-2.5">
                 <span class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-violet-500/20 text-violet-300 border border-violet-500/30">
-                  ETAPA 6 â€¢ 1900 - ACTUALITAT
+                  ETAPA 6 • 1900 - ACTUALITAT
                 </span>
                 <span class="text-xs text-slate-400 font-mono">Modernitat i Reptes</span>
               </div>
-              <span class="text-xs font-semibold text-violet-400">NormalitzaciÃ³, Franquisme i Segle XXI</span>
+              <span class="text-xs font-semibold text-violet-400">Normalització, Franquisme i Segle XXI</span>
             </div>
 
-            <h3 class="text-2xl font-bold text-white">Modernisme, Pompeu Fabra, Dictadura i l'Ãˆpoca Actual</h3>
+            <h3 class="text-2xl font-bold text-white">Modernisme, Pompeu Fabra, Dictadura i l'Època Actual</h3>
 
             <p class="text-slate-300 text-sm leading-relaxed">
-              El segle XX comenÃ§a amb la gran fita de la <strong>normativitzaciÃ³ de Pompeu Fabra</strong> (Normes ortogrÃ fiques de 1913 i Diccionari de 1932) i l'oficialitat amb l'Estatut republicÃ  de 1932. DesprÃ©s de la dura foscor de la dictadura franquista (1939-1975), la democrÃ cia permet recuperar la immersiÃ³ lingÃ¼Ã­stica, TV3 i el catalÃ  modern.
+              El segle XX comença amb la gran fita de la <strong>normativització de Pompeu Fabra</strong> (Normes ortogràfiques de 1913 i Diccionari de 1932) i l'oficialitat amb l'Estatut republicà de 1932. Després de la dura foscor de la dictadura franquista (1939-1975), la democràcia permet recuperar la immersió lingüística, TV3 i el català modern.
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
@@ -618,39 +613,39 @@
                   <i data-lucide="award" class="w-4 h-4"></i>
                   Pompeu Fabra: El Mestre de la Llengua
                 </strong>
-                <p class="text-slate-400">Enginyer industrial i lingÃ¼ista que va modernitzar i unificar el catalÃ , creant una ortografia clara vÃ lida per a tots els dialectes (central, valenciÃ , balear...).</p>
+                <p class="text-slate-400">Enginyer industrial i lingüista que va modernitzar i unificar el català, creant una ortografia clara vàlida per a tots els dialectes (central, valencià, balear...).</p>
               </div>
 
               <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1 text-xs">
                 <strong class="text-violet-300 flex items-center gap-1.5 font-bold">
                   <i data-lucide="radio" class="w-4 h-4"></i>
-                  La SituaciÃ³ Avui (Reptes del Segle XXI)
+                  La Situació Avui (Reptes del Segle XXI)
                 </strong>
-                <p class="text-slate-400">El catalÃ  Ã©s oficial i present a l'escola i govern, perÃ² afronta el gran repte de l'Ãºs entre els joves, a les plataformes digitals (TikTok, Twitch, Netflix) i a la mÃºsica urbana.</p>
+                <p class="text-slate-400">El català és oficial i present a l'escola i govern, però afronta el gran repte de l'ús entre els joves, a les plataformes digitals (TikTok, Twitch, Netflix) i a la música urbana.</p>
               </div>
             </div>
 
             <div class="p-3 rounded-xl bg-violet-500/10 border border-violet-500/20 text-xs text-violet-200">
-              ðŸ’¡ <strong>Dada curiosa per a la cartolina:</strong> Durant el franquisme, malgrat estar prohibit parlar catalÃ  en pÃºblic, la gent s'organitzava a les cases per fer classes clandestines de catalÃ  i cantar canÃ§ons de la <em>Nova CanÃ§Ã³</em> (LluÃ­s Llach, Raimon).
+              💡 <strong>Dada curiosa per a la cartolina:</strong> Durant el franquisme, malgrat estar prohibit parlar català en públic, la gent s'organitzava a les cases per fer classes clandestines de català i cantar cançons de la <em>Nova Cançó</em> (Lluís Llach, Raimon).
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- GRÃ€FIQUES HISTÃ’RIQUES DE LA LLENGUA (CHART.JS) -->
+      <!-- GRÀFIQUES HISTÒRIQUES DE LA LLENGUA (CHART.JS) -->
       <section class="space-y-6">
         <div class="text-center max-w-3xl mx-auto space-y-2">
-          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">GrÃ fiques EstadÃ­stiques</span>
-          <h2 class="text-3xl font-extrabold text-white">L'EvoluciÃ³ del CatalÃ  en Dades i GrÃ fics</h2>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Gràfiques Estadístiques</span>
+          <h2 class="text-3xl font-extrabold text-white">L'Evolució del Català en Dades i Gràfics</h2>
           <p class="text-slate-400 text-xs sm:text-sm">
-            Per treure la mÃ xima puntuaciÃ³ a l'apartat de disseny visual i rigor histÃ²ric, podeu dibuixar alguna d'aquestes grÃ fiques a la vostra cartolina!
+            Per treure la màxima puntuació a l'apartat de disseny visual i rigor històric, podeu dibuixar alguna d'aquestes gràfiques a la vostra cartolina!
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          <!-- CHART 1: HISTÃ’RIA DE L'ÃšS PÃšBLIC -->
+          <!-- CHART 1: HISTÒRIA DE L'ÚS PÚBLIC -->
           <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-4">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
@@ -658,8 +653,8 @@
                   <i data-lucide="trending-up" class="w-4 h-4"></i>
                 </div>
                 <div>
-                  <h3 class="text-base font-bold text-white">Ãndex d'Ãšs Oficial i Prestigi Cultural (S. X - S. XXI)</h3>
-                  <span class="text-xs text-slate-400">Com ha variat la forÃ§a de la llengua al llarg de 1000 anys</span>
+                  <h3 class="text-base font-bold text-white">Índex d'Ús Oficial i Prestigi Cultural (S. X - S. XXI)</h3>
+                  <span class="text-xs text-slate-400">Com ha variat la força de la llengua al llarg de 1000 anys</span>
                 </div>
               </div>
             </div>
@@ -670,11 +665,11 @@
 
             <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 flex items-start gap-2">
               <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-              <span>Observa els dos moments d'esplendor: el <strong>Segle d'Or (S. XV)</strong> i l'<strong>Ãˆpoca de la RepÃºblica (1932)</strong>, i les dues grans caigudes: els <strong>Decrets de Nova Planta (1716)</strong> i la <strong>Dictadura Franquista (1939-1975)</strong>.</span>
+              <span>Observa els dos moments d'esplendor: el <strong>Segle d'Or (S. XV)</strong> i l'<strong>Època de la República (1932)</strong>, i les dues grans caigudes: els <strong>Decrets de Nova Planta (1716)</strong> i la <strong>Dictadura Franquista (1939-1975)</strong>.</span>
             </div>
           </div>
 
-          <!-- CHART 2: ORIGEN ETIMOLÃ’GIC DEL VOCABULARI -->
+          <!-- CHART 2: ORIGEN ETIMOLÒGIC DEL VOCABULARI -->
           <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-7 border border-slate-800 space-y-4">
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2.5">
@@ -682,7 +677,7 @@
                   <i data-lucide="pie-chart" class="w-4 h-4"></i>
                 </div>
                 <div>
-                  <h3 class="text-base font-bold text-white">D'on ve el Vocabulari CatalÃ ?</h3>
+                  <h3 class="text-base font-bold text-white">D'on ve el Vocabulari Català?</h3>
                   <span class="text-xs text-slate-400">Origen de les paraules que fem servir</span>
                 </div>
               </div>
@@ -694,32 +689,32 @@
 
             <div class="p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-300 space-y-1">
               <div class="flex justify-between text-slate-400 text-[11px]">
-                <span>ðŸ›ï¸ LlatÃ­ vulgar: ~80%</span>
-                <span>âš”ï¸ GermÃ nic: ~8%</span>
-                <span>ðŸ•Œ Ã€rab: ~4%</span>
+                <span>🏛️ Llatí vulgar: ~80%</span>
+                <span>⚔️ Germànic: ~8%</span>
+                <span>🕌 Àrab: ~4%</span>
               </div>
-              <p class="text-slate-400 text-[11px]">Paraules Ã rabs com <em>sucre, xarop, magatzem</em>; germÃ niques com <em>guerra, blanc, guanyar</em>.</p>
+              <p class="text-slate-400 text-[11px]">Paraules àrabs com <em>sucre, xarop, magatzem</em>; germàniques com <em>guerra, blanc, guanyar</em>.</p>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- CALCULADORA DE LA RÃšBRICA D'AVALUACIÃ“ (15 PUNTS / NOTA SOBRE 10) -->
+      <!-- CALCULADORA DE LA RÚBRICA D'AVALUACIÓ (15 PUNTS / NOTA SOBRE 10) -->
       <section class="space-y-6">
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-amber-500/30 relative overflow-hidden">
           <div class="max-w-2xl space-y-2">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300">
               <i data-lucide="calculator" class="w-3.5 h-3.5"></i>
-              Calculadora Oficial de la RÃºbrica
+              Calculadora Oficial de la Rúbrica
             </div>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Autoavalua el vostre Treball d'Equip!</h2>
             <p class="text-slate-300 text-xs sm:text-sm">
-              Selecciona quants punts obtindreu a cadascun dels 5 criteris de la rÃºbrica que ha donat el professor (3 punts mÃ xim per criteri = 15 punts total).
+              Selecciona quants punts obtindreu a cadascun dels 5 criteris de la rúbrica que ha donat el professor (3 punts màxim per criteri = 15 punts total).
             </p>
           </div>
 
-          <!-- RÃšBRICA INTERACTIVA -->
+          <!-- RÚBRICA INTERACTIVA -->
           <div class="mt-8 space-y-5" id="rubric-criteria-list">
             
             <!-- CRITERI 1 -->
@@ -727,7 +722,7 @@
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span class="text-sm font-bold text-white flex items-center gap-2">
                   <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-300 text-xs font-bold flex items-center justify-center">1</span>
-                  Rigor i contingut histÃ²ric
+                  Rigor i contingut històric
                 </span>
                 <span id="score-crit-1" class="text-xs font-mono font-bold text-amber-400 px-2 py-0.5 rounded bg-amber-950/60 border border-amber-800/60">3 punts</span>
               </div>
@@ -736,7 +731,7 @@
                   3 pts: Les 6 etapes completes i precises
                 </button>
                 <button onclick="setRubricScore(1, 2, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
-                  2 pts: 4-5 etapes, informaciÃ³ correcta
+                  2 pts: 4-5 etapes, informació correcta
                 </button>
                 <button onclick="setRubricScore(1, 1, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
                   1 pt: Falten etapes o errors destacables
@@ -752,7 +747,7 @@
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span class="text-sm font-bold text-white flex items-center gap-2">
                   <span class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center">2</span>
-                  CorrecciÃ³ lingÃ¼Ã­stica (Eix i Oral)
+                  Correcció lingüística (Eix i Oral)
                 </span>
                 <span id="score-crit-2" class="text-xs font-mono font-bold text-cyan-400 px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/60">3 punts</span>
               </div>
@@ -802,7 +797,7 @@
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span class="text-sm font-bold text-white flex items-center gap-2">
                   <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 text-xs font-bold flex items-center justify-center">4</span>
-                  FluÃ¯desa oral i expressiÃ³ no verbal
+                  Fluïdesa oral i expressió no verbal
                 </span>
                 <span id="score-crit-4" class="text-xs font-mono font-bold text-indigo-400 px-2 py-0.5 rounded bg-indigo-950/60 border border-indigo-800/60">3 punts</span>
               </div>
@@ -817,7 +812,7 @@
                   1 pt: Es limita a llegir l'eix, to de veu baix
                 </button>
                 <button onclick="setRubricScore(4, 0, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
-                  0 pts: No se l'escolta o no Ã©s capaÃ§ de parlar
+                  0 pts: No se l'escolta o no és capaç de parlar
                 </button>
               </div>
             </div>
@@ -827,7 +822,7 @@
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <span class="text-sm font-bold text-white flex items-center gap-2">
                   <span class="w-6 h-6 rounded-lg bg-rose-500/20 text-rose-300 text-xs font-bold flex items-center justify-center">5</span>
-                  Treball en equip i coordinaciÃ³
+                  Treball en equip i coordinació
                 </span>
                 <span id="score-crit-5" class="text-xs font-mono font-bold text-rose-400 px-2 py-0.5 rounded bg-rose-950/60 border border-rose-800/60">3 punts</span>
               </div>
@@ -839,10 +834,10 @@
                   2 pts: Temps una mica desigual entre membres
                 </button>
                 <button onclick="setRubricScore(5, 1, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
-                  1 pt: NomÃ©s 1 o 2 membres fan gairebÃ© tot
+                  1 pt: Només 1 o 2 membres fan gairebé tot
                 </button>
                 <button onclick="setRubricScore(5, 0, this)" class="p-2.5 rounded-xl border border-slate-800 bg-slate-950/60 hover:bg-slate-800 text-slate-300 text-left">
-                  0 pts: DesinterÃ¨s absolut d'alguns integrants
+                  0 pts: Desinterès absolut d'alguns integrants
                 </button>
               </div>
             </div>
@@ -852,17 +847,17 @@
           <!-- TOTAL CALCULATED SCORE CARD -->
           <div class="mt-8 p-6 rounded-2xl bg-gradient-to-r from-amber-950/70 via-slate-900 to-indigo-950/70 border border-amber-500/40 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="space-y-1 text-center sm:text-left">
-              <span class="text-xs uppercase font-mono tracking-wider text-amber-400 font-bold">PuntuaciÃ³ Final Estimada</span>
-              <h3 id="rubric-total-title" class="text-xl sm:text-2xl font-black text-white">ExcelÂ·lent! Nota: 10 / 10</h3>
-              <p id="rubric-total-subtitle" class="text-xs text-slate-300">Compleix tots els requisits mÃ xims de la rÃºbrica del professor.</p>
+              <span class="text-xs uppercase font-mono tracking-wider text-amber-400 font-bold">Puntuació Final Estimada</span>
+              <h3 id="rubric-total-title" class="text-xl sm:text-2xl font-black text-white">Excel·lent! Nota: 10 / 10</h3>
+              <p id="rubric-total-subtitle" class="text-xs text-slate-300">Compleix tots els requisits màxims de la rúbrica del professor.</p>
             </div>
 
             <div class="flex items-center gap-3">
               <div class="text-center px-5 py-3 rounded-2xl bg-slate-950/80 border border-amber-500/40">
-                <span class="text-[10px] text-slate-400 uppercase font-mono block">Punts RÃºbrica</span>
+                <span class="text-[10px] text-slate-400 uppercase font-mono block">Punts Rúbrica</span>
                 <span id="rubric-raw-score" class="text-3xl font-black text-amber-400 font-mono">15 / 15</span>
               </div>
-              <button onclick="celebrateMaxRubric()" class="p-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-lg shadow-amber-500/25 transition active:scale-95" title="LlanÃ§ar celebraciÃ³">
+              <button onclick="celebrateMaxRubric()" class="p-3.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-lg shadow-amber-500/25 transition active:scale-95" title="Llançar celebració">
                 <i data-lucide="party-popper" class="w-5 h-5"></i>
               </button>
             </div>
@@ -871,7 +866,7 @@
         </div>
       </section>
 
-      <!-- CONSELLS D'OR PER A L'EXPOSICIÃ“ ORAL -->
+      <!-- CONSELLS D'OR PER A L'EXPOSICIÓ ORAL -->
       <section class="space-y-6">
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800">
           <div class="flex items-center gap-3 pb-4 border-b border-slate-800">
@@ -879,7 +874,7 @@
               <i data-lucide="speech" class="w-5 h-5"></i>
             </div>
             <div>
-              <h3 class="text-xl font-bold text-white">Guia d'Ãˆxit per a l'ExposiciÃ³ Oral (3 a 5 minuts)</h3>
+              <h3 class="text-xl font-bold text-white">Guia d'Èxit per a l'Exposició Oral (3 a 5 minuts)</h3>
               <p class="text-xs text-slate-400">Com repartir el temps i com parlar per guanyar-se el 10</p>
             </div>
           </div>
@@ -890,21 +885,21 @@
               <p class="text-slate-400 leading-relaxed">
                 Si sou <strong>3 persones</strong>: exactament <strong>1 minut i 20 segons per persona</strong>.
                 <br>Si sou <strong>4 persones</strong>: exactament <strong>1 minut per persona</strong>.
-                <br>Feu servir un cronÃ²metre a l'assaig abans del dia de la presentaciÃ³!
+                <br>Feu servir un cronòmetre a l'assaig abans del dia de la presentació!
               </p>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
-              <strong class="text-cyan-400 text-sm block">2. ComunicaciÃ³ No Verbal</strong>
+              <strong class="text-cyan-400 text-sm block">2. Comunicació No Verbal</strong>
               <p class="text-slate-400 leading-relaxed">
-                <strong>No llegiu la cartolina!</strong> La cartolina nomÃ©s Ã©s el suport visual. Mireu als ulls dels vostres companys de classe, manteniu una postura dreta i somrieu amb confianÃ§a.
+                <strong>No llegiu la cartolina!</strong> La cartolina només és el suport visual. Mireu als ulls dels vostres companys de classe, manteniu una postura dreta i somrieu amb confiança.
               </p>
             </div>
 
             <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
               <strong class="text-emerald-400 text-sm block">3. Suport de la Cartolina</strong>
               <p class="text-slate-400 leading-relaxed">
-                Assenyaleu amb la mÃ  la imatge o el document quan en parleu (ex: "com podeu veure aquÃ­ a les Homilies d'OrganyÃ ..."). AixÃ² demostra domini absolut de l'espai!
+                Assenyaleu amb la mà la imatge o el document quan en parleu (ex: "com podeu veure aquí a les Homilies d'Organyà..."). Això demostra domini absolut de l'espai!
               </p>
             </div>
           </div>
@@ -914,7 +909,7 @@
     </div>
 
     <!-- ======================================================== -->
-    <!-- SUBJECT 2: MATEMÃ€TIQUES (PARÃ€METRES DE CENTRALITZACIÃ“) -->
+    <!-- SUBJECT 2: MATEMÀTIQUES (PARÀMETRES DE CENTRALITZACIÓ) -->
     <!-- ======================================================== -->
     <div id="subject-mates" class="hidden space-y-16 transition-opacity duration-300">
       
@@ -924,15 +919,15 @@
           <div class="lg:col-span-7 space-y-5">
             <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-indigo-500/10 border border-indigo-500/30 text-indigo-300">
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              MatemÃ tiques ESO â€¢ EstadÃ­stica Descriptiva
+              Matemàtiques ESO • Estadística Descriptiva
             </div>
 
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-              ParÃ metres de <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">CentralitzaciÃ³ i GrÃ fics</span>
+              Paràmetres de <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400">Centralització i Gràfics</span>
             </h1>
 
             <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
-              ResoluciÃ³ interactiva completa dels 3 exercicis de la captura: cÃ lcul de la <strong class="text-white font-medium">Moda</strong>, <strong class="text-white font-medium">Mediana</strong> i <strong class="text-white font-medium">Mitjana aritmÃ¨tica</strong>, amb taula de freqÃ¼Ã¨ncies i representaciÃ³ en <strong class="text-white font-medium">diagrames de barres i de sectors</strong>.
+              Resolució interactiva completa dels 3 exercicis de la captura: càlcul de la <strong class="text-white font-medium">Moda</strong>, <strong class="text-white font-medium">Mediana</strong> i <strong class="text-white font-medium">Mitjana aritmètica</strong>, amb taula de freqüències i representació en <strong class="text-white font-medium">diagrames de barres i de sectors</strong>.
             </p>
 
             <div class="flex flex-wrap items-center gap-2.5 pt-2">
@@ -958,9 +953,9 @@
                 <span class="text-xs text-slate-500">Exercici 10</span>
               </div>
               <div class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 font-mono space-y-2">
-                <p class="text-slate-200 font-sans font-semibold">Calcula els parÃ metres de centralitzaciÃ³:</p>
+                <p class="text-slate-200 font-sans font-semibold">Calcula els paràmetres de centralització:</p>
                 <div class="text-[11px] space-y-1 text-slate-400 pl-2 border-l border-indigo-500/40">
-                  <p><strong class="text-amber-400">a)</strong> Marques cotxes: Renault, Audi, CitroÃ«n...</p>
+                  <p><strong class="text-amber-400">a)</strong> Marques cotxes: Renault, Audi, Citroën...</p>
                   <p><strong class="text-cyan-400">b)</strong> Edats nois/es: 12, 15, 13, 12, 16...</p>
                   <p><strong class="text-emerald-400">c)</strong> Suspeses: 0, 1, 0, 2, 4, 0, 1, 1...</p>
                 </div>
@@ -968,7 +963,7 @@
               <div class="grid grid-cols-3 gap-2 text-center text-xs">
                 <div class="p-2 rounded-xl bg-indigo-950/40 border border-indigo-800/40">
                   <span class="text-slate-400 block text-[10px] uppercase">Moda</span>
-                  <span class="font-bold text-indigo-300">El mÃ©s repetit</span>
+                  <span class="font-bold text-indigo-300">El més repetit</span>
                 </div>
                 <div class="p-2 rounded-xl bg-cyan-950/40 border border-cyan-800/40">
                   <span class="text-slate-400 block text-[10px] uppercase">Mediana</span>
@@ -984,7 +979,7 @@
         </div>
       </section>
 
-      <!-- SECCIÃ“ DE RESOLUCIÃ“ DE L'EXERCICI (INTERACTIU) -->
+      <!-- SECCIÓ DE RESOLUCIÓ DE L'EXERCICI (INTERACTIU) -->
       <section class="space-y-6">
         <!-- Switcher Tabs -->
         <div class="flex items-center justify-between pb-2 border-b border-slate-800">
@@ -1005,7 +1000,7 @@
 
           <button onclick="toggleStepByStep()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 flex items-center gap-2 transition">
             <i data-lucide="play-circle" class="w-4 h-4 text-indigo-400"></i>
-            <span id="step-btn-text">Veure SimulaciÃ³ Pas a Pas</span>
+            <span id="step-btn-text">Veure Simulació Pas a Pas</span>
           </button>
         </div>
 
@@ -1017,7 +1012,7 @@
                 <span id="ex-badge" class="px-3 py-1 rounded-md text-xs font-mono font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">APARTAT A</span>
                 <span id="ex-type-badge" class="px-3 py-1 rounded-md text-xs font-semibold bg-slate-800 text-slate-300">Variable Qualitativa</span>
               </div>
-              <h3 id="ex-title" class="text-2xl font-bold text-white mt-1.5">Marques dels cotxes en un taller mecÃ nic</h3>
+              <h3 id="ex-title" class="text-2xl font-bold text-white mt-1.5">Marques dels cotxes en un taller mecànic</h3>
             </div>
             <span class="text-xs text-slate-400 font-mono">Total dades (N): <strong id="ex-count" class="text-white">14</strong></span>
           </div>
@@ -1032,7 +1027,7 @@
           <div id="step-panel" class="hidden p-5 rounded-2xl bg-indigo-950/20 border border-indigo-500/30 space-y-3">
             <h4 class="text-xs font-bold text-indigo-300 uppercase tracking-wider flex items-center gap-1.5">
               <i data-lucide="list-ordered" class="w-4 h-4"></i>
-              <span>ProcÃ©s de Raonament i CÃ lcul Pas a Pas</span>
+              <span>Procés de Raonament i Càlcul Pas a Pas</span>
             </h4>
             <div id="step-timeline" class="space-y-2.5 text-xs text-slate-300"></div>
           </div>
@@ -1046,7 +1041,7 @@
                 <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
               </div>
               <div id="res-moda-val" class="text-2xl font-black text-white font-heading">Seat</div>
-              <p id="res-moda-desc" class="text-xs text-slate-300">Apareix 5 vegades (mÃ xima freqÃ¼Ã¨ncia).</p>
+              <p id="res-moda-desc" class="text-xs text-slate-300">Apareix 5 vegades (màxima freqüència).</p>
             </div>
 
             <!-- MEDIANA -->
@@ -1063,7 +1058,7 @@
             <!-- MITJANA -->
             <div class="p-5 rounded-2xl bg-slate-900/90 border border-emerald-500/30 space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-emerald-400 uppercase">Mitjana (xÌ„)</span>
+                <span class="text-xs font-bold text-emerald-400 uppercase">Mitjana (x̄)</span>
                 <i data-lucide="sigma" class="w-4 h-4 text-emerald-400"></i>
               </div>
               <div id="res-mitjana-val" class="text-2xl font-black text-white font-heading">No existeix</div>
@@ -1072,22 +1067,22 @@
             </div>
           </div>
 
-          <!-- TAULA DE FREQÃœÃˆNCIES COMPLETA -->
+          <!-- TAULA DE FREQÜÈNCIES COMPLETA -->
           <div class="space-y-3">
             <h4 class="text-sm font-bold text-white flex items-center gap-2">
               <i data-lucide="table-2" class="w-4 h-4 text-indigo-400"></i>
-              <span>Taula de FreqÃ¼Ã¨ncies Completa i CÃ lcul d'Angles (Î± = (fáµ¢ / N) Ã— 360Â°)</span>
+              <span>Taula de Freqüències Completa i Càlcul d'Angles (α = (fᵢ / N) × 360°)</span>
             </h4>
             <div class="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-950/60">
               <table class="w-full text-left text-xs">
                 <thead class="bg-slate-900 text-slate-300 font-mono border-b border-slate-800 uppercase tracking-wider text-[11px]">
                   <tr>
-                    <th class="px-4 py-3 font-semibold text-white">Categoria (xáµ¢)</th>
-                    <th class="px-4 py-3 font-semibold text-amber-300">fáµ¢ (Absoluta)</th>
-                    <th class="px-4 py-3 font-semibold text-cyan-300">háµ¢ (Relativa)</th>
+                    <th class="px-4 py-3 font-semibold text-white">Categoria (xᵢ)</th>
+                    <th class="px-4 py-3 font-semibold text-amber-300">fᵢ (Absoluta)</th>
+                    <th class="px-4 py-3 font-semibold text-cyan-300">hᵢ (Relativa)</th>
                     <th class="px-4 py-3 font-semibold text-indigo-300">% (Percentatge)</th>
-                    <th class="px-4 py-3 font-semibold text-emerald-300">Fáµ¢ (Acumulada)</th>
-                    <th class="px-4 py-3 font-semibold text-rose-300">Angle (Î±Â°)</th>
+                    <th class="px-4 py-3 font-semibold text-emerald-300">Fᵢ (Acumulada)</th>
+                    <th class="px-4 py-3 font-semibold text-rose-300">Angle (α°)</th>
                   </tr>
                 </thead>
                 <tbody id="frequency-table-body" class="divide-y divide-slate-800/70 font-mono text-slate-200"></tbody>
@@ -1099,7 +1094,7 @@
         </div>
       </section>
 
-      <!-- GRÃ€FIQUES DINÃ€MIQUES DE MATES -->
+      <!-- GRÀFIQUES DINÀMIQUES DE MATES -->
       <section class="space-y-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
@@ -1131,14 +1126,14 @@
               <canvas id="pieChartCanvas"></canvas>
             </div>
             <p class="text-xs text-slate-400 p-3 rounded-xl bg-slate-900 border border-slate-800">
-              Angle: <strong class="text-cyan-300">Î± = (fáµ¢ / N) Ã— 360Â°</strong>. La circumferÃ¨ncia sencera suma 360Â°.
+              Angle: <strong class="text-cyan-300">α = (fᵢ / N) × 360°</strong>. La circumferència sencera suma 360°.
             </p>
           </div>
 
         </div>
       </section>
 
-      <!-- LABORATORI DADES PRÃ’PIES -->
+      <!-- LABORATORI DADES PRÒPIES -->
       <section class="space-y-6">
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-indigo-500/30 space-y-5">
           <div class="space-y-2">
@@ -1146,8 +1141,8 @@
               <i data-lucide="flask-conical" class="w-3.5 h-3.5"></i>
               Laboratori Virtual de Dades
             </div>
-            <h2 class="text-2xl font-bold text-white">Prova amb les teves prÃ²pies dades</h2>
-            <p class="text-slate-400 text-xs">Introdueix qualsevol conjunt de nÃºmeros o paraules separats per comes:</p>
+            <h2 class="text-2xl font-bold text-white">Prova amb les teves pròpies dades</h2>
+            <p class="text-slate-400 text-xs">Introdueix qualsevol conjunt de números o paraules separats per comes:</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
@@ -1185,7 +1180,7 @@
         </div>
       </section>
 
-      <!-- TEST AUTOAVALUACIÃ“ MATES -->
+      <!-- TEST AUTOAVALUACIÓ MATES -->
       <section class="space-y-6">
         <div class="text-center max-w-2xl mx-auto space-y-1">
           <span class="text-xs font-bold uppercase tracking-widest text-emerald-400">Posa't a Prova</span>
@@ -1196,11 +1191,11 @@
           <!-- Q1 -->
           <div class="glass-card rounded-2xl p-5 border border-slate-800 space-y-3" data-q="1">
             <span class="text-[11px] font-mono font-bold text-indigo-400 uppercase">Pregunta 1</span>
-            <p class="text-white text-xs sm:text-sm font-semibold">Per quÃ¨ a l'apartat a) (marques de cotxes) NO podem calcular la mitjana?</p>
+            <p class="text-white text-xs sm:text-sm font-semibold">Per què a l'apartat a) (marques de cotxes) NO podem calcular la mitjana?</p>
             <div class="space-y-2 text-xs">
-              <button onclick="checkAnswer(1, 0, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">A) PerquÃ¨ falten cotxes a la mostra.</button>
-              <button onclick="checkAnswer(1, 1, this)" data-correct="true" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">B) PerquÃ¨ Ã©s una variable qualitativa (paraules) i no es poden sumar.</button>
-              <button onclick="checkAnswer(1, 2, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">C) PerquÃ¨ el nombre total Ã©s parell (14).</button>
+              <button onclick="checkAnswer(1, 0, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">A) Perquè falten cotxes a la mostra.</button>
+              <button onclick="checkAnswer(1, 1, this)" data-correct="true" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">B) Perquè és una variable qualitativa (paraules) i no es poden sumar.</button>
+              <button onclick="checkAnswer(1, 2, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">C) Perquè el nombre total és parell (14).</button>
             </div>
             <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
           </div>
@@ -1211,8 +1206,8 @@
             <p class="text-white text-xs sm:text-sm font-semibold">Com es troba la mediana a l'apartat c) amb N = 16 (parell)?</p>
             <div class="space-y-2 text-xs">
               <button onclick="checkAnswer(2, 0, this)" data-correct="true" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">A) S'ordenen les dades i es fa la mitjana de les posicions 8a i 9a.</button>
-              <button onclick="checkAnswer(2, 1, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">B) S'agafa la dada mÃ©s gran dividit per dos.</button>
-              <button onclick="checkAnswer(2, 2, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">C) La mediana nomÃ©s existeix amb N senar.</button>
+              <button onclick="checkAnswer(2, 1, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">B) S'agafa la dada més gran dividit per dos.</button>
+              <button onclick="checkAnswer(2, 2, this)" class="w-full p-3 rounded-xl bg-slate-900/90 text-left border border-slate-800 text-slate-300 transition">C) La mediana només existeix amb N senar.</button>
             </div>
             <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
           </div>
@@ -1221,166 +1216,15 @@
 
     </div>
 
-    <!-- ======================================================== -->
-    <!-- SUBJECT 3: FÍSICA I QUÍMICA -->
-    <!-- ======================================================== -->
-    <div id="subject-fisica" class="hidden space-y-16 transition-opacity duration-300">
-      
-      <section class="relative pt-4 pb-8 overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-12 space-y-5">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-teal-500/10 border border-teal-500/30 text-teal-300">
-              <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-              Ciències • La matèria i la investigació
-            </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
-              Física i <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-emerald-400 to-teal-200">Química</span>
-            </h1>
-            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light">
-              Explora els conceptes fonamentals de la Física i la Química, i descobreix com el <strong>Mètode Científic</strong> ens ajuda a entendre com funciona el nostre món. Tot el material del professor, vídeos i documents de referència estan aquí.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- CONCEPTES: FÍSICA, QUÍMICA I MÈTODE CIENTÍFIC -->
-      <section class="space-y-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <!-- Física -->
-          <div class="glass-card rounded-2xl p-6 border-t-4 border-t-emerald-500 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold">
-              <i data-lucide="atom" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white">Què és la Física?</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              La <strong>Física</strong> és la ciència que estudia les propietats de la matèria i l'energia, així com els fenòmens naturals on no canvia la composició de les substàncies. Per exemple: el moviment d'un cotxe, la força de la gravetat o com es comporta la llum.
-            </p>
-          </div>
-
-          <!-- Química -->
-          <div class="glass-card rounded-2xl p-6 border-t-4 border-t-teal-500 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 font-bold">
-              <i data-lucide="flask-conical" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white">Què és la Química?</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              La <strong>Química</strong> és la ciència que estudia la composició, estructura i propietats de la matèria, i els canvis o reaccions que experimenta. A diferència de la física, aquí els fenòmens alteren l'essència de la matèria, com ara cremar fusta o l'oxidació del ferro.
-            </p>
-          </div>
-
-          <!-- Mètode Científic -->
-          <div class="glass-card rounded-2xl p-6 border-t-4 border-t-cyan-500 space-y-3">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-bold">
-              <i data-lucide="search" class="w-5 h-5"></i>
-            </div>
-            <h3 class="text-xl font-bold text-white">El Mètode Científic</h3>
-            <p class="text-slate-300 text-sm leading-relaxed">
-              El <strong>Mètode Científic</strong> és el procés sistemàtic que s'utilitza per investigar fenòmens, adquirir nous coneixements o corregir-ne i integrar-ne de previs. Consta de diverses etapes: observació, formulació d'hipòtesis, experimentació, anàlisi de resultats i conclusions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- VÍDEO MÈTODE CIENTÍFIC -->
-      <section class="space-y-6">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3">
-          <div>
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-teal-400">
-              <i data-lucide="youtube" class="w-4 h-4 text-red-500"></i>
-              Vídeo Explicatiu
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">El Mètode Científic</h2>
-          </div>
-        </div>
-
-        <div class="glass-card rounded-3xl overflow-hidden p-2 border border-slate-800 shadow-2xl max-w-4xl mx-auto">
-          <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950">
-            <iframe 
-              class="absolute inset-0 w-full h-full" 
-              src="https://www.youtube-nocookie.com/embed/2l0MfhsIqUU" 
-              title="El Mètode Científic" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              allowfullscreen>
-            </iframe>
-          </div>
-        </div>
-      </section>
-
-      <!-- DOCUMENTS I PRÀCTIQUES (CARPETA FÍSICA I QUÍMICA) -->
-      <section class="space-y-6">
-        <div class="text-center max-w-3xl mx-auto space-y-2">
-          <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Material de Classe</span>
-          <h2 class="text-3xl font-extrabold text-white">Documents, Imatges i Pràctiques</h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <!-- Document 1 -->
-          <a href="./Fisica i Quimica/normes_seguretat.docx" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center">
-                <i data-lucide="file-text" class="w-6 h-6"></i>
-              </div>
-              <div class="text-left">
-                <h4 class="text-sm font-bold text-white leading-tight">Normes de seguretat</h4>
-                <span class="text-xs text-slate-400">Word Document (.docx)</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Document 2 -->
-          <a href="./Fisica i Quimica/activitats_metode_cientific.pdf" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center">
-                <i data-lucide="file" class="w-6 h-6"></i>
-              </div>
-              <div class="text-left">
-                <h4 class="text-sm font-bold text-white leading-tight">Activitats Mètode Científic</h4>
-                <span class="text-xs text-slate-400">PDF Document (.pdf)</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Document 3 -->
-          <a href="./Fisica i Quimica/informe_practiques.pdf" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center">
-                <i data-lucide="file" class="w-6 h-6"></i>
-              </div>
-              <div class="text-left">
-                <h4 class="text-sm font-bold text-white leading-tight">Informe Pràctiques</h4>
-                <span class="text-xs text-slate-400">PDF Document (.pdf)</span>
-              </div>
-            </div>
-          </a>
-
-          <!-- Imatge -->
-          <a href="./Fisica i Quimica/image.png" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
-            <div class="flex items-center gap-3">
-              <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
-                <i data-lucide="image" class="w-6 h-6"></i>
-              </div>
-              <div class="text-left">
-                <h4 class="text-sm font-bold text-white leading-tight">Esquema Visual</h4>
-                <span class="text-xs text-slate-400">Imatge (.png)</span>
-              </div>
-            </div>
-          </a>
-        </div>
-      </section>
-
-    </div>
-"
-
   </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-800/80 bg-slate-950/80 py-8 text-center text-xs text-slate-400 space-y-2">
     <div class="flex items-center justify-center gap-2 text-slate-300 font-semibold">
       <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
-      <span>Plataforma d'Estudi 2n d'ESO â€¢ CatalÃ  i MatemÃ tiques</span>
+      <span>Plataforma d'Estudi 2n d'ESO • Català i Matemàtiques</span>
     </div>
-    <p>Projecte creat per estudiar amb grÃ fics, animacions i contingut 100% oficial en catalÃ .</p>
+    <p>Projecte creat per estudiar amb gràfics, animacions i contingut 100% oficial en català.</p>
   </footer>
 
   <!-- SCRIPT LOGIC -->
@@ -1392,39 +1236,27 @@
       currentSubject = subj;
       const catalaSec = document.getElementById('subject-catala');
       const matesSec = document.getElementById('subject-mates');
-      const fisicaSec = document.getElementById('subject-fisica');
-      
       const btnCatala = document.getElementById('nav-btn-catala');
       const btnMates = document.getElementById('nav-btn-mates');
-      const btnFisica = document.getElementById('nav-btn-fisica');
-
-      // Reset visibility
-      catalaSec.classList.add('hidden');
-      matesSec.classList.add('hidden');
-      if (fisicaSec) fisicaSec.classList.add('hidden');
-      
-      // Reset buttons
-      btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
-      btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
-      if (btnFisica) btnFisica.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
 
       if (subj === 'catala') {
         catalaSec.classList.remove('hidden');
+        matesSec.classList.add('hidden');
         btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md';
+        btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
         renderCatalaCharts();
-      } else if (subj === 'mates') {
+      } else {
+        catalaSec.classList.add('hidden');
         matesSec.classList.remove('hidden');
         btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-indigo-700 text-white shadow-md';
+        btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
         renderExercise(currentExerciseKey);
-      } else if (subj === 'fisica') {
-        if (fisicaSec) fisicaSec.classList.remove('hidden');
-        if (btnFisica) btnFisica.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md';
       }
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // CATALÃ€ CHARTS CONTROLLER
+    // CATALÀ CHARTS CONTROLLER
     let catalaHistoryChartInstance = null;
     let etymologyChartInstance = null;
 
@@ -1436,9 +1268,9 @@
         catalaHistoryChartInstance = new Chart(ctxHist.getContext('2d'), {
           type: 'line',
           data: {
-            labels: ['S. X (Origen)', 'S. XII (Homilies)', 'S. XV (Segle d\'Or)', 'S. XVII (Davallada)', '1716 (Nova Planta)', 'S. XIX (RenaixenÃ§a)', '1932 (RepÃºblica)', '1940 (Franquisme)', '1980 (DemocrÃ cia)', '2026 (Actualitat)'],
+            labels: ['S. X (Origen)', 'S. XII (Homilies)', 'S. XV (Segle d\'Or)', 'S. XVII (Davallada)', '1716 (Nova Planta)', 'S. XIX (Renaixença)', '1932 (República)', '1940 (Franquisme)', '1980 (Democràcia)', '2026 (Actualitat)'],
             datasets: [{
-              label: 'Nivell d\'Ãšs Oficial i Prestigi Literari (0 - 100)',
+              label: 'Nivell d\'Ús Oficial i Prestigi Literari (0 - 100)',
               data: [25, 45, 95, 40, 15, 60, 85, 10, 80, 75],
               borderColor: '#f59e0b',
               backgroundColor: 'rgba(245, 158, 11, 0.15)',
@@ -1483,7 +1315,7 @@
         etymologyChartInstance = new Chart(ctxEtym.getContext('2d'), {
           type: 'doughnut',
           data: {
-            labels: ['LlatÃ­ vulgar', 'GermÃ nic (visigots/francs)', 'Ã€rab', 'PrÃ¨stecs moderns (francÃ¨s, anglÃ¨s, grec)'],
+            labels: ['Llatí vulgar', 'Germànic (visigots/francs)', 'Àrab', 'Prèstecs moderns (francès, anglès, grec)'],
             datasets: [{
               data: [80, 8, 4, 8],
               backgroundColor: ['#f59e0b', '#06b6d4', '#10b981', '#a855f7'],
@@ -1535,17 +1367,17 @@
       const subtitle = document.getElementById('rubric-total-subtitle');
 
       if (total >= 14) {
-        title.innerText = `ExcelÂ·lent! Nota: ${markOutOf10} / 10`;
-        subtitle.innerText = 'Feina perfecta! Compleix tots els requisits mÃ xims de la cartolina i l\'oral.';
+        title.innerText = `Excel·lent! Nota: ${markOutOf10} / 10`;
+        subtitle.innerText = 'Feina perfecta! Compleix tots els requisits màxims de la cartolina i l\'oral.';
       } else if (total >= 11) {
         title.innerText = `Notable! Nota: ${markOutOf10} / 10`;
         subtitle.innerText = 'Molt bona feina! Reviseu els detalls menors per aspirar al 10.';
       } else if (total >= 8) {
-        title.innerText = `BÃ© / Aprovat: ${markOutOf10} / 10`;
-        subtitle.innerText = 'Compleix el mÃ­nim, perÃ² cal aprofundir en mÃ©s etapes i assajar mÃ©s l\'oral.';
+        title.innerText = `Bé / Aprovat: ${markOutOf10} / 10`;
+        subtitle.innerText = 'Compleix el mínim, però cal aprofundir en més etapes i assajar més l\'oral.';
       } else {
         title.innerText = `Insuficient: ${markOutOf10} / 10`;
-        subtitle.innerText = 'AtenciÃ³: falten etapes essencials o coordinaciÃ³ d\'equip.';
+        subtitle.innerText = 'Atenció: falten etapes essencials o coordinació d\'equip.';
       }
     }
 
@@ -1558,36 +1390,36 @@
     }
 
     // ==========================================
-    // MATEMÃ€TIQUES LOGIC (EXERCICI 10 A, B, C)
+    // MATEMÀTIQUES LOGIC (EXERCICI 10 A, B, C)
     // ==========================================
     const exercisesData = {
       'a': {
         badge: 'APARTAT A',
         typeBadge: 'Variable Qualitativa Nominal',
-        title: 'Marques dels cotxes en un taller mecÃ nic',
-        raw: ['Renault', 'Audi', 'CitroÃ«n', 'Seat', 'Renault', 'Seat', 'Seat', 'Mercedes', 'CitroÃ«n', 'Renault', 'Seat', 'Seat', 'Renault', 'CitroÃ«n'],
+        title: 'Marques dels cotxes en un taller mecànic',
+        raw: ['Renault', 'Audi', 'Citroën', 'Seat', 'Renault', 'Seat', 'Seat', 'Mercedes', 'Citroën', 'Renault', 'Seat', 'Seat', 'Renault', 'Citroën'],
         frequencies: [
           { val: 'Seat', fi: 5, color: '#f59e0b' },
           { val: 'Renault', fi: 4, color: '#6366f1' },
-          { val: 'CitroÃ«n', fi: 3, color: '#06b6d4' },
+          { val: 'Citroën', fi: 3, color: '#06b6d4' },
           { val: 'Audi', fi: 1, color: '#ec4899' },
           { val: 'Mercedes', fi: 1, color: '#8b5cf6' }
         ],
         moda: 'Seat',
-        modaDesc: 'La marca Seat Ã©s la mÃ©s freqÃ¼ent (5 cotxes de 14).',
+        modaDesc: 'La marca Seat és la més freqüent (5 cotxes de 14).',
         mediana: 'No calculable',
-        medianaDesc: 'No es poden ordenar cotxes de menor a major de manera matemÃ tica.',
+        medianaDesc: 'No es poden ordenar cotxes de menor a major de manera matemàtica.',
         medianaValid: false,
         mitjana: 'No calculable',
         mitjanaDesc: 'No es pot fer la suma de marques de cotxe dividit entre 14.',
         mitjanaValid: false,
         steps: [
           '1. Variable qualitativa: paraules (marques de cotxes). Total N = 14.',
-          '2. Recompte: Seat (5), Renault (4), CitroÃ«n (3), Audi (1), Mercedes (1).',
-          '3. Moda = Seat (el valor mÃ©s repetit).',
-          '4. Mediana i Mitjana: No existeixen perquÃ¨ requereixen nÃºmeros.'
+          '2. Recompte: Seat (5), Renault (4), Citroën (3), Audi (1), Mercedes (1).',
+          '3. Moda = Seat (el valor més repetit).',
+          '4. Mediana i Mitjana: No existeixen perquè requereixen números.'
         ],
-        chartExplanation: 'La barra mÃ©s alta identifica clarament la <strong>Moda (Seat, 5 unitats)</strong>.'
+        chartExplanation: 'La barra més alta identifica clarament la <strong>Moda (Seat, 5 unitats)</strong>.'
       },
       'b': {
         badge: 'APARTAT B',
@@ -1605,20 +1437,20 @@
           { val: '16 anys', fi: 1, color: '#e11d48' }
         ],
         moda: '12 anys',
-        modaDesc: 'Apareix 4 vegades (freqÃ¼Ã¨ncia mÃ xima).',
+        modaDesc: 'Apareix 4 vegades (freqüència màxima).',
         mediana: '11 anys',
-        medianaDesc: 'Dades ordenades (N = 15 senar): la 8a posiciÃ³ Ã©s 11.',
+        medianaDesc: 'Dades ordenades (N = 15 senar): la 8a posició és 11.',
         medianaValid: true,
         mitjana: '11,33 anys',
-        mitjanaDesc: 'Suma de les 15 edats = 170. xÌ„ = 170 / 15 â‰ˆ 11,33 anys.',
+        mitjanaDesc: 'Suma de les 15 edats = 170. x̄ = 170 / 15 ≈ 11,33 anys.',
         mitjanaValid: true,
         steps: [
           '1. Ordenem les 15 edats: 8, 9, 9, 10, 10, 10, 11, [11], 12, 12, 12, 12, 13, 15, 16.',
           '2. Moda = 12 anys (apareix 4 vegades).',
-          '3. Mediana = 11 anys (posiciÃ³ central Ãºnica (15+1)/2 = 8a).',
+          '3. Mediana = 11 anys (posició central única (15+1)/2 = 8a).',
           '4. Mitjana = 170 / 15 = 11,33 anys.'
         ],
-        chartExplanation: 'La barra de 12 anys Ã©s la mÃ©s alta (Moda). La mitjana i la mediana se situen al voltant d\'11 anys.'
+        chartExplanation: 'La barra de 12 anys és la més alta (Moda). La mitjana i la mediana se situen al voltant d\'11 anys.'
       },
       'c': {
         badge: 'APARTAT C',
@@ -1633,20 +1465,20 @@
           { val: '4 suspeses', fi: 1, color: '#ef4444' }
         ],
         moda: '0 suspeses',
-        modaDesc: 'Apareix 6 vegades (la gran majoria no tÃ© cap suspesa).',
+        modaDesc: 'Apareix 6 vegades (la gran majoria no té cap suspesa).',
         mediana: '1 suspesa',
         medianaDesc: 'N = 16 (parell): mitjana de posicions 8a (1) i 9a (1) = 1.',
         medianaValid: true,
         mitjana: '1,19 suspeses',
-        mitjanaDesc: 'Suma total = 19 suspeses / 16 alumnes â‰ˆ 1,19 suspeses.',
+        mitjanaDesc: 'Suma total = 19 suspeses / 16 alumnes ≈ 1,19 suspeses.',
         mitjanaValid: true,
         steps: [
           '1. Dades ordenades: 0, 0, 0, 0, 0, 0, 1, [1, 1], 1, 1, 2, 2, 3, 3, 4.',
-          '2. Moda = 0 suspeses (freqÃ¼Ã¨ncia mÃ xima = 6).',
+          '2. Moda = 0 suspeses (freqüència màxima = 6).',
           '3. Mediana = (1 + 1)/2 = 1 suspesa (posicions centrals 8a i 9a).',
-          '4. Mitjana = 19 / 16 = 1,1875 â‰ˆ 1,19 suspeses per alumne.'
+          '4. Mitjana = 19 / 16 = 1,1875 ≈ 1,19 suspeses per alumne.'
         ],
-        chartExplanation: 'Diagrama clarament asimÃ¨tric: el 68,75% dels alumnes tenen 0 o 1 suspesa.'
+        chartExplanation: 'Diagrama clarament asimètric: el 68,75% dels alumnes tenen 0 o 1 suspesa.'
       }
     };
 
@@ -1707,11 +1539,11 @@
       document.getElementById('res-mitjana-desc').innerText = data.mitjanaDesc;
 
       const medStatus = document.getElementById('res-mediana-status');
-      medStatus.innerText = data.medianaValid ? 'VÃ€LID I DETERMINAT' : 'NO ES POT CALCULAR';
+      medStatus.innerText = data.medianaValid ? 'VÀLID I DETERMINAT' : 'NO ES POT CALCULAR';
       medStatus.className = `pt-2 text-[10px] font-bold uppercase ${data.medianaValid ? 'text-emerald-400' : 'text-rose-400'}`;
 
       const mitjStatus = document.getElementById('res-mitjana-status');
-      mitjStatus.innerText = data.mitjanaValid ? 'VÃ€LID I DETERMINAT' : 'NO ES POT CALCULAR';
+      mitjStatus.innerText = data.mitjanaValid ? 'VÀLID I DETERMINAT' : 'NO ES POT CALCULAR';
       mitjStatus.className = `pt-2 text-[10px] font-bold uppercase ${data.mitjanaValid ? 'text-emerald-400' : 'text-rose-400'}`;
 
       // Table
@@ -1746,7 +1578,7 @@
           <td class="px-4 py-2.5 text-cyan-300">${rel}</td>
           <td class="px-4 py-2.5 text-indigo-300 font-bold">${pct}%</td>
           <td class="px-4 py-2.5 text-emerald-300">${cumFi}</td>
-          <td class="px-4 py-2.5 text-rose-300 font-bold">${deg}Â°</td>
+          <td class="px-4 py-2.5 text-rose-300 font-bold">${deg}°</td>
         `;
         tbody.appendChild(tr);
       });
@@ -1758,7 +1590,7 @@
           <td class="px-4 py-2.5 text-cyan-400">1,0000</td>
           <td class="px-4 py-2.5 text-indigo-400">100%</td>
           <td class="px-4 py-2.5 text-emerald-400">-</td>
-          <td class="px-4 py-2.5 text-rose-400">360,0Â°</td>
+          <td class="px-4 py-2.5 text-rose-400">360,0°</td>
         </tr>
       `;
     }
@@ -1824,10 +1656,10 @@
       isStepVisible = !isStepVisible;
       if (isStepVisible) {
         p.classList.remove('hidden');
-        b.innerText = 'Amagar SimulaciÃ³';
+        b.innerText = 'Amagar Simulació';
       } else {
         p.classList.add('hidden');
-        b.innerText = 'Veure SimulaciÃ³ Pas a Pas';
+        b.innerText = 'Veure Simulació Pas a Pas';
       }
     }
 
@@ -1864,7 +1696,7 @@
       } else {
         document.getElementById('custom-res-mediana').innerText = 'No calculable';
         document.getElementById('custom-res-mitjana').innerText = 'No calculable';
-        document.getElementById('custom-res-info').innerText = 'Variable qualitativa (text). NomÃ©s la Moda tÃ© sentit matemÃ tic.';
+        document.getElementById('custom-res-info').innerText = 'Variable qualitativa (text). Només la Moda té sentit matemàtic.';
       }
 
       confetti({ particleCount: 50, spread: 60, origin: { y: 0.7 } });
@@ -1892,7 +1724,7 @@
       if (isOk) {
         btn.classList.add('bg-emerald-950', 'border-emerald-500', 'text-emerald-200');
         fb.className = 'feedback p-2.5 rounded-lg text-xs bg-emerald-950/80 border border-emerald-500/40 text-emerald-200';
-        fb.innerHTML = '<strong>Molt bÃ©! Resposta correcta.</strong>';
+        fb.innerHTML = '<strong>Molt bé! Resposta correcta.</strong>';
         fb.classList.remove('hidden');
         confetti({ particleCount: 40, spread: 50 });
       } else {
@@ -1911,4 +1743,3 @@
   </script>
 </body>
 </html>
-
