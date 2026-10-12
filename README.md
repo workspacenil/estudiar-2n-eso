@@ -34,6 +34,22 @@ Plataforma web educativa per als estudiants de **2n d'ESO**, dissenyada per apre
 - **Laboratori virtual:** Càlcul automàtic amb dades personalitzades.
 - **Test d'autoavaluació:** Preguntes interactives tipus test.
 
+### 3. 🧪 Física i Química: El Mètode Científic i la Matèria
+- **Definicions Fonamentals:** Diferències clau entre Física (canvis d'estat, posició, energia sense canvi de substància) i Química (transformacions i reaccions químiques internes).
+- **Etapes del Mètode Científic:** Observació, Pregunta, Hipòtesi, Experimentació (variables independent, dependent i de control), Anàlisi i Conclusions.
+- **Documents i Recursos:** Normes de seguretat al laboratori, activitats pràctiques, guia de l'informe científic i vídeo explicatiu.
+
+### 4. 🪵 Tecnologia: La Fusta (Tema 1)
+- **Origen i Composició:** Origen en els arbres, cel·lulosa (95% del paper mundial), lignina (aglutinant/fàrmacs), resines i aigua.
+- **Parts del Tronc (Anatomia interactiva):** Escorça (protecció), Líber (saba elaborada), Càmbium (creixement de l'arbre), Albeca (fusta jove clara) i Duramen (cor del tronc / suport resistent).
+- **Classificació de la Fusta:**
+  - *Segons l'arbre:* Toves (fulla perenne / pi, avet) vs Dures (fulla caduca / roure, alzina, noguer).
+  - *Segons la composició:* Fustes Naturals (olor, color, vetes) vs Fustes Artificials (Contraplacats [nombre imparell de capes simètriques], Aglomerat [serradures premsades], Premsat/DM [fibres fines]).
+- **Formes Comercials al Mercat:** Taulons, Llistons i varetes, Perfils o motllures, Taulers i taules, Planxes o xapes.
+- **Procés Industrial d'Obtenció (5 etapes):** Tala (maduresa de 4 a 8 anys), Transport (sec/basses amb sulfats), Desescorçat i cilindratge, Serratge o desenrotllat, Assecatge (natural o forns).
+- **Qüestionari Oficial del Vídeo:** Resolució completa de les 10 preguntes d'examen amb acordió interactiu per estudiar.
+- **Test d'Autoavaluació:** 6 preguntes interactives d'examen amb retroalimentació immediata i confetti.
+
 ---
 
 ## 💻 Com utilitzar-ho

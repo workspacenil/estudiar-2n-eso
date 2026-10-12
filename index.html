@@ -132,8 +132,8 @@
         </div>
       </div>
 
-      <!-- MAIN SUBJECT APARTATS (CATALÀ / MATEMÀTIQUES) -->
-      <nav class="flex items-center p-1.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-inner">
+      <!-- MAIN SUBJECT APARTATS (CATALÀ / MATEMÀTIQUES / FÍSICA / TECNO) -->
+      <nav class="flex items-center p-1.5 rounded-2xl bg-slate-900/90 border border-slate-700/80 shadow-inner flex-wrap justify-center gap-1">
         <button id="nav-btn-catala" onclick="setSubject('catala')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 shadow-md">
           <i data-lucide="book-marked" class="w-4 h-4"></i>
           <span>Llengua Catalana</span>
@@ -143,9 +143,15 @@
           <i data-lucide="calculator" class="w-4 h-4"></i>
           <span>Matemàtiques</span>
         </button>
-              <button id="nav-btn-fisica" onclick="setSubject('fisica')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white">
+
+        <button id="nav-btn-fisica" onclick="setSubject('fisica')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white">
           <i data-lucide="flask-conical" class="w-4 h-4"></i>
           <span>Física i Química</span>
+        </button>
+
+        <button id="nav-btn-tecno" onclick="setSubject('tecno')" class="px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white">
+          <i data-lucide="trees" class="w-4 h-4"></i>
+          <span>Tecno Fusta</span>
         </button>
       </nav>
 
@@ -1444,13 +1450,1115 @@
 
     </div>
 
+  
+    <!-- ======================================================== -->
+    <!-- SUBJECT 4: TECNOLOGIA - LA FUSTA -->
+    <!-- ======================================================== -->
+    <div id="subject-tecno" class="hidden space-y-16 transition-opacity duration-300">
+      
+      <!-- HERO TECNO -->
+      <section class="relative pt-4 pb-8 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-12 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-500/10 border border-amber-500/30 text-amber-300">
+              <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              Tecnologia 2n d'ESO • Tema 1: Els Materials i La Fusta
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+              Tecno: <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-200">La Fusta</span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-light max-w-4xl">
+              Guia d'estudi completa i interactiva per preparar l'examen de tecnologia sobre la <strong class="text-white font-medium">fusta com a material d'ús tècnic</strong>: des de la seva composició i l'anatomia interna del tronc, fins a la classificació (toves, dures, naturals i derivats artificials), formes comercials, procés industrial de transformació i el qüestionari oficial del vídeo resolt pas a pas.
+            </p>
+
+            <!-- Exam Priority Alert -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-amber-950/30 border border-amber-500/40 flex items-start gap-4 shadow-lg shadow-amber-950/20">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-300 shrink-0">
+                <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs sm:text-sm text-slate-300 space-y-1.5">
+                <strong class="text-amber-300 block font-heading text-base font-bold">Prioritat clau per a l'examen:</strong>
+                <p class="leading-relaxed">
+                  L'examen posa el màxim focus en el contingut dels <strong class="text-white">Apunts de Teoria</strong> (Parts del tronc, Classificació de fustes toves/dures i naturals/artificials, Formes comercials i Fases d'obtenció). Per això hem estructurat cada apartat teòric amb les seves fotografies reals i explicacions clau, reservant el qüestionari del vídeo per a la secció de repàs final.
+                </p>
+              </div>
+            </div>
+
+            <!-- Quick Stats Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 glass-card">
+                <span class="text-amber-400 block text-xs font-bold uppercase tracking-wider font-mono">5 Capes del tronc</span>
+                <strong class="text-white text-base block mt-1">Escorça a Duramen</strong>
+                <span class="text-[11px] text-slate-400 mt-0.5 block">Anatomia transversal</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 glass-card">
+                <span class="text-orange-400 block text-xs font-bold uppercase tracking-wider font-mono">2 Classificacions</span>
+                <strong class="text-white text-base block mt-1">Fulla i Composició</strong>
+                <span class="text-[11px] text-slate-400 mt-0.5 block">Toves/Dures & Derivats</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 glass-card">
+                <span class="text-yellow-400 block text-xs font-bold uppercase tracking-wider font-mono">5 Formes comercials</span>
+                <strong class="text-white text-base block mt-1">Taulons a Planxes</strong>
+                <span class="text-[11px] text-slate-400 mt-0.5 block">Formats de fusteria</span>
+              </div>
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 glass-card">
+                <span class="text-emerald-400 block text-xs font-bold uppercase tracking-wider font-mono">5 Fases industrials</span>
+                <strong class="text-white text-base block mt-1">Tala a Assecatge</strong>
+                <span class="text-[11px] text-slate-400 mt-0.5 block">Procés d'obtenció</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 1: ORIGEN I COMPOSICIÓ QUÍMICA DE LA FUSTA -->
+      <!-- ======================================================== -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-black font-mono">1</div>
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-wider text-amber-400">Unitat Temàtica • Origen biològic</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Origen i Composició de la Fusta</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+          
+          <!-- Text and Chemical Components -->
+          <div class="lg:col-span-8 glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+            <div class="space-y-3">
+              <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i data-lucide="trees" class="w-5 h-5 text-amber-400"></i>
+                Què és la fusta i d'on s'obté?
+              </h3>
+              <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+                La fusta té el seu origen exclusivament en els <strong class="text-white font-semibold">arbres</strong>. És una matèria primera natural, d'origen vegetal, renovable i biodegradable que forma la part llenyosa del tronc, les branques i les arrels de les plantes llenyoses.
+              </p>
+            </div>
+
+            <!-- Components Grid -->
+            <div class="space-y-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">Components principals de la fusta:</span>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                
+                <!-- Lignina -->
+                <div class="p-4 rounded-2xl bg-slate-900/90 border border-amber-500/30 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-extrabold bg-amber-500/20 text-amber-300 font-mono">20% - 30%</span>
+                    <i data-lucide="shield-check" class="w-4 h-4 text-amber-400"></i>
+                  </div>
+                  <h4 class="text-base font-bold text-white">Lignina</h4>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    Actua com a <strong class="text-amber-300">ciment natural</strong> que uneix i aglutina les fibres cel·lulars. Dóna rigidesa, duresa i impermeabilitat.
+                  </p>
+                  <div class="pt-2 text-[11px] text-amber-400/90 border-t border-slate-800">
+                    💡 <em>Ús industrial: Fàrmacs i aplicacions veterinàries.</em>
+                  </div>
+                </div>
+
+                <!-- Cel·lulosa -->
+                <div class="p-4 rounded-2xl bg-slate-900/90 border border-cyan-500/30 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-extrabold bg-cyan-500/20 text-cyan-300 font-mono">40% - 50%</span>
+                    <i data-lucide="file-text" class="w-4 h-4 text-cyan-400"></i>
+                  </div>
+                  <h4 class="text-base font-bold text-white">Cel·lulosa</h4>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    Forma l'<strong class="text-cyan-300">esquelet fibrós</strong> de les parets de les cèl·lules vegetals. Dóna flexibilitat i resistència a la tracció.
+                  </p>
+                  <div class="pt-2 text-[11px] text-cyan-400/90 border-t border-slate-800">
+                    💡 <em>D'on s'obté el 95% del paper produït al món!</em>
+                  </div>
+                </div>
+
+                <!-- Resines -->
+                <div class="p-4 rounded-2xl bg-slate-900/90 border border-emerald-500/30 space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2 py-0.5 rounded text-[10px] font-extrabold bg-emerald-500/20 text-emerald-300 font-mono">5% - 10%</span>
+                    <i data-lucide="droplet" class="w-4 h-4 text-emerald-400"></i>
+                  </div>
+                  <h4 class="text-base font-bold text-white">Resines</h4>
+                  <p class="text-xs text-slate-300 leading-relaxed">
+                    Substàncies naturals viscoses que l'arbre segrega com a <strong class="text-emerald-300">mecanisme de defensa</strong> contra fongs, paràsits i insectes.
+                  </p>
+                  <div class="pt-2 text-[11px] text-emerald-400/90 border-t border-slate-800">
+                    💡 <em>També conté aigua i sals minerals (saba).</em>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Extra info -->
+            <div class="p-4 rounded-2xl bg-slate-950/70 border border-slate-800 text-xs text-slate-400 space-y-1.5">
+              <strong class="text-slate-200 block text-sm">Resum ràpid per a l'examen:</strong>
+              <p>La fusta està formada principalment per <strong>lignina</strong> (el ciment rígid), <strong>cel·lulosa</strong> (les fibres flexibles) i <strong>resines</strong>. Quan l'arbre és viu, també conté una gran quantitat d'aigua (saba) que caldrà assecar durant la fase industrial.</p>
+            </div>
+          </div>
+
+          <!-- Tree Image Showcase -->
+          <div class="lg:col-span-4 glass-card rounded-3xl p-6 border border-slate-800 flex flex-col justify-between items-center text-center space-y-4">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">Imatge dels Apunts Oficials</span>
+            
+            <div class="relative w-full max-w-[240px] aspect-square rounded-2xl overflow-hidden bg-slate-900/80 border border-amber-500/20 flex items-center justify-center p-3 shadow-inner group">
+              <img src="./Tecno Fusta/img/arbre_origen.jpeg" alt="L'arbre: origen de la fusta" class="w-full h-full object-contain filter drop-shadow-md group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <div class="space-y-1">
+              <h4 class="text-white font-bold text-sm">L'arbre: Font Natural de la Fusta</h4>
+              <p class="text-xs text-slate-400">
+                La fusta del tronc s'utilitza per a taulons, bigues i mobles; les branques i arrels s'aprofiten per a olis i cel·lulosa química.
+              </p>
+            </div>
+            
+            <div class="w-full pt-3 border-t border-slate-800/80 flex items-center justify-around text-xs text-slate-400">
+              <span class="flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Renovable</span>
+              <span class="flex items-center gap-1"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Biodegradable</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 2: PARTS DEL TRONC (ANATOMIA TRANSVERSAL) -->
+      <!-- ======================================================== -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-orange-500/20 border border-orange-500/40 flex items-center justify-center text-orange-400 font-black font-mono">2</div>
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-wider text-orange-400">Anatomia vegetal • Secció transversal</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Parts del Tronc d'un Arbre</h2>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-8">
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Real PDF Anatomy Diagram -->
+            <div class="lg:col-span-6 space-y-3 text-center">
+              <div class="p-4 sm:p-6 rounded-3xl bg-slate-900/90 border border-orange-500/30 relative overflow-hidden shadow-2xl group">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 font-mono">
+                  DIAGRAMA OFICIAL DELS APUNTS
+                </div>
+                <img src="./Tecno Fusta/img/parts_tronc.jpeg" alt="Secció del tronc d'arbre amb les 5 parts: Duramen, Albeca, Càmbium, Líber i Escorça" class="w-full max-h-72 object-contain mx-auto filter drop-shadow-xl group-hover:scale-102 transition-transform duration-300">
+              </div>
+              <p class="text-xs text-slate-400">
+                Secció en falca d'un tronc: visualització de les 5 capes des de l'exterior (dreta) fins al centre (esquerra).
+              </p>
+            </div>
+
+            <!-- Layer Explorer / Interactive Details -->
+            <div class="lg:col-span-6 space-y-4">
+              <div>
+                <span class="text-xs font-bold text-orange-400 uppercase tracking-wider font-mono">Selector Interactiu de Capes</span>
+                <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">Les 5 Capes en Ordre Transversal</h3>
+                <p class="text-xs text-slate-400 mt-1">Fes clic a qualsevol capa per ressaltar la seva definició oficial i funció clau:</p>
+              </div>
+
+              <!-- Layer Buttons -->
+              <div class="grid grid-cols-5 gap-2">
+                <button onclick="selectTrunkLayer('escorca')" id="btn-layer-escorca" class="p-2 sm:p-2.5 rounded-xl border text-center text-xs font-bold transition bg-amber-950/60 border-amber-500 text-amber-300 shadow">
+                  1. Escorça
+                </button>
+                <button onclick="selectTrunkLayer('liber')" id="btn-layer-liber" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 text-center text-xs font-bold transition">
+                  2. Líber
+                </button>
+                <button onclick="selectTrunkLayer('cambium')" id="btn-layer-cambium" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 text-center text-xs font-bold transition">
+                  3. Càmbium
+                </button>
+                <button onclick="selectTrunkLayer('albeca')" id="btn-layer-albeca" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 text-center text-xs font-bold transition">
+                  4. Albeca
+                </button>
+                <button onclick="selectTrunkLayer('duramen')" id="btn-layer-duramen" class="p-2 sm:p-2.5 rounded-xl border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-300 text-center text-xs font-bold transition">
+                  5. Duramen
+                </button>
+              </div>
+
+              <!-- Active Layer Dynamic Detail Card -->
+              <div id="trunk-layer-display" class="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/40 space-y-3 transition-all duration-300">
+                <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                  <span id="trunk-layer-title" class="text-lg font-black text-amber-300 font-heading">1. Escorça (Part més exterior)</span>
+                  <span id="trunk-layer-badge" class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 font-mono">Protecció mecànica</span>
+                </div>
+                <p id="trunk-layer-desc" class="text-sm text-slate-200 leading-relaxed">
+                  És la part més exterior de l'arbre. Protegeix les altres capes internes de les inclemències del temps, paràsits i cops. Es sol crivellar (esquerdar) i anar caient amb el temps.
+                </p>
+                <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 text-xs space-y-1">
+                  <strong class="text-amber-400 block font-semibold">Pregunta clau d'examen:</strong>
+                  <span id="trunk-layer-exam" class="text-slate-300">Per què s'esquerda? Perquè l'arbre creix de diàmetre des de dins i l'escorça morta no es pot estirar més, de manera que es clivella i cau.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- All 5 Layers Table Grid (For Comprehensive Study) -->
+          <div class="pt-4 space-y-3 border-t border-slate-800">
+            <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wider font-mono">Taula Completa d'Estudi (D'exterior a interior):</h4>
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+              
+              <!-- Escorça Card -->
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2 hover:border-amber-500/40 transition">
+                <div class="flex items-center justify-between">
+                  <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono">1</span>
+                  <span class="text-[10px] text-slate-500 uppercase font-mono">Exterior</span>
+                </div>
+                <h5 class="text-sm font-bold text-white">Escorça</h5>
+                <p class="text-slate-300 leading-relaxed">Part més exterior. <strong>Protegeix</strong> les altres capes. Es sol crivellar i anar caient.</p>
+              </div>
+
+              <!-- Líber Card -->
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2 hover:border-yellow-500/40 transition">
+                <div class="flex items-center justify-between">
+                  <span class="w-6 h-6 rounded-lg bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold font-mono">2</span>
+                  <span class="text-[10px] text-slate-500 uppercase font-mono">Sub-escorça</span>
+                </div>
+                <h5 class="text-sm font-bold text-white">Líber</h5>
+                <p class="text-slate-300 leading-relaxed">Teixit conductor pel qual <strong>puja la saba amb els nutrients</strong> cap a les branques i fulles.</p>
+              </div>
+
+              <!-- Càmbium Card -->
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-orange-500/50 space-y-2 relative shadow-lg shadow-orange-950/20">
+                <div class="flex items-center justify-between">
+                  <span class="w-6 h-6 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono">3</span>
+                  <span class="text-[9px] px-1.5 py-0.5 rounded bg-orange-500/20 text-orange-300 font-bold uppercase font-mono">VITAL!</span>
+                </div>
+                <h5 class="text-sm font-bold text-orange-300">Càmbium</h5>
+                <p class="text-slate-300 leading-relaxed">Capa encara no endurida de tot. <strong>És la que permet el creixement de l'arbre</strong>.</p>
+              </div>
+
+              <!-- Albeca Card -->
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2 hover:border-amber-500/40 transition">
+                <div class="flex items-center justify-between">
+                  <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono">4</span>
+                  <span class="text-[10px] text-slate-500 uppercase font-mono">Fusta Jove</span>
+                </div>
+                <h5 class="text-sm font-bold text-white">Albeca</h5>
+                <p class="text-slate-300 leading-relaxed"><strong>Fusta jove</strong>, viva i clara. Per ella circula saba activa. Menys dura que el centre.</p>
+              </div>
+
+              <!-- Duramen Card -->
+              <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2 hover:border-amber-500/40 transition">
+                <div class="flex items-center justify-between">
+                  <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono">5</span>
+                  <span class="text-[10px] text-slate-500 uppercase font-mono">Centre / Cor</span>
+                </div>
+                <h5 class="text-sm font-bold text-white">Duramen</h5>
+                <p class="text-slate-300 leading-relaxed"><strong>Fusta vella i seca</strong> que serveix de suport i resistència estructural per l'arbre.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 3: TIPUS DE FUSTA I CLASSIFICACIÓ COMPLETA -->
+      <!-- ======================================================== -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-yellow-500/20 border border-yellow-500/40 flex items-center justify-center text-yellow-400 font-black font-mono">3</div>
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-wider text-yellow-400">Classificació completa • Naturalesa i derivats</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Tipus de Fusta i Classificació</h2>
+          </div>
+        </div>
+
+        <!-- 3.1 SEGONS EL TIPUS D'ARBRE (TOVES VS DURES) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider font-mono">Criteri A</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">1. Segons el tipus d'arbre: Fustes Toves vs Fustes Dures</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">Classificació segons la fulla de l'arbre d'origen (caduca o perenne) i les seves propietats mecàniques:</p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            
+            <!-- Fustes Toves Card -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border-2 border-emerald-500/40 space-y-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 flex items-center gap-1.5">
+                    <i data-lucide="leaf" class="w-3.5 h-3.5"></i> Fulla Perenne
+                  </span>
+                  <span class="text-xs text-slate-400 font-mono">Fàcil treballar</span>
+                </div>
+                <h4 class="text-2xl font-black text-white">Fustes Toves</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  Provenen d'arbres de <strong class="text-emerald-300 font-bold">fulla perenne</strong> (coníferes). Són fustes resinoses, lleugeres, de creixement ràpid i tonalitats clares.
+                </p>
+                <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1 text-xs">
+                  <strong class="text-emerald-400 block">Exemples oficials dels apunts:</strong>
+                  <p class="text-white font-medium text-sm">El Pi o l'Avet</p>
+                </div>
+              </div>
+
+              <!-- Image of Soft / Natural Wood -->
+              <div class="space-y-2 pt-2">
+                <div class="relative w-full h-44 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 group">
+                  <img src="./Tecno Fusta/img/fusta_natural_taulons.jpeg" alt="Fustes toves de pi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3">
+                    <span class="text-xs font-semibold text-slate-200">Fusta natural de pi: color clar i vetes suaus</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Fustes Dures Card -->
+            <div class="p-6 rounded-3xl bg-slate-900/90 border-2 border-amber-500/40 space-y-4 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 flex items-center gap-1.5">
+                    <i data-lucide="trees" class="w-3.5 h-3.5"></i> Fulla Caduca
+                  </span>
+                  <span class="text-xs text-slate-400 font-mono">Gran resistència</span>
+                </div>
+                <h4 class="text-2xl font-black text-white">Fustes Dures</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                  Provenen d'arbres de <strong class="text-amber-300 font-bold">fulla caduca</strong> (frondoses). Són fustes més denses, pesades, resistents al desgast i de creixement lent.
+                </p>
+                <div class="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800 space-y-1 text-xs">
+                  <strong class="text-amber-400 block">Exemples oficials dels apunts:</strong>
+                  <p class="text-white font-medium text-sm">El Roure, l'Alzina o el Noguer</p>
+                </div>
+              </div>
+
+              <!-- Image of Hardwoods Textures -->
+              <div class="space-y-2 pt-2">
+                <div class="relative w-full h-44 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 group">
+                  <img src="./Tecno Fusta/img/fusta_natural_vetes.jpeg" alt="Fustes dures: noguer, roure, alzina" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                  <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end p-3">
+                    <span class="text-xs font-semibold text-slate-200">Mostres de fustes dures: vetes marcades i colors nobles</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3.2 SEGONS LA COMPOSICIÓ (NATURALS VS ARTIFICIALS) -->
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-8">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="text-xs font-bold text-orange-400 uppercase tracking-wider font-mono">Criteri B</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">2. Segons la composició: Fustes Naturals vs Artificials</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">Com es distingeixen la fusta massissa obtinguda de l'arbre i els taulers derivats industrials:</p>
+          </div>
+
+          <!-- Natural Wood Definition Banner -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="space-y-1 max-w-2xl">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/20 text-amber-300 font-mono">FUSTES NATURALS</span>
+              <h4 class="text-lg font-bold text-white">Directament dels arbres talats</h4>
+              <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                S'obtenen directament dels arbres serrats. Es poden apreciar totes les propietats originals naturals: <strong class="text-amber-300">l'olor pròpia</strong>, el <strong class="text-amber-300">color</strong>, i les <strong class="text-amber-300">vetes</strong> (els cercles de creixement anuals).
+              </p>
+            </div>
+            <div class="px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-400 shrink-0">
+              Característiques: <strong class="text-white">Olor, Color, Vetes</strong>
+            </div>
+          </div>
+
+          <!-- Artificial Wood Subtitle -->
+          <div class="space-y-2">
+            <div class="flex items-center gap-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 font-mono">FUSTES ARTIFICIALS</span>
+              <h4 class="text-lg font-bold text-white">Els 3 Grans Derivats Industrials Obligatoris</h4>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-400">
+              S'obtenen a partir de la fusta natural aplicant diferents processos físics i químics. Aprofiten les restes de fusta, són més barates, permeten taulers gegants i <strong>no es deformen amb facilitat</strong>.
+            </p>
+          </div>
+
+          <!-- 3 ARTIFICIAL WOODS GRID WITH OFFICIAL IMAGES -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            
+            <!-- 1. Contraplacats -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-amber-500/40 transition-all flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono text-xs">1</span>
+                  <span class="text-[10px] font-bold text-amber-400 font-mono uppercase">Capes Encreuades</span>
+                </div>
+                <h5 class="text-xl font-black text-white">Contraplacats</h5>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Format per <strong class="text-white font-semibold">diverses planxes de fusta (xapes) amb les fibres encolades</strong> superposades alternant la direcció de les fibres a 90°.
+                </p>
+                <div class="p-3 rounded-xl bg-amber-950/30 border border-amber-500/30 text-[11px] text-amber-300 space-y-1">
+                  <strong>⭐ Pregunta fixa d'examen:</strong>
+                  <p class="text-slate-300">El nombre de capes és <strong>sempre imparell</strong> (3, 5, 7 capes) perquè el conjunt quedi <strong>simètric</strong> i no es corbi!</p>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 pt-2">
+                <div class="w-full h-40 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                  <img src="./Tecno Fusta/img/fusta_contraplacat.jpeg" alt="Tauler contraplacat" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[11px] text-slate-400 block text-center font-mono">Capes visibles a la vora</span>
+              </div>
+            </div>
+
+            <!-- 2. Aglomerat -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-orange-500/40 transition-all flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="w-7 h-7 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold font-mono text-xs">2</span>
+                  <span class="text-[10px] font-bold text-orange-400 font-mono uppercase">Serradures + Cola</span>
+                </div>
+                <h5 class="text-xl font-black text-white">Aglomerat</h5>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Format per <strong class="text-white font-semibold">serradures i encenalls de fusta mesclades amb cola sintètica i premsades</strong> a forta pressió i calor.
+                </p>
+                <div class="p-3 rounded-xl bg-orange-950/30 border border-orange-500/30 text-[11px] text-orange-300 space-y-1">
+                  <strong>⭐ Clau d'examen:</strong>
+                  <p class="text-slate-300">Molt barat i rígid, però molt sensible a la humitat (es bufa). Se sol revestir de melamina per a mobles econòmics.</p>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 pt-2">
+                <div class="w-full h-40 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                  <img src="./Tecno Fusta/img/fusta_aglomerat.jpeg" alt="Tauler aglomerat" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[11px] text-slate-400 block text-center font-mono">Encenalls premsats visibles</span>
+              </div>
+            </div>
+
+            <!-- 3. Premsat o DM -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 hover:border-yellow-500/40 transition-all flex flex-col justify-between space-y-4">
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="w-7 h-7 rounded-lg bg-yellow-500/20 text-yellow-400 flex items-center justify-center font-bold font-mono text-xs">3</span>
+                  <span class="text-[10px] font-bold text-yellow-400 font-mono uppercase">Fibres Fines (MDF)</span>
+                </div>
+                <h5 class="text-xl font-black text-white">Premsat o DM</h5>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  La fusta es converteix en <strong class="text-white font-semibold">fibres fines abans d'encolar-les i premsar-les</strong> (Densitat Mitjana / MDF).
+                </p>
+                <div class="p-3 rounded-xl bg-yellow-950/30 border border-yellow-500/30 text-[11px] text-yellow-300 space-y-1">
+                  <strong>⭐ Clau d'examen:</strong>
+                  <p class="text-slate-300">Superfície extremadament llisa, homogènia i sense encenalls. Perfecte per lacar, pintar i tallar amb precisió.</p>
+                </div>
+              </div>
+
+              <div class="space-y-1.5 pt-2">
+                <div class="w-full h-40 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                  <img src="./Tecno Fusta/img/fusta_dm_premsat.jpeg" alt="Tauler de DM o Premsat" class="w-full h-full object-cover">
+                </div>
+                <span class="text-[11px] text-slate-400 block text-center font-mono">Fibra llisa i compacta</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 4: FORMES COMERCIALS DE LA FUSTA -->
+      <!-- ======================================================== -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 font-black font-mono">4</div>
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-wider text-amber-400">Comercialització • Formats al mercat</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Formes Comercials de la Fusta</h2>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            Al magatzem de fusta o fusteria, el material no es ven en troncs rodons, sinó en peces estandarditzades amb formes i mides concretes segons l'ús final:
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Forma 1: Taulons -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-amber-500/40 transition">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-amber-500/20 text-amber-300 font-mono">FORMA 1</span>
+                  <i data-lucide="box" class="w-4 h-4 text-amber-400"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Taulons</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Peces de <strong class="text-amber-300">forma prismàtica</strong> de dimensions que poden arribar a ser considerables (grossos i llargs).
+                </p>
+                <div class="text-[11px] text-slate-400 pt-1">
+                  <em>Usos: Bigues, bastides, estructures de sostre i construcció pesada.</em>
+                </div>
+              </div>
+              <div class="w-full h-44 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <img src="./Tecno Fusta/img/taulons.jpeg" alt="Taulons de fusta per a bigues" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <!-- Forma 2: Llistons i varetes -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-amber-500/40 transition">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-orange-500/20 text-orange-300 font-mono">FORMA 2</span>
+                  <i data-lucide="ruler" class="w-4 h-4 text-orange-400"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Llistons i Varetes</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Peces de <strong class="text-orange-300">forma prismàtica</strong> (o cilíndrica en varetes) de secció molt menor a la llargària.
+                </p>
+                <div class="text-[11px] text-slate-400 pt-1">
+                  <em>Usos: Maquetisme a tecnologia, marcs, bastidors lleugers i unions.</em>
+                </div>
+              </div>
+              <div class="w-full h-44 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <img src="./Tecno Fusta/img/llistons_varetes.jpeg" alt="Llistons prismàtics i varetes cilíndriques" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <!-- Forma 3: Perfils o motllures -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-amber-500/40 transition">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-yellow-500/20 text-yellow-300 font-mono">FORMA 3</span>
+                  <i data-lucide="scissors" class="w-4 h-4 text-yellow-400"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Perfils o Motllures</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Peces semblants als llistons però <strong class="text-yellow-300">amb una forma determinada</strong> (relleus, sanefes o formes motllurades).
+                </p>
+                <div class="text-[11px] text-slate-400 pt-1">
+                  <em>Usos: Sòcols, cantoneres, marcs de quadres i guarniments de fusteria.</em>
+                </div>
+              </div>
+              <div class="w-full h-44 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <img src="./Tecno Fusta/img/perfils_motllures.jpeg" alt="Perfils i motllures de fusta amb formes" class="w-full h-full object-contain p-2">
+              </div>
+            </div>
+
+            <!-- Forma 4: Taulers i taules -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-amber-500/40 transition">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-cyan-500/20 text-cyan-300 font-mono">FORMA 4</span>
+                  <i data-lucide="layers" class="w-4 h-4 text-cyan-400"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Taulers i Taules</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Peces <strong class="text-cyan-300">rectangulars</strong> amples amb un determinat espessor.
+                </p>
+                <div class="text-[11px] text-slate-400 pt-1">
+                  <em>Usos: Taulells de treball, prestatgeries, portes d'armari i taules.</em>
+                </div>
+              </div>
+              <div class="w-full h-44 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <img src="./Tecno Fusta/img/taulers_taules.jpeg" alt="Taulers i taules rectangulars" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <!-- Forma 5: Planxes -->
+            <div class="p-5 rounded-3xl bg-slate-900/90 border border-slate-800 space-y-3 flex flex-col justify-between hover:border-amber-500/40 transition lg:col-span-2">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-rose-500/20 text-rose-300 font-mono">FORMA 5</span>
+                  <i data-lucide="scroll" class="w-4 h-4 text-rose-400"></i>
+                </div>
+                <h4 class="text-xl font-bold text-white">Planxes (Làmines fines / Xapes)</h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  <strong class="text-rose-300">Làmines fines</strong> de fusta natural (gruixos inferiors a 1 mm o pocs mm). S'obtenen per desenrotllat o aplanament.
+                </p>
+                <div class="text-[11px] text-slate-400 pt-1">
+                  <em>Usos: Revestiment decoratiu de taulers d'aglomerat/DM (donant aspecte de fusta noble massissa) i fabricació de taulers contraplacats.</em>
+                </div>
+              </div>
+              <div class="w-full h-44 rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+                <img src="./Tecno Fusta/img/planxes_xapes.jpeg" alt="Planxes i làmines fines de xapa" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 5: PROCÉS D'OBTENCIÓ DE LA FUSTA -->
+      <!-- ======================================================== -->
+      <section class="space-y-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-black font-mono">5</div>
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-400">Procés Industrial • Del bosc al taller</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Procés d'Obtenció de la Fusta (5 Fases)</h2>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed font-light">
+            El cicle complet des que un arbre madura al bosc fins que la fusta arriba a la indústria en condicions d'ús té <strong class="text-white font-medium">5 passos ordenats obligatoris</strong>:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            
+            <!-- Pas 1: Tala -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2 relative hover:border-emerald-500/40 transition">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black font-mono text-sm">1</span>
+              <h4 class="text-base font-bold text-white">Tala</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Es tallen els arbres al bosc amb serres mecàniques quan han assolit la maduresa necessària (de 4 a 8 anys en plantacions industrials).
+              </p>
+            </div>
+
+            <!-- Pas 2: Transport -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2 relative hover:border-emerald-500/40 transition">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black font-mono text-sm">2</span>
+              <h4 class="text-base font-bold text-white">Transport</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Trasllat dels troncs a la fàbrica en camions, trens o rius. S'emmagatzemen en sec (patis) o basses d'aigua amb sulfats contra fongs.
+              </p>
+            </div>
+
+            <!-- Pas 3: Desescorçat -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2 relative hover:border-emerald-500/40 transition">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black font-mono text-sm">3</span>
+              <h4 class="text-base font-bold text-white">Desescorçat</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Extracció de l'escorça protectora i impureses del tronc mitjançant corrons especials, seguit del procés de cilindratge.
+              </p>
+            </div>
+
+            <!-- Pas 4: Serratge -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2 relative hover:border-emerald-500/40 transition">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black font-mono text-sm">4</span>
+              <h4 class="text-base font-bold text-white">Serratge</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Tall longitudinal del tronc amb serres per obtenir taulers i taulons, o cilindratge i desenrotllat en xapa per a contraplacats.
+              </p>
+            </div>
+
+            <!-- Pas 5: Assecatge -->
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2 relative hover:border-emerald-500/40 transition">
+              <span class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-black font-mono text-sm">5</span>
+              <h4 class="text-base font-bold text-white">Assecatge</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Extracció de la humitat (assecatge natural a l'aire o en forns industrials) per evitar que la fusta es corbi, podreixi o esquerdi.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Video Drive Link Callout -->
+          <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                <i data-lucide="video" class="w-5 h-5"></i>
+              </div>
+              <div class="text-xs space-y-0.5">
+                <strong class="text-white block text-sm">Vídeo Oficial de Classe: Procés d'Obtenció</strong>
+                <span class="text-slate-400">Enllaç directe al vídeo compartit pel professor a Google Drive.</span>
+              </div>
+            </div>
+            <a href="https://drive.google.com/file/d/10lGTsfWG6S1cSbF6YYilFoVdryEpuKl3/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center gap-2 transition shrink-0">
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>Obrir Vídeo de Google Drive</span>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 6: VÍDEO OFICIAL I QÜESTIONARI RESOLT -->
+      <!-- ======================================================== -->
+      <section class="space-y-6 pt-6 border-t border-slate-800">
+        <div class="flex items-center justify-between flex-wrap gap-3">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-400 font-black font-mono">6</div>
+            <div>
+              <span class="text-xs uppercase font-extrabold tracking-wider text-red-400">Repàs d'examen • Vídeo i preguntes oficials</span>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Qüestionari del Vídeo de la Fusta (Amb Respostes)</h2>
+            </div>
+          </div>
+
+          <button onclick="toggleAllQuestions()" id="btn-toggle-all-questions" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold transition flex items-center gap-2 border border-slate-700">
+            <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+            <span id="txt-toggle-all">Mostrar Totes les Respostes</span>
+          </button>
+        </div>
+
+        <!-- Embedded Video -->
+        <div class="glass-card rounded-3xl p-4 sm:p-6 border border-slate-800 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-red-400 uppercase tracking-wider font-mono flex items-center gap-1.5">
+              <i data-lucide="youtube" class="w-4 h-4"></i> Vídeo Oficial de Referència (https://youtu.be/4uS5pv0SQI8)
+            </span>
+            <a href="https://youtu.be/4uS5pv0SQI8" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 underline">
+              Obrir a YouTube <i data-lucide="external-link" class="w-3 h-3"></i>
+            </a>
+          </div>
+          
+          <div class="relative w-full aspect-video rounded-2xl overflow-hidden bg-slate-950 border border-slate-800 max-w-4xl mx-auto shadow-2xl">
+            <iframe 
+              class="absolute inset-0 w-full h-full" 
+              src="https://www.youtube-nocookie.com/embed/4uS5pv0SQI8" 
+              title="Vídeo de la Fusta" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+
+        <!-- The 10 Questions Accordion Cards -->
+        <div class="space-y-3">
+          
+          <!-- Q1 -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(1)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">1</span>
+                <h4 class="text-sm sm:text-base font-bold text-white">A partir de quin compost s'obté el 95% del paper que es produeix mundialment?</h4>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-1">Veure</span>
+              </button>
+            </div>
+            <div id="q-ans-1" class="hidden pl-9 pt-2 text-xs sm:text-sm text-slate-300 border-t border-slate-800 space-y-1">
+              <p><strong class="text-emerald-400">Resposta oficial:</strong> <span class="text-white font-bold text-base">La cel·lulosa</span></p>
+              <p class="text-slate-400">Explicació: És el polímer vegetal fibrós que constitueix la paret de les cèl·lules vegetals.</p>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(2)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">2</span>
+                <h4 class="text-sm sm:text-base font-bold text-white">Quin és el principal component de la fusta?</h4>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-2">Veure</span>
+              </button>
+            </div>
+            <div id="q-ans-2" class="hidden pl-9 pt-2 text-xs sm:text-sm text-slate-300 border-t border-slate-800 space-y-1">
+              <p><strong class="text-emerald-400">Resposta oficial:</strong> <span class="text-white font-bold text-base">Aigua i lignina</span></p>
+              <p class="text-slate-400">Explicació: La lignina dóna rigidesa i l'aigua transporta els nutrients per l'arbre viu.</p>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(3)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">3</span>
+                <h4 class="text-sm sm:text-base font-bold text-white">Per a quina finalitat s'utilitza la lignina?</h4>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-3">Veure</span>
+              </button>
+            </div>
+            <div id="q-ans-3" class="hidden pl-9 pt-2 text-xs sm:text-sm text-slate-300 border-t border-slate-800 space-y-1">
+              <p><strong class="text-emerald-400">Resposta oficial:</strong> <span class="text-white font-bold text-base">Fàrmacs. Usos veterinaris.</span></p>
+              <p class="text-slate-400">Explicació: La indústria farmacèutica i veterinària aprofita la lignina extreta durant el blanqueig de la pasta de paper.</p>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(4)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">4</span>
+                <h4 class="text-sm sm:text-base font-bold text-white">Per a la fabricació de quins productes s'utilitza la fusta dels troncs?</h4>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-4">Veure</span>
+              </button>
+            </div>
+            <div id="q-ans-4" class="hidden pl-9 pt-2 text-xs sm:text-sm text-slate-300 border-t border-slate-800 space-y-1">
+              <p><strong class="text-emerald-400">Resposta oficial:</strong> <span class="text-white font-bold">Llistons, làmines, fusta massissa, obra fina de fusteria, medicaments, bigues, xapes, paper,...</span></p>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(5)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">5</span>
+                <h4 class="text-sm sm:text-base font-bold text-white">I la fusta de les branques i arrels? Per a què s'utilitza?</h4>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-5">Veure</span>
+              </button>
+            </div>
+            <div id="q-ans-5" class="hidden pl-9 pt-2 text-xs sm:text-sm text-slate-300 border-t border-slate-800 space-y-1">
+              <p><strong class="text-emerald-400">Resposta oficial:</strong> <span class="text-white font-bold">Olis, cel·lulosa i nitrocel·lulosa per la indústria química.</span></p>
+            </div>
+          </div>
+
+          <!-- Q6 -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(6)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">6</span>
+                <h4 class="text-sm sm:text-base font-bold text-white">Quina és la funció del tronc a l'arbre?</h4>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-6">Veure</span>
+              </button>
+            </div>
+            <div id="q-ans-6" class="hidden pl-9 pt-2 text-xs sm:text-sm text-slate-300 border-t border-slate-800 space-y-1">
+              <p><strong class="text-emerald-400">Resposta oficial:</strong> <span class="text-white font-bold">Portar aigua i minerals (aliment) fins a les fulles.</span></p>
+            </div>
+          </div>
+
+          <!-- Q7 -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-slate-800 space-y-3">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(7)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-red-500/20 text-red-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">7</span>
+                <h4 class="text-sm sm:text-base font-bold text-white">Quines són les dues propietats de la fusta comentades al vídeo?</h4>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-7">Veure</span>
+              </button>
+            </div>
+            <div id="q-ans-7" class="hidden pl-9 pt-2 text-xs sm:text-sm text-slate-300 border-t border-slate-800 space-y-1">
+              <p><strong class="text-emerald-400">Resposta oficial:</strong> <span class="text-white font-bold text-base">Porositat i resistència.</span></p>
+            </div>
+          </div>
+
+          <!-- Q8 (With subquestions 8.1 to 8.10) -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-amber-500/30 space-y-4">
+            <div class="flex items-start justify-between gap-3 cursor-pointer" onclick="toggleQuestion(8)">
+              <div class="flex items-start gap-3">
+                <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-400 font-mono text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">8</span>
+                <div>
+                  <h4 class="text-sm sm:text-base font-bold text-white">Respecte a la transformació de la fusta (Bloc complet 8.1 a 8.10)</h4>
+                  <p class="text-xs text-slate-400">Desplega per veure les 10 preguntes i respostes oficials del procés fabril</p>
+                </div>
+              </div>
+              <button class="text-xs text-amber-400 font-bold hover:underline shrink-0">
+                <span id="q-action-8">Veure</span>
+              </button>
+            </div>
+
+            <div id="q-ans-8" class="hidden pl-2 sm:pl-9 pt-3 border-t border-slate-800 space-y-3 text-xs sm:text-sm">
+              
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.1) Quina és la mitjana d'anys que necessita un arbre per arribar a la maduresa suficient per a ser recol·lectat?</strong>
+                <p class="text-emerald-300 font-bold mt-1">De 4 a 8 anys</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.2) Quins són els dos tipus d'emmagatzematge de la fusta recol·lectada?</strong>
+                <p class="text-emerald-300 font-bold mt-1">En sec (en patis) i en basses (aigua)</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.3) Quin tipus de microorganismes ataquen els troncs durant l'emmagatzematge i espera per entrar a fàbrica?</strong>
+                <p class="text-emerald-300 font-bold mt-1">Fongs</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.4) Quin tractament realitzen durant l'emmagatzematge per evitar l'atac de microorganismes als troncs?</strong>
+                <p class="text-emerald-300 font-bold mt-1">Mitjançant aspersors, es mullen els troncs amb sulfats per evitar l'atac de microorganismes</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.5) Un cop els troncs entren a fàbrica, quines accions es realitzen durant el primer i segon pas?</strong>
+                <p class="text-emerald-300 font-bold mt-1">1- Treure impureses i escorça (desescorçat), 2- Cilindratge</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.6) Com s'anomena el procés d'obtenció de la xapa?</strong>
+                <p class="text-emerald-300 font-bold mt-1">Desenrollat i contraxapat</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.7) Un cop la xapa està tallada i apilada, quin és el següent pas?</strong>
+                <p class="text-emerald-300 font-bold mt-1">Assecat (treure l'aigua)</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.8) Quin és el nom del producte obtingut després del procés de fabricació?</strong>
+                <p class="text-emerald-300 font-bold mt-1">Tauler contraxapat [tablero contrachapado]</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.9) Explica en què consisteix el procés de "armado del tablero":</strong>
+                <p class="text-emerald-300 font-bold mt-1">Apilar capes de xapes contraxapades encolades</p>
+              </div>
+
+              <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
+                <strong class="text-white block font-semibold">8.10) Per quin motiu el nombre de xapes que es munten encolades és imparell?</strong>
+                <p class="text-emerald-300 font-bold mt-1">Per tal que el conjunt quedi simètric, d'aquesta manera s'estabilitza</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 7: DOCUMENTS ORIGINALS I DESCÀRREGUES -->
+      <!-- ======================================================== -->
+      <section class="space-y-6 pt-6 border-t border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/20 border border-indigo-500/40 flex items-center justify-center text-indigo-400 font-black font-mono">7</div>
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-wider text-indigo-400">Materials oficials • PDF i multimèdia</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Fitxers i Documents Oficials de Classe</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Doc 1: Apunts Fusta PDF -->
+          <a href="./Tecno Fusta/APUNTS FUSTA.pdf" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 shrink-0 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                <i data-lucide="file-text" class="w-6 h-6"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-base font-bold text-white">APUNTS FUSTA.pdf</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  El document de diapositives original del professor amb els 4 blocs de teoria (origen, tronc, tipus i formes comercials) i el procés d'obtenció.
+                </p>
+                <span class="inline-flex items-center gap-1 text-[11px] text-amber-400 font-semibold pt-1">
+                  <i data-lucide="download" class="w-3 h-3"></i> Veure o Descarregar PDF
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Doc 2: Questionnaire PDF -->
+          <a href="./Tecno Fusta/Qüestionari video fusta RESPOSTES.pdf" target="_blank" class="block glass-card glass-card-hover rounded-2xl p-5 border border-slate-800/80">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 shrink-0 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center">
+                <i data-lucide="check-square" class="w-6 h-6"></i>
+              </div>
+              <div class="space-y-1">
+                <h4 class="text-base font-bold text-white">Qüestionari vídeo fusta RESPOSTES.pdf</h4>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Full oficial de respostes de les 10 preguntes del vídeo de transformació de la fusta a fàbrica.
+                </p>
+                <span class="inline-flex items-center gap-1 text-[11px] text-red-400 font-semibold pt-1">
+                  <i data-lucide="download" class="w-3 h-3"></i> Veure o Descarregar PDF
+                </span>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </section>
+
+      <!-- ======================================================== -->
+      <!-- APARTAT 8: TEST D'AUTOAVALUACIÓ INTERACTIU PER A L'EXAMEN -->
+      <!-- ======================================================== -->
+      <section class="space-y-6 pt-6 border-t border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 font-black font-mono">8</div>
+          <div>
+            <span class="text-xs uppercase font-extrabold tracking-wider text-emerald-400">Posa't a prova • Simulacre d'examen</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Test Interactiu d'Autoavaluació (6 Preguntes)</h2>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
+          <p class="text-xs sm:text-sm text-slate-400">
+            Respon a aquestes preguntes clau per comprovar si tens els conceptes clars abans de l'examen de tecnologia. Si l'encertes, sortirà verd i confetti!
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="tecno-quiz-container">
+            
+            <!-- Quiz Q1 -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3" data-tq="1">
+              <span class="text-xs font-mono font-bold text-amber-400">Pregunta 1: Parts del Tronc</span>
+              <h5 class="text-sm font-bold text-white">Quina és la capa viva del tronc responsable del creixement de l'arbre?</h5>
+              <div class="space-y-2 text-xs">
+                <button onclick="checkTecnoQuiz(1, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">A) L'albeca</button>
+                <button onclick="checkTecnoQuiz(1, true, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">B) El càmbium</button>
+                <button onclick="checkTecnoQuiz(1, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">C) El duramen</button>
+              </div>
+              <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
+            </div>
+
+            <!-- Quiz Q2 -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3" data-tq="2">
+              <span class="text-xs font-mono font-bold text-amber-400">Pregunta 2: Tipus de Fusta</span>
+              <h5 class="text-sm font-bold text-white">A quin grup pertanyen el pi i l'avet?</h5>
+              <div class="space-y-2 text-xs">
+                <button onclick="checkTecnoQuiz(2, true, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">A) Fustes toves (fulla perenne)</button>
+                <button onclick="checkTecnoQuiz(2, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">B) Fustes dures (fulla caduca)</button>
+                <button onclick="checkTecnoQuiz(2, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">C) Fustes artificials premsades</button>
+              </div>
+              <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
+            </div>
+
+            <!-- Quiz Q3 -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3" data-tq="3">
+              <span class="text-xs font-mono font-bold text-amber-400">Pregunta 3: Fustes Artificials</span>
+              <h5 class="text-sm font-bold text-white">Com s'anomena la fusta artificial feta de fibres desfibrades molt fines abans d'encolar-les?</h5>
+              <div class="space-y-2 text-xs">
+                <button onclick="checkTecnoQuiz(3, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">A) Aglomerat</button>
+                <button onclick="checkTecnoQuiz(3, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">B) Contraplacat</button>
+                <button onclick="checkTecnoQuiz(3, true, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">C) Premsat o DM (MDF)</button>
+              </div>
+              <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
+            </div>
+
+            <!-- Quiz Q4 -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3" data-tq="4">
+              <span class="text-xs font-mono font-bold text-amber-400">Pregunta 4: Estabilitat del Contraplacat</span>
+              <h5 class="text-sm font-bold text-white">Per quin motiu el nombre de capes del contraxapat sempre és imparell?</h5>
+              <div class="space-y-2 text-xs">
+                <button onclick="checkTecnoQuiz(4, true, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">A) Perquè el conjunt quedi simètric i s'estabilitzi mecànicament</button>
+                <button onclick="checkTecnoQuiz(4, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">B) Perquè és més fàcil de serrar i transportar</button>
+                <button onclick="checkTecnoQuiz(4, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">C) Per estalviar cola sintètica a la fàbrica</button>
+              </div>
+              <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
+            </div>
+
+            <!-- Quiz Q5 -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3" data-tq="5">
+              <span class="text-xs font-mono font-bold text-amber-400">Pregunta 5: Formes Comercials</span>
+              <h5 class="text-sm font-bold text-white">Com s'anomenen les làmines molt fines de fusta natural usades per recobrir taulers?</h5>
+              <div class="space-y-2 text-xs">
+                <button onclick="checkTecnoQuiz(5, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">A) Taulons</button>
+                <button onclick="checkTecnoQuiz(5, true, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">B) Planxes o xapes</button>
+                <button onclick="checkTecnoQuiz(5, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">C) Motllures</button>
+              </div>
+              <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
+            </div>
+
+            <!-- Quiz Q6 -->
+            <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3" data-tq="6">
+              <span class="text-xs font-mono font-bold text-amber-400">Pregunta 6: Paper Mundial</span>
+              <h5 class="text-sm font-bold text-white">A partir de quin compost vegetal s'obté el 95% del paper mundial?</h5>
+              <div class="space-y-2 text-xs">
+                <button onclick="checkTecnoQuiz(6, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">A) La resina</button>
+                <button onclick="checkTecnoQuiz(6, false, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">B) La lignina</button>
+                <button onclick="checkTecnoQuiz(6, true, this)" class="w-full text-left p-3 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 hover:bg-slate-800 transition">C) La cel·lulosa</button>
+              </div>
+              <div class="feedback hidden p-2.5 rounded-lg text-xs"></div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-800/80 bg-slate-950/80 py-8 text-center text-xs text-slate-400 space-y-2">
     <div class="flex items-center justify-center gap-2 text-slate-300 font-semibold">
       <i data-lucide="graduation-cap" class="w-4 h-4 text-amber-400"></i>
-      <span>Plataforma d'Estudi 2n d'ESO • Català i Matemàtiques</span>
+      <span>Plataforma d'Estudi 2n d'ESO • Català, Matemàtiques, Física i Química & Tecnologia</span>
     </div>
     <p>Projecte creat per estudiar amb gràfics, animacions i contingut 100% oficial en català.</p>
   </footer>
@@ -1465,18 +2573,22 @@
       const catalaSec = document.getElementById('subject-catala');
       const matesSec = document.getElementById('subject-mates');
       const fisicaSec = document.getElementById('subject-fisica');
+      const tecnoSec = document.getElementById('subject-tecno');
       
       const btnCatala = document.getElementById('nav-btn-catala');
       const btnMates = document.getElementById('nav-btn-mates');
       const btnFisica = document.getElementById('nav-btn-fisica');
+      const btnTecno = document.getElementById('nav-btn-tecno');
 
       if (catalaSec) catalaSec.classList.add('hidden');
       if (matesSec) matesSec.classList.add('hidden');
       if (fisicaSec) fisicaSec.classList.add('hidden');
+      if (tecnoSec) tecnoSec.classList.add('hidden');
       
       if (btnCatala) btnCatala.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
       if (btnMates) btnMates.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
       if (btnFisica) btnFisica.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
+      if (btnTecno) btnTecno.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 text-slate-400 hover:text-white';
 
       if (subj === 'catala') {
         if (catalaSec) catalaSec.classList.remove('hidden');
@@ -1489,7 +2601,11 @@
       } else if (subj === 'fisica') {
         if (fisicaSec) fisicaSec.classList.remove('hidden');
         if (btnFisica) btnFisica.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-teal-500 to-emerald-600 text-white shadow-md';
+      } else if (subj === 'tecno') {
+        if (tecnoSec) tecnoSec.classList.remove('hidden');
+        if (btnTecno) btnTecno.className = 'px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center gap-2 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white shadow-md';
       }
+      lucide.createIcons();
       
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -1977,7 +3093,12 @@
     // ON LOAD
     window.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
-      renderCatalaCharts();
+      const hash = window.location.hash.replace('#', '');
+      if (hash && ['catala', 'mates', 'fisica', 'tecno'].includes(hash)) {
+        setSubject(hash);
+      } else {
+        renderCatalaCharts();
+      }
     });
   </script>
 </body>
